@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            margin: 20px auto;
+            text-align: center;
+        }
+        /*属性选择器：通过标签属性来选择  如：选中div中所有有类名的div盒子*/
+        div[class] { /*因为第8个盒子没有类名，所以只有前七个会变成黄色，没有被覆盖的前提下*/
+            background-color: #ff0;
+        }
+        
+        /*选中div中带有class属性，并且属性值为box1的盒子*/
+        div[class="box1"] { /*只有存在class=“box1”的div才会变成红色，没有被覆盖的前提下*/
+            background-color: #f00;
+        }
+        
+        /*选中带有class属性，并且属性值为aa开头的div*/
+        div[class ^= "aa"] { /* ^= x 代表必须开头以x开始 */
+            background-color: #00f;
+        }
+        
+        /*选中带有class属性的，并且该属性值以 aa结尾的div盒子*/
+        div[class $= "aa"] {
+            background-color: #000;
+        }
+
+        /*选中带有calss属性，并且该属性值包含了aa的div盒子*/
+        div[class *= "aa"] {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="aabox2">2</div>
+    <div class="bbbox3">3</div>
+    <div class="box4aa">4</div>
+    <div class="box5bb">5</div>
+    <div class="aabox6bb">6</div>
+    <div class="bbbox7aa">7</div>
+    <div>8</div>
+</body>
+</html>

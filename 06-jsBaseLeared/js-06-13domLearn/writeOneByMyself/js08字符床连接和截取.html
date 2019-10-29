@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str1 = "abc";
+    var str2 = "def";
+    //字符串的连接,用concat()拼接，但是拼接的两个字符串的值没有改变，因为字符串是不可改变
+    //用str1.concat(str2)返回的值才是一个拼接的字符串，而两个本身没有改变
+    var strc = str1.concat(str2);
+    console.log(str1); //str1任然是abc
+    console.log(str2);  //str2任然是def
+    console.log(strc);
+
+    //字符串的分割
+    var str3 = "012345678";
+    var strSli2 = str3.slice(2);  //从索引为2的地方开始截取到最后，但是str3的值任然没有改变
+    console.log(str3);//str3没有改变
+    console.log(strSli2);   //strSli2的值为：2345678
+
+    var strSli3to5= str3.slice(2,5);   //截取的索引范围是[2,5);
+    console.log(strSli3to5);    //strsli3to5=234
+
+    var nchar = str3.slice(-3); //str.slice（-n) 截取的是后边三个字符
+    console.log(nchar);   //nchar=678
+
+    //substr()；根据索引值和长度截取字符串
+    var str4 = "012345";
+    var su0 = str4.substr(0);   //从索引0截取到最后
+    console.log(su0);
+    var su13 = str4.substr(1,3); //从索引1截取3个字符 即str.substr(n,m);代表的是从n为索引(包括n）向后截取m个字符
+    console.log(su13); //su13=123
+    var sul4 = str4.substr(-4); //截取后边4个字符
+    console.log(sul4)  //sul4 = 2345
+
+    //substring(); 根据索引值和索引值截取字符串
+    var str5 = "01234567";
+    console.log("str5:" + str5.substring(2)); //从索引为2向后截取到底
+    console.log("str5:" + str5.substring(2,5)); //截取的范围为[2,5]
+    console.log("str5:" + str5.substring(-3));   //str.substring(-n) n为任意值，代表全部截取
+    console.log("str5:" + str5.substring(5,2)); //自动转为从2截取到4的索引值
+
+
+
+</script>
+</body>
+</html>

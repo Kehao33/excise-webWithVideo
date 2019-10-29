@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    data: <span id="txt"></span> <br>
+    <button onclick="getme()">获取</button>
+
+    <script>
+        /*处理兼容性，创建xhr对象*/
+        function creatXHR() {
+            var xhr;
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest(); //非IE创建xhr的方法;
+            }else{
+                xhr = new ActiveXObject("Microsoft.XMLHTTP"); //IE的创建xhr的方法
+            }
+            return xhr;
+            /*return window.XMLHttpRequest?new XMELHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");*/
+
+        }
+        /*readystate:
+        * 0:未初始化
+        * 1：
+        * 2：已记载
+        * 4：完成
+        *
+        * onreadystatechange：指定状态改变时所触发时间处理器的属性
+        * */
+        function getme() {
+            var xhr = creatXHR();
+            //1.创建请求
+            xhr.open("get","one.txt",true);
+            /*true为异步操作，多线程的
+            * false为同步操作，单线程的
+            * */
+            //2.发送请求  给服务器端
+            xhr.send();
+            //3.回调函数,状态码改变的时候触发匿名方法
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    //表示已经准备就绪
+                    /*获得服务器文本响应*/
+                    var data = xhr.responseText;
+                    document.getElementById("txt").innerHTML = data;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

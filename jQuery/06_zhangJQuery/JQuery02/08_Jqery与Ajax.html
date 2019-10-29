@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			var i=0;
+			var dataList;
+			/* $().ready(function(){
+				$("#btn").bind("click",function(){
+					$.ajax({
+						url:"1.json",
+						async:"true",
+						dataType:"json",
+						success:function(Data){
+								dataList = Data;
+								$("#name").html(Data[i].name);
+								$("#sex").html(Data[i].sex);
+								$("#grade").html(Data[i].grade);
+						},
+						error:function(){
+							alert("没有获取到服务器数据！");
+						}
+					});
+				});
+				$("#btn1").bind("click",function(){
+					i++;
+					if(dataList.length <= i) i =0;
+					$("#name").html(dataList[i].name);
+					$("#sex").html(dataList[i].sex);
+					$("#grade").html(dataList[i].grade);
+				});
+			}); */
+			
+			/* get() 方法通过远程 HTTP GET 请求载入信息。这是一个简单的 GET 请求功能以取代复杂 $.ajax 。请求成功时可调用回调函数。如果需要在出错时执行函数，请使用 $.ajax。
+
+ */
+			 $().ready(function(){
+				$("#btn").bind("click",function(){
+					$.get("1.json",function(Data){
+						dataList = Data;
+						$("#name").html(Data[i].name);
+						$("#sex").html(Data[i].sex);
+						$("#grade").html(Data[i].grade);
+					});
+				});
+				$("#btn1").bind("click",function(){
+					i++;
+					if(dataList.length <= i) i =0;
+					$("#name").html(dataList[i].name);
+					$("#sex").html(dataList[i].sex);
+					$("#grade").html(dataList[i].grade);
+				}); 
+			}); 
+		</script>
+	</head>
+	<body>
+		服务器返回的数据是：<span id="box"></span><br /><br />
+		<button id="txt">点击显示服务器返回数据</button>
+		<br />
+		<h1>学生信息</h1>
+		姓名：<span id="name"></span><br /><br />
+		性别：<span id="sex"></span><br /><br />
+		成绩：<span id="grade"></span><br /><br />
+		<button id="btn">点击显示服务器返回数据</button>
+		<button id="btn1">下一条</button>
+	</body>
+</html>

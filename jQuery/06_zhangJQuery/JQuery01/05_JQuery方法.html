@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery选择器</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<style>
+			.box{
+				color: red;
+			}
+			.txt{
+				font-size: 30px;
+			}
+			.test{
+				text-decoration: line-through;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>document.getElementById()返回的是DOM对象，而$()返回的是jQuery对象</h3>
+		<h3>什么是jQuery对象？</h3> 
+		<p id="txt" class="box test">
+			就是通过jQuery包装DOM对象后产生的对象。jQuery对象是jQuery独有的，其可以使用jQuery里的方法。 
+		</p>	
+		
+		<h3>jQuery对象转成DOM对象： 两种转换方式将一个jQuery对象转换成DOM对象：[index]和.get(index); 
+		</h3>
+		<ol>
+			<li>
+				jQuery对象是一个数据对象，可以通过[index]的方法，来得到相应的DOM对象。
+			</li>
+			<li>jQuery本身提供，通过.get(index)方法，得到相应的DOM对象 </li>
+		</ol>
+		<h3>DOM对象转成jQuery对象: </h3>
+		<p>
+			对于已经是一个DOM对象，只需要用$()把DOM对象包装起来，就可以获得一个jQuery对象了
+		</p>
+		<div id="box2">
+			我是div
+		</div>
+		<img src="1.jpg"/>
+		<button type="button" onclick="test()">点击返回Juqery对象</button>
+		<br /><br />
+		<button type="button" onclick="update_css()">点击添加网页的样式</button><br /><br />
+		<button type="button" onclick="delete_css()">点击删除网页的样式</button><br /><br />
+		<button type="button" onclick="deleteOrupdate_css()">点击删除或者修改网页的样式</button><br /><br />
+		<button type="button" onclick="get_attr()">获取属性</button><br /><br />
+	</body>
+	<script type="text/javascript">
+		function test(){
+			var obj = $("#txt");
+			var txt = document.getElementById("txt");
+			alert(obj);
+			alert(txt)
+			alert(obj.get());
+			alert(obj[0]);
+			alert(obj.eq(0))
+		}	
+				
+		function update_css(){
+			/* 添加样式 1.方法*/
+			//$("h3").eq(0).addClass("box")
+			//$("h3").addClass("txt")
+			//$("h3").addClass("txt").addClass("box")
+			//$("h3").addClass("txt box");
+			/* 添加样式 1.属性*/
+			/* css() 方法返回或设置匹配的元素的一个或多个样式属性。
+			设置所有匹配元素的指定 CSS 属性。$(selector).css(name,value)
+			返回第一个匹配元素的 CSS 属性值。$(selector).css(name)
+ */
+			//$("div").css("color","red");
+			//alert($("h3").css("font-size"))
+			//alert($("h3").css("color"))
+		}
+		
+		function delete_css(){
+			/* removeClass(class) 从所有匹配的元素中删除
+全部或者指定的 CSS 类 */
+			$("h3").addClass("txt box")
+			$("h3").removeClass("txt");
+		}
+		
+		function deleteOrupdate_css(){
+			/* toggleClass(class) 如果存在（不存在）就删
+除（添加）一个 CSS 类 */
+			$("p").eq(0).toggleClass("box txt test")
+		}
+		
+		function get_attr(){
+			/* $(selector).attr(attribute,value) */
+			/* 返回属性 */
+			alert($("p").attr("class"));
+			//$("img").attr("height","30px");
+			$("img").attr({
+ 				"height":"50px",
+ 				"alt":"京东",
+				"src":"",
+			}) ;
+		}
+	</script>
+	
+</html>

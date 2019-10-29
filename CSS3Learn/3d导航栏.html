@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        .nav .nav-item {
+            float: left;
+            width: 150px;
+            height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            -webkit-transition: transform 0.3s ease;
+            -moz-transition: transform 0.3s ease;
+            -ms-transition: transform 0.3s ease;
+            -o-transition: transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+        .nav .nav-item:hover {
+            /*鼠标移动的时候，让大盒子绕X周旋转90度*/
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -o-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+        /*约定:a标签是立方体的前边
+           div是立方体的上边
+        */
+        .nav .nav-item a,
+        .nav .nav-item .dex {
+            width: 150px;
+            height: 30px;
+            opacity: 0.7;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .nav .nav-item a {
+            display: block;
+            background-color: darkcyan;
+            text-decoration: none;
+            -webkit-transform: translateZ(15px);
+            -moz-transform: translateZ(15px);
+            -ms-transform: translateZ(15px);
+            -o-transform: translateZ(15px);
+            transform: translateZ(15px);
+        }
+        .nav .nav-item .dex {
+            background-color: #00f;
+            -webkit-transform: rotateX( 90deg) translateZ(15px);
+            -moz-transform: rotateX(90deg) translateZ(15px);
+            -ms-transform: rotateX(90deg) translateZ(15px);
+            -o-transform: rotateX(90deg) translateZ(15px);
+            transform: rotateX(90deg) translateZ(15px);
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <!--(li.nav-item>a[href=javascript:]{items$}+div.dex{item==$})*6-->
+        <li class="nav-item">
+            <a href="javascript:">items1</a>
+            <div class="dex">item==1</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">items2</a>
+            <div class="dex">item==2</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">items3</a>
+            <div class="dex">item==3</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">items4</a>
+            <div class="dex">item==4</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">items5</a>
+            <div class="dex">item==5</div>
+        </li>
+        <li class="nav-item">
+            <a href="javascript:">items6</a>
+            <div class="dex">item==6</div>
+        </li>
+    </ul>
+</body>
+</html>

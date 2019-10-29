@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    网络状态 连接状态事件： online()
+             断开事件： offline();
+    * */
+    window.addEventListener("online",function () {
+        alert("网络连接已建立！");
+    });
+
+    window.addEventListener("offline",function () {
+        alert("网络连接已断开!");
+    })
+</script>
+</body>
+</html>

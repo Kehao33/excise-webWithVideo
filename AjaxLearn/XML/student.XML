@@ -1,0 +1,20 @@
+<student>
+    <stu1>
+        <name>张三</name>
+        <course>web</course>
+        <sex>男</sex>
+        <grade>100</grade>
+    </stu1>
+    <stu1>
+        <name>李四</name>
+        <course>C语言</course>
+        <sex>男</sex>
+        <grade>99</grade>
+    </stu1>
+    <stu1>
+        <name>王浩</name>
+        <course>pathy</course>
+        <sex>女</sex>
+        <grade>96</grade>
+    </stu1>
+</student>

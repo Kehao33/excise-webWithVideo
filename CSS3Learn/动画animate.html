@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px auto;
+
+            /*动画属性   可以合写*/
+            -webkit-animation-name: rotateA;                  /*定义动画名字*/
+            -moz-animation-name: rotateA;                 /*定义动画名字*/
+            -o-animation-name: rotateA;               /*定义动画名字*/
+            animation-name: rotateA;                  /*定义动画名字*/
+            -webkit-animation-duration: 1s;             /*定义动画所需要完成的时间*/
+            -moz-animation-duration: 1s;                 /*定义动画所需要完成的时间*/
+            -o-animation-duration: 1s;                   /*定义动画所需要完成的时间*/
+            animation-duration: 1s;                      /*定义动画所需要完成的时间*/
+            animation-direction: normal;        /*动漫的方向： alternate循环   reverse相反方向*/
+            animation-delay: 1s;
+            animation-iteration-count: infinite; /*循环播放次数 infinite无限次*/
+            animation-fill-mode: both;
+            /*both来回切换
+             backwards：动画结束之后显示最开始状态
+             forwards: 动画结束后的状态
+             */
+
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #555;
+            margin: 0 auto;
+            -webkit-animation: rotateB 2s ease infinite alternate;
+            -o-animation: rotateB 2s ease infinite alternate;
+            animation: rotateB 2s ease infinite alternate;
+        }
+        @keyframes rotateB {
+            0% {
+                -webkit-transform: rotate(30deg);
+                -moz-transform: rotate(30deg);
+                -ms-transform: rotate(30deg);
+                -o-transform: rotate(30deg);
+                transform: rotate(30deg);
+                background-color: #0fa;
+            }
+            45% {
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+                background-color: #f03;
+            }
+           80% {
+                -webkit-transform: rotate(160deg);
+                -moz-transform: rotate(160deg);
+                -ms-transform: rotate(160deg);
+                -o-transform: rotate(160deg);
+                transform: rotate(160deg);
+                background-color: #ddd;
+           }
+           80% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(160deg);
+                background-color: #000;
+           }
+
+        }
+        /*在选择器外定义动画，相当于一个公共的动画函数*/
+        @keyframes rotateA {
+            /*0%可以用from代替
+             100%可以用to来代替
+            */
+            0% {
+                background-color: #f00;
+            }
+            20% {
+                background-color: #0f0; 
+            }
+            50% {
+                background-color: #f2d;
+            }
+            80% {
+                background-color: #09c;0
+            }
+            100% {
+                background-color: #8f0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

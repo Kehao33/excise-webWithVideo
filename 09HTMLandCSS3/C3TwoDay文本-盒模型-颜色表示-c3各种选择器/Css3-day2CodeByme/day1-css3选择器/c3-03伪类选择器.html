@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+
+        *{}通配符选择器，
+        x:link{}
+        x:active{}
+        :visitec{}
+        伪类选择器的标志性符号：冒号(:);
+        */
+        .box {
+            width: 300px;
+            height: 200px;
+            line-height: 200px;
+            border: 1px solid #000;
+            text-align: center;
+
+        }
+        .box:hover {
+            color: #f00;
+        }
+        a:link {  /*  x:link 如果x是一个链接则被选中  */
+            font-size: 23px;
+            color: blue;
+        }
+        a:visited {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        可是逝者不强求，生者却不能遗忘
+    </div>
+    <a href="#">广告</a>
+</body>
+</html>

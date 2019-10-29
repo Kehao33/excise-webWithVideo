@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery选择器</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<p>我是段落1</p>
+		<a href="http://www.baidu.com">百度一下</a>
+		<div>
+			<p id="box3" class="box3">我是div中的p标签</p>
+			<span>我是div中的span标签</span>
+			<div id="box2" class="txt2">
+				<p>
+					<img src="1.jpg"/>
+					<ul>
+						<li>语文</li>
+						<li>数学</li>
+						<li>英语</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+		<ol>
+			<li>c</li>
+			<li>c++</li>
+			<li>java</li>
+		</ol>
+		<input type="text" id="box" class="txt" value="123"/><br /><br>
+		<input type="button"  onclick="test()" value="通配符选择器"/><br /><br />
+		<input type="button"  onclick="test_tag()" value="元素选择器"/><br /><br />
+		<input type="button"  onclick="test_class()" value="类名选择器"/><br /><br />
+		<input type="button"  onclick="test_id()" value="id选择器"/>
+		<div id="new"></div>
+	</body>
+	<script>
+		function test(){
+			/* 1.通配符选择器 */
+			//$("*").css("color","red");
+		}
+		
+		function test_tag(){
+			/* 2.元素选择器：$("div")：用于获取文档中全部的<div>。 */
+			//$("div").css("font-size","30px");
+			$("div").eq(0).css({
+				"font-size":"30px",
+				"color":"red"
+			});
+		}
+		
+		function test_class(){
+			/* 3.类名选择器：$(".classname")：用于获取文档中使用 CSS 类名为 classname 的所有元素。 
+			val() 方法返回或设置被选元素的值。
+			元素的值是通过 value 属性设置的。该方法大多用于 input 元素。
+			如果该方法未设置参数，则返回被选元素的当前值。
+			*/
+		  // $(".txt").val("456")
+			var txt = $(".txt").val();
+			alert(txt)
+		}
+		
+		function test_id(){
+			/* 4.ID 选择器：$("#idname")：用于获取文档中 ID 属
+性值为 idname 的一个元素。 
+			html() 方法返回或设置被选元素的内容 (inner HTML)。如果该方法未设置参数，则返回被选元素的当前内容。
+
+*/			
+			$("#new").html("<p style='background:red'>我是新段落</p>");
+			alert($("#box3").html());
+		}
+		
+	</script>
+</html>

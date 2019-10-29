@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            color: #000;
+            font: 700 23px "Arial";
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        九尺龙泉万卷书，上天生我意何如？ <br>
+        九尺龙泉万卷书，上天生我意何如？ <br>
+        九尺龙泉万卷书，上天生我意何如？ <br>
+        九尺龙泉万卷书，上天生我意何如？ <br>
+        九尺龙泉万卷书，上天生我意何如？ <br>
+        九尺龙泉万卷书，上天生我意何如？ <br>
+    </div>
+
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+        //scrollWidth和scrollHeight不包括border和margin
+        //scrollWidth = width + padding；（不包括border和margin）；
+
+        //高度有一个特点，如果文字超出了盒子，高度为查出盒子的内容的高，不超出是盒子本身高度
+        //ie8一下，不包括ie8为盒子内容本身的多少。
+        console.log(div.scrollWidth);
+        //scrollWidth = width + padding = 200 + 20
+
+        console.log(div.scrollHeight);
+        //因为盒子里的内容超出了盒子的高度，所以scrollHeight的为查出盒子的内容的高度
+    </script>
+</body>
+</html>

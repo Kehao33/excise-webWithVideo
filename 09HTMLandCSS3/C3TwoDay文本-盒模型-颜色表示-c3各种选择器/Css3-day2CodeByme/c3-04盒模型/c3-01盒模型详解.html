@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top:20px;
+        }
+        .box2,
+        .box3 {
+            border: 25px solid blue;
+            padding: 25px;
+            /*设置放内容区域的盒子大小*/
+            /*外加模式,即盒子的宽高度包含了padding和border，margin*/
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        .box2 {
+            /*设置盒子模型中最大盒子大小，如果在加padding，
+            border只会减小放内容的盒子区域，这种模式叫做内减模式*/
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>CanvasLayer</title>
+    <script type="text/javascript" src="4NdmxNZrsLW548wHCsBfCv7slixtbL6I"></script>
+    <style type="text/css">
+        body, html,#container {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>
+<script type="text/javascript">
+    /*
+     攀枝花学院的纬度：
+     谷歌地图：26.5783681809,101.7202078557
+     百度地图：26.5842391023,101.7267489974
+     腾讯高德：26.5783760380,101.7202234268
+     图吧地图：26.5886279480,101.7220907168
+     谷歌地球：26.5819279480,101.7186307168
+     北纬N26°34′54.94″ 东经E101°43′7.07″
+     */
+
+    //自定义纬度lat 经度lon
+    var lat = 26.5842391023;
+    var lon = 01.7267489974;
+    var mp = new BMap.Map("container");
+    mp.centerAndZoom(new BMap.Point(lat,lon), 10);
+    mp.enableScrollWheelZoom();
+
+    var canvasLayer = new BMap.CanvasLayer({
+        update: update
+    });
+
+    function update() {
+        var ctx = this.canvas.getContext("2d");
+
+        if (!ctx) {
+            return;
+        }
+
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+        var temp = {};
+        ctx.fillStyle = "rgba(50, 50, 255, 0.7)";
+        ctx.beginPath();
+        var data = [
+            new BMap.Point(26.5783760380,101.7202234268),
+            new BMap.Point(26.5886279480,101.7220907168),
+            new BMap.Point(26.5819279480,101.7186307168)
+        ];
+
+        for (var i = 0, len = data.length; i < len; i++) {
+            var pixel = mp.pointToPixel(data[i]);
+            ctx.fillRect(pixel.x, pixel.y, 30, 30);
+        }
+    }
+    mp.addOverlay(canvasLayer);
+</script>

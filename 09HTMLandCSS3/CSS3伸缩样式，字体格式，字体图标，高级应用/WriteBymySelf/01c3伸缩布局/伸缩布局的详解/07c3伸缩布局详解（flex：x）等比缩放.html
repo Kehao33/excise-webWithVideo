@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap-box {
+            width: 78%;
+            border: 1px solid #eee;
+            border-radius: 8%;
+            margin: 0 auto;
+        }
+        .wrap-box>header {
+            width: 100%;
+            margin: 0 auto 30px;
+            text-align: center;
+            font: 700 33px "Microsoft Yahei";
+        }
+        section {
+            width: 90%;
+            min-height: 200px;
+            margin: 0 auto 20px;
+            border: 1px solid #333;
+        }
+        ul {
+            list-style: none;
+        }
+        section>header {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            font: 700 23px "Microsoft Yahei";
+        }
+        section p {
+            font: 23px "Microsoft Yahei";
+            padding: 20px;
+            margin: 20px;
+        }
+        .introduce {
+            width: 90%;
+            min-height: 200px;
+        }
+        section ul li {
+            width: 220px;
+            height: 220px;
+            line-height: 220px;
+            text-align: center;
+            margin: 10px;
+            background-color: #FFB700;
+        }
+        /*全局定义*/
+        section ul {
+            display: flex;
+            min-height: 600px;
+            margin: 10px;
+        }
+        .sec1 ul li:nth-child(1) {
+            flex: 1;
+        }
+        .sec1 ul li:nth-child(2) {
+            flex: 2;
+        }
+        .sec1 ul li:nth-child(3) {
+            flex: 1;
+        }
+
+        .sec2 ul li:nth-child(1) {
+            flex: 2;
+        }
+        .sec2 ul li:nth-child(2) {
+            flex: 2;
+        }
+        .sec2 ul li:nth-child(3) {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap-box">
+    <header>css3-伸缩布局侧轴对齐方式align-items详解</header>
+    <section class="introduce">
+        <header>flex：num;等比缩放</header>
+        <p>
+            flex：num；表示该容器占父盒子的num份<br>
+        </p>
+    </section>
+    <section class="sec1 ">
+        <header>1:2:1</header>
+        <div class="left"></div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </section>
+    <section class="sec2">
+        <header>2:2:1</header>
+        <div class="left"></div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*利用锚点实现图片的跳转问题
+        <a href="#idname"> </a>
+        <div id="idname"> </div>
+        */
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        .background {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .img-box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .img-box #img1{
+            z-index: 2;
+        }
+        .img-box #img2 {
+            z-index: 1;
+        }
+        .img-box #img3 {
+            z-index: 1;
+        }
+        .warp {
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translate(-99px);
+            -moz-transform: translate(-99px);
+            -ms-transform: translate(-99px);
+            -o-transform: translate(-99px);
+            transform: translate(-99px);
+            bottom: 0;
+            z-index: 3;
+        }
+        .warp ul li{
+            display: inline-block;
+            width: 66px;
+            height: 66px;
+            line-height: 66px;
+            font-size: 23px;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            background-color: #f00;
+
+        }
+        .warp a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px;
+        }
+        #img1:target {
+            -webkit-animation: left 0.6s ease-in;
+            -o-animation: left 0.6s ease-in;
+            animation: left 0.6s ease-in;
+            z-index: 3;
+        }
+        #img2:target {
+            -webkit-animation: top 0.6s ease-in;
+            -o-animation: top 0.6s ease-in;
+            animation: top 0.6s ease-in;
+            z-index: 2;
+        }
+        #img3:target {
+            -webkit-animation: rot 0.6s ease-in;
+            -o-animation: rot 0.6s ease-in;
+            animation: rot 0.6s ease-in;
+            z-index: 2;
+        }
+        @keyframes left {
+            0% {
+                -webkit-transform: translate(-300px);
+                -moz-transform: translate(-300px);
+                -ms-transform: translate(-300px);
+                -o-transform: translate(-300px);
+                transform: translate(-300px);
+            }
+            100% {
+                -webkit-transform: translate(0px);
+                -moz-transform: translate(0px);
+                -ms-transform: translate(0px);
+                -o-transform: translate(0px);
+                transform: translate(0px);
+            }
+        }
+        @keyframes top {
+            0% {
+                -webkit-transform: translateY(-300px);
+                -moz-transform: translateY(-300px);
+                -ms-transform: translateY(-300px);
+                -o-transform: translateY(-300px);
+                transform: translateY(-300px);
+            }
+            100% {
+                -webkit-transform: translateY(0px);
+                -moz-transform: translateY(0px);
+                -ms-transform: translateY(0px);
+                -o-transform: translateY(0px);
+                transform: translateY(0px);
+            }
+        }
+        @keyframes rot {
+            0% {
+                -webkit-transform: rotate(0deg) translate(-23px,-36px);
+                -moz-transform: rotate(0deg) translate(-23px,-36px);
+                -ms-transform: rotate(0deg) translate(-23px,-36px);
+                -o-transform:  rotate(0deg) translate(-23px,-36px);
+                transform:  rotate(0deg) translate(-23px,-36px);
+            }
+            75% {
+                -webkit-transform: rotate(120deg) translate(300px);
+                -moz-transform: rotate(120deg) translate(300px);
+                -ms-transform: rotate(120deg) translate(300px);
+                -o-transform:  rotate(120deg) translate(300px);
+                transform:  rotate(120deg) translate(300px);
+            }
+            100% {
+                -webkit-transform: rotate(360deg) translate(0px);
+                -moz-transform: rotate(360deg) translate(0px);
+                -ms-transform: rotate(360deg) translate(0px);
+                -o-transform:  rotate(360deg) translate(0px);
+                transform:  rotate(360deg) translate(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="img-box">
+            <img src="img/bg1.jpg" id="img1" alt="">
+            <img src="img/bg2.jpg" id="img2" alt="">
+            <img src="img/bg3.jpg" id="img3" alt="">
+        </div>
+        <div class="warp">
+            <ul>
+                <li><a href="#img1">1</a></li>
+                <li><a href="#img2">2</a></li>
+                <li><a href="#img3">3</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

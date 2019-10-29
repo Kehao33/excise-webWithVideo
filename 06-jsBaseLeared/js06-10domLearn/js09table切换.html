@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>table切换</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 500px;
+            height: 400px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul {
+            width: 600px;
+            height: 40px;
+            margin-left: -1px;
+            list-style: none;
+        }
+        li {
+            float: left;
+            width: 101px;
+            height: 40px;
+            text-align: center;
+            font: 600 18px/40px "simsun";
+            background-color: pink;
+            cursor: pointer;
+        }
+        span {
+            display: none;
+            width: 500px;
+            height: 360px;
+            background-color: yellow;
+            text-align: center;
+            font: 700 150px/360px "simsun";
+        }
+        .show {
+            display: block;
+        }
+        .current {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="current">袜子</li>
+            <li >鞋子</li>
+            <li >帽子</li>
+            <li >橙子</li>
+            <li >李子</li>
+        </ul>
+        <span class="show">袜子</span>
+        <span>鞋子</span>
+        <span>帽子</span>
+        <span>橙子</span>
+        <span>李子</span>
+    </div>
+
+    <script>
+        var liHover = document.getElementsByTagName("li");
+        var spanShow = document.getElementsByTagName("span");
+        for(var i = 0; i < liHover.length; i++){
+            //绑定索引值
+            liHover[i].index = i;
+            liHover[i].onmouseover = function() {
+                //排他思想（干掉他人，剩下自己）
+                for(var j = 0; j < liHover.length; j++){
+                    liHover[j].className = "";
+                    spanShow[j].className = "show";
+                }
+                this.className="current";
+                spanShow[this.index].className = "show";
+            }
+        }
+    </script>
+</body>
+</html>

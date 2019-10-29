@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $("button").click(function () {
+                //创建一个新的jQuery对象li
+                var jqNewli = $("<li>我是jQuery创建出来的li，用append()方法添加到ul内部末尾</li>");
+                //$("ul").append(jqNewli); //内部末尾添加
+                //jqNewli.appendTo($("ul"));  //把jqNewli添加到ul内部末尾
+
+                //添加到盒子内部的最前边
+                //$("ul").prepend(jqNewli);  //ul中内部前边添加jqNewli对象
+                //jqNewli.prependTo($("ul")); //将jqNewli添加到ul的内部的最前边
+
+                //after(),before()操作兄弟元素的，放在兄弟之后或者之前
+                //$("li").after(jqNewli);
+
+                //before();
+                $("li").before(jqNewli);
+            })
+
+        });
+    </script>
+</head>
+<body>
+<button>添加li</button>
+
+<ul>
+    <li>我是土著li</li>
+</ul>
+
+</body>
+</html>

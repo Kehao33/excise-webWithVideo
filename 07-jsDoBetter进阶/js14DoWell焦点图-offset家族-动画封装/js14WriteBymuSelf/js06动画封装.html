@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            margin: 0;
+            padding: 5px;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+        button {
+            margin: 5px;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <button>运动到200</button>
+    <button>运动到400</button>
+    <div class="box2"></div>
+</div>
+<script>
+    var btnArr = document.getElementsByTagName("button");
+    var box2 = document.getElementsByClassName("box2")[0];
+    var timer = null;
+    //绑定事件
+    btnArr[0].onclick = function () {
+        animate(200);
+    };
+    btnArr[1].onclick = function () {
+        animate(400);
+    };
+    function animate(target) {
+        //bug1:点击多次以后，越来越快，每次之只能开启一个定时器
+        //解决方法：执行定时器面前，先清除定时器）
+        //要用定时器，先清除定时器。
+        console.log(box2.offsetLeft);
+        clearInterval(timer);
+        //bug2:无法返回，原因就是步长为恒定值
+        //传递的目标值如果比当前的左侧的距离大，那么步长为一个固定正值
+        //传递的目标值如果比当前的左侧的距离小，那么步长为一个固定负值
+        //盒子本身的位置+步长
+        console.log(box2.offsetLeft);
+        //在起初的时候box2离左边为0
+        //随着盒box2盒子的移动，离左边的距离越来越远。
+        var speed = target > box2.offsetLeft ? 10 :-10;
+        //如果盒子要移动的距离大于盒子离左边的距离，那么步长（speed)是10，反之是-10
+
+        //如果停止盒子，清除定时器
+        timer = setInterval(function () {
+            //bug3:二次点击不停止的问题
+            //解决：如果当前值===目标值，那么先判断之间的距离还有多远，如果小于步长，
+                //那就别走了，马上清除定时器
+            var val = target - box2.offsetLeft;
+            //随着移动，offsetLeft逐渐变大，即val变小
+
+            //盒子自身的位置+步长
+            box2.style.left = box2.offsetLeft + speed + "px";
+            //如果停值盒子？（清除定时器）
+            if(Math.abs(val)<Math.abs(speed)){
+                box2.style.left = target + "px";
+                clearInterval(timer);
+            }
+        },30);
+
+    }
+</script>
+</body>
+</html>

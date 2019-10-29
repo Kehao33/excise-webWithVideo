@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <style>
+        .right {
+            border: 1px solid #080;
+        }
+        .wrong {
+            border: 1px solid #f00;
+        }
+    </style>
+</head>
+<body>
+    <h2>用户注册</h2>
+    用户名：<input type="text" onblur="test(this)"> <!--此this指的是该输入框对像-->
+    <br><br>
+    密 码：<input type="password" onblur="test(this)">
+    <!--需求：
+        如果input中的内容的长度在6-12之间通过，反之则让边框变红
+    -->
+    <script>
+        function test(inObj) { //此处的inobj指的是传递过来的input对象
+            /*html中的input标签行内调用function的时候，
+             是先通过window调用function的
+
+             只有产地this才指的是标签本身。
+             意思是在函数中this指的是window
+             */
+            if (inObj.value.length >= 6 && inObj.value.length <= 12) {
+                inObj.className = "right";
+            }else{
+                inObj.className = "wrong"
+            }
+
+        }
+    </script>
+</body>
+</html>

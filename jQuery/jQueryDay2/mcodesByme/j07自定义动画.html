@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script></script>
+    <!--
+    自定义动画animate();动画的内容以json对象来做来当做参数用法有：
+    1.animate(json对象)
+    2.animate(json对象，毫秒值);其中毫秒值参数可以用字符串代替("slow","fast","normal")
+    3.animate(json对象，毫秒值，回调函数);
+
+    即animate()的用法和fadeXX(),slideXX()的用法差不多
+    -->
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+            background-color: #ff6600;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        jQuery(function () {
+           $("button").click(function () {
+               var json = {"width": 500,"height": 500, "left": 300, "top": 300, "border-radius":100};
+               var json2 = {"width": 100, "height": 100, "left": 100, "top": 100, "border-radius": 100,"background-color":"red"};
+               //animate()自定义动画
+               $("div").animate(json,1000,function () {
+                   $("div").animate(json2,1000,function () {
+                       alert("动画执行完毕");
+                   });
+               })
+           });
+        });
+    </script>
+</head>
+<body>
+<button>动画</button>
+<div></div>
+</body>
+</html>

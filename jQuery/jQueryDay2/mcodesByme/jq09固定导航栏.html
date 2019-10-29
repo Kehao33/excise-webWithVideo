@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <style>
+        html,body {
+            width: 100%;
+        }
+        div {
+            width: 100%;
+        }
+        div img {
+            width:100%;
+        }
+        .fixed-top {
+            position: fixed;
+            top: 0;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            var topHeight = $(".top").height();
+            $(window).scroll(function () {
+                var $sTop = $(document).scrollTop();
+                console.log("topHeight:" + topHeight)
+                console.log("windowScrollTop:" + $sTop);
+                if($sTop > topHeight){
+                    $(".nav").addClass("fixed-top");
+                    $(".main").css("margin-top",76);
+                }else{
+                    $(".nav").removeClass("fixed-top");
+                    $(".main").css("margin-top",20);
+                }
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+    <div class="top">
+        <img src="lastimg/top.png" alt="">
+    </div>
+    <div class="nav">
+        <img src="lastimg/nav.png" alt="">
+    </div>
+    <div class="main">
+        <img src="lastimg/main.png" alt="">
+    </div>
+</body>
+</html>

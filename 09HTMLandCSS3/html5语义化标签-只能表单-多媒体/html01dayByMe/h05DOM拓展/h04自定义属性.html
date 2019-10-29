@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--在html5中给标签添加自定义属性，必须以data开头-->
+    <div class="box" title="盒子" date-my-name="jake" data-content="这是一个div" hi="world">div</div>
+    <!--made-in-china-->
+    <script>
+        var box = document.querySelector(".box");
+        //js里边的自定义属性
+        //box.index = 100;
+//        console.log(box.hi); 这是一种错误的获取自定义的方式
+        console.log("box.className" + box.className);
+        console.log("box.title" + box.title);
+        //获取标签的自定义属性 通过dataset[]方式来获取
+        console.log("box.dataset[content]" + box.dataset["content"]);
+        //设置自定义属性值
+        var num = 100;
+        num.index = 10;
+        box.index = 100;
+        console.log("index:" + box.index);
+        //给自定义属性赋值 对象.dataset["自定义属性"] = 新的属性值
+        //获取自定义属性的方法是 node.dataset["自定义属性的驼峰标识名"];
+        box.dataset["content"] = "aaa";
+        //data-my-name="zs"的获取
+        console.log("box.dataset[myName]" + box.dataset["myName"]);
+    </script>
+</body>
+</html>

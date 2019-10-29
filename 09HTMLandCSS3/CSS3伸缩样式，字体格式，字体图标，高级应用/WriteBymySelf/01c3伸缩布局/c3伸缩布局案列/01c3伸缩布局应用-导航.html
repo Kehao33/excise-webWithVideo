@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    所谓的等比缩放：可以利用百分比，也可以利用flex：num；
+    最好的就是给盒子设置对应的最小宽度（min-width)或者是最小高度（min-height)
+    -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            width: 600px;
+            margin: 100px auto;
+            display: flex;
+            border: 1px solid #000;
+        }
+        li {
+            flex: 1;
+            text-align: center;
+            line-height: 60px;
+            background-color: #f00;
+            color: #fff;
+            font-size: 23px;
+            margin: 0 5px;
+        }
+        .layout {
+            width: 600px;
+            height: 800px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            /*伸缩布局*/
+            display: flex;
+            /*主轴方向为column*/
+            flex-direction: column;
+        }
+        .section {
+            background-color: #f00;
+            flex: 5; /*占父盒子的两份*/
+            display: flex;
+        }
+        .left {
+            flex: 1;
+            background-color: orange;
+        }
+        .right {
+            flex: 3;
+            background-color: #f40;
+        }
+        .footer {
+            background-color: #222;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>微信</li>
+        <li>小说</li>
+        <li>空间</li>
+        <li>笔记</li>
+        <li>支付宝</li>
+    </ul>
+    <div class="layout">
+        <div class="header"></div>
+        <div class="section">
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

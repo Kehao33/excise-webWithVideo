@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>close广告栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .top-banner {
+            position: relative;
+        }
+        .w {
+            width: 1366px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #closebanner {
+            position: absolute;
+            right: 280px;
+            top: 0px;
+            font-size: 23px;
+            color: #f06;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            height: 100px;
+        }
+        .hide {
+            display: none!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner" id="closeit">
+        <div class="w">
+            <img src="img/topbanner.jpg" alt="closeIt">
+            <a href="#" id="closebanner">x</a>
+        </div>
+    </div>
+
+    <!--//方法一
+    <script>
+        window.onload = function() {
+            var src = document.getElementById("closebanner");
+            src.onclick = function(){
+                closeit.style.display = "none";
+            }
+        }
+    </script>-->
+
+</body>
+</html>

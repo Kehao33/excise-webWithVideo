@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script> --> 
+	</head>
+	<body>
+		<p>我是段落1</p>
+		<a href="http://www.baidu.com">百度一下</a>
+		<div>
+			<p id="box3" class="test">我是div中的p标签</p>
+			<span>我是div中的span标签</span>
+			<div id="box2" class="txt2">
+				<p>red</p>
+				<p>
+					我是段落<br/>
+					<img src="1.jpg"/>
+					<ul>
+						<li>语文</li>
+						<li>数学</li>
+						<li>英语</li>
+					</ul>
+				</p>
+				<span>我是span标签</span>
+			</div>
+			<span>我是div中的span标签1315615641564545</span>
+		</div>
+		<br />
+		<button onclick="display()">点击</button><br /><br />
+	</body>
+	<script>
+	
+		function display(){
+		/* 			
+			1.js ->html Dom
+			var box = document.getElementById("box3");
+			alert(box3)
+			box.style.color ="red"; 
+		*/
+	   /* 2.Jquery的写法
+			$("#box3").css("color","red");
+			alert($("#box3"))
+			$("#box3").get(0).style.color= "red";
+		*/
+		/* 
+		   3.自定义
+		 */
+		  $("#box3").style.color = "red"
+		
+		}
+		
+		function $(id){
+			var id = id.substr(1,id.length-1);
+			return document.getElementById(id);
+		}
+	</script>
+</html>

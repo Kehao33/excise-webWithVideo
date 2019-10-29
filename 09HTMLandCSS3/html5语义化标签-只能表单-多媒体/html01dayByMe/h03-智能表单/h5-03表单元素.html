@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            /*最大宽度和最小宽度的目的可以让盒子处于一个区域变动*/
+            width: 100%;
+            /*最大宽度*/
+            max-width: 640px;
+            /*最小宽度*/
+            min-width: 320px;
+            margin: 0 auto;
+            font: 23px Microsoft Yahei;
+        }
+        input,meter,progress {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>表单元素</legend>
+            <label for="">
+                用户名： <input type="text" name="userName"/>
+            </label>
+
+            <label for="">
+                密码： <input type="password" name="pwd">
+            </label>
+
+            <label for="">
+                性别: <input type="text" name="sex" list="sex">
+            </label>
+            <!--定义数据列表-->
+            <datalist id="sex">
+                <option value="boy">男</option>
+                <option value="girl">女</option>
+                <option value="no">不详</option>
+            </datalist>
+
+            <label for="">
+                推荐人: <output>皓爷</output>
+            </label>
+            <br><br>
+            <label for="">
+                加密类型: <keygen/> <!-- 保证密钥传输正确-->
+            </label>
+            <label for="">
+                度量器： <meter value="50" max="100" min="0" low="30" heigh="80"></meter>
+            </label>
+            <!--进度条-->
+            <progress value="2" max="8" min="0"></progress>
+            <input type="submit" value="提交">
+        </fieldset>
+    </form>
+</body>
+</html>

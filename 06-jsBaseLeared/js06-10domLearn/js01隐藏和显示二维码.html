@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .small {
+            position: relative;
+            left: 50px;
+        }
+        a:hover {
+            opacity: 0.3;
+        }
+        .hide {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="nodeSmall" id="node_small">
+        <div class="small">
+            <a href="#" id="aMouse">
+                <img src="images/smallEr.png" alt="">
+            </a>
+        </div>
+        <div class="big hide" id="er">
+            <img src="images/456.png" >
+        </div>
+    </div>
+    <script>
+        var aMouse = document.getElementById("aMouse");
+        var big = document.getElementById("er");
+        aMouse.onmouseover = over; //写括号就相当与=前边的变量接受了后边的返回值
+        aMouse.onmouseout = out;
+
+        function over(){
+            //big.className = "big show";
+            big.className = big.className.replace("hide","show");
+        }
+        function out(){
+            //big.className = "big hide";
+            big.className = big.className.replace("show","hide"); //字符串操作，将show替换为hide
+
+        }
+    </script>
+</body>
+</html>

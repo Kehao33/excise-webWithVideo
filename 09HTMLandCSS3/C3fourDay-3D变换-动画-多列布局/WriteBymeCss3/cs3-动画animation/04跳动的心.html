@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            /*background-color: #ffa5a5;*/
+            background: linear-gradient(to bottom,#ffa5a5 0%, #ffd3d3 100%);
+        }
+        .chest {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .heart {
+            position: absolute;
+            z-index: 2;
+            background: linear-gradient(-90deg,#f00 0%, #f03 40%);
+            -webkit-animation: beat 0.7s ease 0s infinite normal;
+            -o-animation: beat 0.7s ease 0s infinite normal;
+            animation: beat 0.7s ease 0s infinite normal;
+        }
+        .heart.center {
+            background: linear-gradient(-45deg,#f01 0%, #f00 40%);
+        }
+        .heart.top {
+            z-index: 3;
+        }
+        .side {
+            top: 100px;
+            width: 220px;
+            height: 220px;
+            border-radius: 110px;
+        }
+        .center {
+            width: 210px;
+            height: 210px;
+            bottom: 100px;
+            left: 145px;
+            -webkit-transform: rotateZ(225deg);
+            -moz-transform: rotateZ(225deg);
+            -ms-transform: rotateZ(225deg);
+            -o-transform: rotateZ(225deg);
+            transform: rotateZ(225deg);
+        }
+        .left {
+            left: 62px;
+        }
+        .right {
+            right: 62px;
+        }
+        @keyframes beat {
+            0% {
+                -webkit-transform: scale(1) rotate(225deg);
+                -moz-transform: scale(1) rotate(225deg);
+                -ms-transform: scale(1) rotate(225deg);
+                -o-transform: scale(1) rotate(225deg);
+                transform: scale(1) rotate(225deg);
+            }
+            50% {
+                -webkit-transform: scale(1.1) rotate(225deg);
+                -moz-transform: scale(1.1) rotate(225deg);
+                -ms-transform: scale(1.1) rotate(225deg);
+                -o-transform: scale(1.1) rotate(225deg);
+                transform: scale(1.1) rotate(225deg);
+                box-shadow: 0 0 70px #f00;
+            }
+            100% {
+                -webkit-transform: scale(1) rotate(225deg);
+                -moz-transform: scale(1) rotate(225deg);
+                -ms-transform: scale(1) rotate(225deg);
+                -o-transform: scale(1) rotate(225deg);
+                transform: scale(1) rotate(225deg);
+                box-shadow: 0 0 40px #f00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chest">
+        <div class="heart left side top"></div>
+        <div class="heart center"></div>
+        <div class="heart right side"></div>
+    </div>
+</body>
+</html>

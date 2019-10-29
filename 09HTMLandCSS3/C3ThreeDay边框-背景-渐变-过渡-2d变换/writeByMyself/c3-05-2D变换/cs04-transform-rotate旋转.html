@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #f00;
+            margin: 100px auto;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            color: #fff;
+            font-size: 50px;
+        }
+        /*rotate(角度值)旋转
+        正顺负逆
+
+        正值：顺时针转动
+        负值：逆时针转动
+        */
+        .box:hover {
+            -webkit-transform: rotate(-1000deg);
+            -moz-transform: rotate(-1000deg);
+            -ms-transform: rotate(-1000deg);
+            -o-transform: rotate(-1000deg);
+            transform: rotate(-1000deg);
+        }
+        .out {
+            -webkit-transition: transform .52s;
+            -moz-transition: transform .52s;
+            -ms-transition: transform .52s;
+            -o-transition: transform .52s;
+            transition: transform .52s;
+            width: 300px;
+            height: 150px;
+            background-color: pink;
+            margin-top: 200px;
+            position: relative;
+        }
+        .out:hover {
+            -webkit-transform: rotate(720deg);
+            -moz-transform: rotate(720deg);
+            -ms-transform: rotate(720deg);
+            -o-transform: rotate(720deg);
+            transform: rotate(720deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="out"></div>
+</body>
+</html>

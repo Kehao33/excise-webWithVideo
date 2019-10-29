@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .one {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+        }
+        .two {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            left: 500px;
+            top: 100px;
+            border: 1px solid #000;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="one" draggable="true">one</div>
+    <div class="two"></div>
+
+    <script>
+        //目标元素的拖拽事件
+        var two = document.querySelector(".two");
+
+        //当被拖拽的元素进入时触发ondragenter事件
+        two.ondragenter = function () {
+            console.log("有其他盒子进入了当前蓝色的盒子了！");
+        };
+        //当被拖动的元素离开了当前的盒子时触发ondragleave事件
+        two.ondragleave = function () {
+               // 阻止拖拽事件的默认行为；
+            console.log("离开了目标元素。")
+        };
+        //当拖拽元素覆盖目标元素时连续触发
+        two.ondragover = function (e) {
+            //阻止默认事件得行为
+            e.preventDefault();
+            console.log("目标元素被覆盖了...");
+        }
+
+        //当在鼠标元素上松开了鼠标时触发ondrop事件
+        two.ondrop = function () {
+            console.log("在目标元素上鼠标被松开了...");
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #81ecec;
+        }
+        .box {
+            width: 300px;
+            height: 200px;
+            padding-top: 100px;
+            color: #fff;
+            background-color: #636e72;
+            margin: 100px;
+            text-align: center;
+            font: 18px/30px "simsun";
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script src="myAnimate.js"></script>
+    <script>
+        //需求：鼠标进入盒子之后只要移动，里边就显示现在鼠标的坐标对应的x，y值
+        //技术点：新事件：onmousemove，在事件源上移动就会触动这个事件
+            //一定程度上，模拟了定时器
+        //步骤：
+        //1.绑定事件对象
+        //2.获取鼠标在整个页面中的位置
+        //3.获取盒子在整个页面的位置
+        //4.用鼠标的位置减去盒子的位置赋值给盒子内容。
+
+        //1.
+        var div = document.getElementsByTagName("div")[0];
+        div.onmousemove = function (event) {
+            event = event || window.event;
+            //2.获取鼠标在整个页面中的位置
+            var pagex = event.pageX || scroll().left + event.clientX;
+            var pagey = event.pageY || scroll().top + event.clientX;
+            //3.获取盒子在整个页面的位置
+            //4.用鼠标的位置减去盒子的相应宽度赋值给盒子的内容。
+            var targetx = pagex - div.offsetLeft;
+            var targety = pagey - div.offsetTop;
+            this.innerHTML = "鼠标在盒子中的X坐标为："
+                            +targetx+"px;<br>鼠标在盒子中的Y坐标为："
+                                +targety+"px;"
+
+        }
+    </script>
+</body>
+</html>

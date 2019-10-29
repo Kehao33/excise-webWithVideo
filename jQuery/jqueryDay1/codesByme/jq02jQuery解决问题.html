@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            height: 200px;
+            background: pink;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+
+    <script>
+        //入口函数方式有
+        //1.$(document).ready(function(){});
+        //2.$(function(){});
+
+        $(document).ready(function () {
+            $("#demo").click(function () {
+                //让div再1000ms后显示，并且设置该盒子的内容为I'm a div box
+                $("div").show(1000).html("I'm a div box")
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="button" id="demo" />
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

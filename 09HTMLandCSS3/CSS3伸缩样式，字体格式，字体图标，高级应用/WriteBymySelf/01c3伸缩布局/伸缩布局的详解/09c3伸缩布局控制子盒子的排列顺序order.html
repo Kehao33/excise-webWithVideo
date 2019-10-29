@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font: 23px "Microsoft Yahei";
+            background-color: #F7F7F7;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrapper > section {
+            min-height: 300px;
+            width: 80%;
+            margin-bottom: 30px;
+            margin: 0 auto;
+            box-shadow: 1px 1px 4px #ddd;
+            background-color: #fff;
+        }
+        .wrapper > header {
+            text-align: center;
+            line-height: 1;
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+        .wrapper section > header {
+            line-height: 1;
+            padding: 10px;
+            font-size: 22px;
+            color: #333;
+            background-color: #eee;
+        }
+        /*全局设置*/
+        section ul {
+            display: flex;
+        }
+        section li {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            margin: 10px;
+            background-color: pink;
+        }
+        .order li:nth-child(1) {
+            /*将该盒子设置为第三个摆放的盒子*/
+            order: 3;
+            background-color: #f00;
+        }
+        .order li:nth-child(2) {
+            /*将该盒子设置为第1个摆放的盒子*/
+            order: 1;
+            background-color: #0f0;
+        }
+        .order li:nth-child(3) {
+            /*将该盒子设置为第2个摆放的盒子*/
+            order: 2;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>css3-伸缩布局详解</header>
+        
+        <section class="brief">
+            <header>order:nth;控制该盒子的排列顺序为第n个</header>
+            <p>将父级盒子设置为flex的时候，在对应的子盒子中写入 ordedr：nth；将会将该子盒子设置为第n个序列</p>
+        </section>
+        
+        <section class="order">
+            <header>原来的盒子顺序为1,2,3，经过order:nth；后顺序为</header>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

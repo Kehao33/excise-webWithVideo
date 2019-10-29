@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //Date定义的方式
+        //第一种
+        var date1 = new Date();
+        console.log(date1);
+        //第二种在Date（）括号里边写指定的时间
+        var date2 = new Date("1998/09/18 00:00:00");
+       /* var date2 = new Date("1998-09-18 00:00:00");表达的时间是一样的*/
+        console.log(date2);
+
+        //第三种和第四种的兼容性不好，不推荐使用
+        //第三种
+        var date3 = new Date("Wed Jan 27 2016 12:00:00 GMT+0800(中国标准时间)");
+        //第四种
+        var date4 = new Date(2016,1,27);
+        console.log(date4);
+        console.log("********************************************************0");
+        console.log(date1.getYear())
+        console.log("获取日 :" + date1.getDate());               //获取日 1-31
+        console.log("获取星期:" + date1.getDay());                //获取星期0-6（0代表周日）
+        console.log("获取月份:" + date1.getMonth());              //获取月份0-11（1月从0开始）
+        console.log("获取完整年份:" + date1.getFullYear());           //获取完整年份（浏览器都支持）
+        console.log("获取小时:" + date1.getHours());              //获取小时0-23小时
+        console.log("h获取分:" + date1.getMinutes());            //h获取分钟0-59分钟
+        console.log("获取秒 :" + date1.getSeconds());            //获取秒 0-59秒
+        console.log("获取毫秒:" + date1.getMilliseconds());       //获取毫秒（1s=1000ms)
+        console.log("返回累计秒数:" + date1.getTime());               //返回累计毫秒数（从1970/1/1开始）
+    </script>
+</body>
+</html>

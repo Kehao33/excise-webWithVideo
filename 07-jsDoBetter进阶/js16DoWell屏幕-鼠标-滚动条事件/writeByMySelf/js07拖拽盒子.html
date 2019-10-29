@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d-box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            box-shadow: 2px 2px 3px #ccc;
+            border: 1px solid #000;
+            background-color: #1abc9c;
+        }
+        .hd {
+            position: relative;
+            background-color: #95a5a6;
+            height: 40px;
+           line-height: 40px;
+            cursor: move;
+        }
+        span {
+            position: absolute;
+            right: 3px;
+            color: #fff;
+            top: -6px;
+            font: 23px "Arial";
+        }
+        p {
+            width: 70%;
+            margin: 80px auto;
+            color: #fff;
+        }
+    </style>
+    <script>
+           //需求：在指定位置按住鼠标左键移动对话框
+           //分析：鼠标按下，触动事件，移动在更换对话框的位置
+           //步骤：
+           //三五组合
+           //2.把鼠标的坐标赋值给对话框
+        window.onload = function () {
+            var box = document.getElementById("d_box");
+            var drop = document.getElementById("drop");
+            //三五组合
+            //先按下，在移动触动此事件
+            drop.onmousedown = function (event) {
+                //获取鼠标在盒子中的坐标，在移动的时候减去保证鼠标在盒子的指定位置
+                event = event || window.event;
+                var pagex = event.pageX || scroll().left + event.clientX;
+                var pagey = event.pageY || scroll().top + event.clientY;
+                var x = pagex - box.offsetLeft;
+                var y = pagey - box.offsetTop;
+
+                //在鼠标啊你按下的时候触发移动鼠标移动事件
+                document.onmousemove = function (event) {
+                    //2.把鼠标的坐标赋值给对话框
+                    event = event || window.event;
+                    var xx = event.pageX || scroll().left + event.clientX;
+                    var yy = event.pageY || scroll().top + event.clientY;
+                    //二次操作鼠标位置，减去鼠标在盒子中的坐标
+                    xx = xx - x;
+                    yy = yy - y;
+                    //给box赋值
+                    box.style.left = xx + "px";
+                    box.style.top = yy + "px";
+                    //禁止为本选中后被取消
+                    window.getSelection() ? window.getSelection().removeAllRanges():document.selection.empty();
+                }
+            };
+
+            //事件解绑
+            drop.onmouseup = function () {
+                //解绑
+                document.onmousemove = null;
+            };
+
+
+
+            function scroll() {
+                return {
+                    left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+                    top: window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop
+                }
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="d-box" id="d_box">
+        <div class="hd" id="drop">
+            美句欣赏(可以拖拽) <span id="box_close">×</span>
+        </div>
+        <p>
+            我不喜欢说话却每天说最多的话，我不喜欢笑却总笑个不停，
+            身边的每个人都说我的生活好快乐，于是我也就认为自己真的快乐。
+            可是为什么我会在一大群朋友中突然地就沉默，
+            为什么在人群中看到个相似的背影就难过，
+            看见秋天树木疯狂地掉叶子我就忘记了说话，
+            看见天色渐晚路上暖黄色的灯火就忘记了自己原来的方向。
+        </p>
+    </div>
+</body>
+</html>

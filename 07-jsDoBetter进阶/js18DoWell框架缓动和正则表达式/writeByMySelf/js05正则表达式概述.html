@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //正则定义（1。内置对象法。2 .字面量）
+    //1.对象定义法
+    var reg1  = new RegExp(/abc/);
+    console.log("reg1:" + reg1)
+    //2.字面量[]{}/a/
+    var reg2 = /def/;
+    console.log("reg2:" + reg2);
+    console.log(typeof reg2);
+
+    //使用：test();正则表达是有一个方法，test,有一个返回值是bool类名，
+        //决定参数是否符合正则表达式
+    console.log(reg1.test("nihaoabc"));
+    //只有test里边的参数和调用者的正则值能够完全匹配的时候才会返回true;
+
+    console.log(/abc/.test("hjk1"));
+
+</script>
+</body>
+</html>

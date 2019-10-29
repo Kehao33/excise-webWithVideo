@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .top-banner {
+            background-color: pink;
+            height: 80px;
+        }
+        .w {
+            width: 1210px;
+            margin: 10px auto;
+            position: relative;
+        }
+        img {
+            width: 1210px;
+            height: 80px;
+            background-color: blue;
+        }
+        a {
+            text-decoration: none;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #fff;
+            background-color: #000;
+            text-decoration: none;
+            width: 20px;
+            height: 20px;
+            font: 700 14px/20px "simsum";
+            text-align: center;
+        }
+        .hide {
+            display: none!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner" id="topBanner">
+        <div class="w">
+            <img src="" >
+            <a href="#" id="closeBanner">x</a>
+        </div>
+    </div>
+    <script>
+        //ask: onclik "x",close box
+        //think; 让top-banner盒子隐藏起来
+        //步骤：
+        //1. 获取事件源和相关元素
+        var closeBanner = document.getElementById("closeBanner");
+        var topBanner = document.getElementById("topBanner");
+        //2.事件绑定
+        closeBanner.onclick = function (){
+            //3.书写事件驱动程序
+            // alert(13);
+            //topBanner.className = "hide"      //替换原类名为hide
+           // topBanner.className += " hide";     //保留原类名，添加新类名
+            topBanner.style.display = "none";
+        }
+
+
+    </script>
+</body>
+</html>

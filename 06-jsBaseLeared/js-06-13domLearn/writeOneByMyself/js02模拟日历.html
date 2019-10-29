@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        //模拟日历
+        //需求：每天打开这个页面都能定时显示年月日和星期几
+        //步骤：（创建一个当前日期的日期对象，然后获取其中的年月日和星期，赋值给div）
+        //1.创建一个当前日期的日期对象
+        //2.然后获取其中的年月日和星期
+        //3.赋值给div
+
+        //1.创建一个当前日期的日期对象
+        var date = new Date();
+        //2.然后获取其中的年月日和星期
+
+        /*在 Firefox 里面 getYear 返回的是 "当前年份-1900" 的值
+
+         IE里面则：
+
+         当today的年份小于2000的时候，和firefox一样。
+
+         当today的年份大于等于2000的时候 在返回的基础上额外加上1900如：
+         today年份是1999 返回99（同firefox) today年份是2000 返回100+1900=2000
+
+         所以最好用 getFullYear getUTCFullYear 去调用var year = today.getFullYear();
+         在IE,FireFox都适用。
+         */
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var week = date.getDay();
+        console.log(year + ":" + month + ":"+ day +":" + week);
+        //3.赋值给div
+        var arr = ["星期日","星期1","星期2","星期3","星期4","星期5","星期6"];
+        var div = document.getElementsByTagName("div")[0];
+        div.innerText = "今天是:" + year + "年" + (month+1) + "月" + day + "日" + arr[week];
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+        }
+        body {
+            background-color: lightseagreen;
+            overflow: hidden;
+        }
+        .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 235px;
+        }
+        .bottom>div {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: url("1.png") no-repeat bottom left;
+            opacity: 0.4;
+        }
+        .bottom .bottom1 {
+            -webkit-animation: upDown 1s infinite alternate;
+            -o-animation: upDown 1s infinite alternate;
+            animation: upDown 1s infinite alternate;
+        }
+        .bottom .bottom2 {
+            background-image: url("2.png");
+            -webkit-animation: upDown 1s infinite alternate 0.5s;
+            -o-animation: upDown 1s infinite alternate 0.5s;
+            animation: upDown 1s infinite alternate 0.5s;
+        }
+        @keyframes upDown {
+            0% {
+                bottom: 0px;
+            }
+            100% {
+                bottom: -30px;
+            }
+        }
+        .sun {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        .sun1,
+        .sun2 {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .sun1 {
+            -webkit-animation: bigger 1s infinite;
+            -o-animation: bigger 1s infinite;
+            animation: bigger 1s infinite;
+        }
+        .sun2 {
+            -webkit-animation: bigger 1s infinite 0.5s;
+            -o-animation: bigger 1s infinite 0.5s;
+            animation: bigger 1s infinite 0.5s;
+        }
+        @keyframes bigger {
+            0% {
+                -webkit-transform: scale(1); /*扩大1倍*/
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -ms-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                transform: scale(1.5);
+                opacity: 0.1;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="sun">
+        <div class="sun1"></div>
+        <div class="sun2"></div>
+    </div>
+    <div class="bottom">
+        <div class="bottom1"></div>
+        <div class="bottom2"></div>
+    </div>
+</body>
+</html>

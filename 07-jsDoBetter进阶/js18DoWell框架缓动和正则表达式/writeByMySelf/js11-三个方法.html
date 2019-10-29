@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <script>
+        //trim()；去除前后的空格，中间的空格不能去掉哦
+        var str = "       你好 荃科皓   ";
+        console.log(str);
+        console.log(str.trim());
+
+        //replace(); 替换和全局替换值。
+        console.log("=============replace()替换和全局替换值。==========");
+        var str2 = "Today isi fine day,today is fine day";
+        console.log(str2);
+        console.log(str2.replace(/today/ig,"tommorrow"));
+        //  /xxx/ig 后边的ig代表忽略大小写并全局匹配
+
+        //search(),用来找出原字符串中某个子字符串首次出现的index，没有则返回-1
+        console.log("search()用来找出原字符串中某个子字符串首次出现的index，没有则返回-1");
+        var str3 = "abcdefg";
+        console.log(str3.search(/bc/));
+        console.log(str3.indexOf("bc"));
+
+
+    </script>
+</body>
+</html>

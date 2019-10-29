@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>girl</title>
+    <style>
+        li {
+            display: inline-block;
+        }
+        .big-img {
+            position: relative;
+            left: 209px;
+            top: 30px;
+        }
+        .big-img img {
+            width: 400px;
+            height: 250px;
+        }
+        h3 {
+            position: relative;
+            left: 404px;
+            color: brown;
+            font: 700 23px "SimSun";
+        }
+        #pcont {
+            color: blue;
+            font: 23px "SimSun";
+        }
+    </style>
+</head>
+<body>
+    <h3>美女画廊</h3>
+    <ul id="imagegallery">
+        <li><a href="img/1.jpg" title="girlOne"><img src="img/1-small.jpg" alt=""></a></li>
+        <li><a href="img/2.jpg" title="girlTwo"><img src="img/2-small.jpg" alt=""></a></li>
+        <li><a href="img/3.jpg" title="girlThr"><img src="img/3-small.jpg" alt=""></a></li>
+        <li><a href="img/4.jpg" title="girlFou"><img src="img/4-small.jpg" alt=""></a></li>
+    </ul>
+    <div class="big-img">
+        <img src="img/placeholder.png" alt="" id="bigImg">
+        <p id="pcont">选择一张照片</p>
+    </div>
+    <script>
+        //需求：点击小图标的时候在大相框中显示对应的大图片
+        //步骤：
+        //1.获取事件源和相关的元素
+        //2.绑定事件
+        //3.书写驱动程序代码
+
+        //1.获取事件源和相关的元素
+        var ul  = document.getElementById("imagegallery");
+        var aArr = ul.getElementsByTagName("a")//得到关于a链接的所有数组aArr;
+        var imgShow = document.getElementById("bigImg");
+        var pcontent = document.getElementById("pcont");
+        //2.绑定事件
+        for(var i = 0; i < aArr.length; i++){
+            //3.书写驱动程序代码
+            aArr[i].onclick = function(){
+            imgShow.src = this.href;
+            pcontent.innerHTML = this.title;
+            return false; //防止a链接跳转到href的地址下
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 5px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li id="box"></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <!--引入自己封装的js文件-->
+    <script src="get.js"></script>
+    <script>
+        var box = getEle("box");
+        //获取box改为red
+        box.style.backgroundColor = "red";
+
+        //获取上一个/下一个兄弟节点,并将它们改为蓝色
+        getNextNode(box).style.backgroundColor = "blue";
+        getPrevNode(box).style.backgroundColor = "blue";
+
+        //获取指定的兄弟节点
+        getEleOfIndex(box,0).style.backgroundColor = "green";
+        getEleOfIndex(box,1).style.backgroundColor = "green";
+
+        //获取所有的兄弟节点(返回值为一个数组，并将所有的兄弟都设置为黑色
+        var SiblingArr = getAllSiblings(box);
+        for(var i = 0; i < SiblingArr.length; i++){
+            SiblingArr[i].style.backgroundColor = "black";
+        }
+        //获取所有子节点
+       /* div.childNodes;
+        div.children;*/
+
+        //获取指定的兄弟节点
+        //    div.parentNode.children[index];
+
+
+    </script>
+
+</body>
+</html>

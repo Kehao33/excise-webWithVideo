@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 200px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px;
+            position: relative;
+        }
+        .content {
+            padding: 5px 18px 5px 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .scroll {
+            width: 18px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #eee;
+        }
+        .bar {
+            height: 100px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #f00;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius:  10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="content" id="con">
+            第相见便相恋 <br>
+            　　第二相知便相思 <br>
+            　　第三相伴便相欠 <br>
+            　　第四相惜便相忆 <br>
+            　　第五相便相弃 <br>
+            　　第六相便相 <br>
+            　　第七相误便相负 <br>
+            　　第八相许便相续 <br>
+            　　第九相依便相偎 <br>
+            　　第十相遇便相聚 <br>
+            　　曾相见便相知相见何见 <br>
+            　　安与君相诀绝免教死作相思 <br>
+            第相见便相恋 <br>
+            　　第二相知便相思 <br>
+            　　第三相伴便相欠 <br>
+            　　第四相惜便相忆 <br>
+            　　第五相便相弃 <br>
+            　　第六相便相 <br>
+            　　第七相误便相负 <br>
+            　　第八相许便相续 <br>
+            　　第九相依便相偎 <br>
+            　　第十相遇便相聚 <br>
+            　　曾相见便相知相见何见 <br>
+            　　安与君相诀绝免教死作相思 <br>
+            第相见便相恋 <br>
+            　　第二相知便相思 <br>
+            　　第三相伴便相欠 <br>
+            　　第四相惜便相忆 <br>
+            　　第五相便相弃 <br>
+            　　第六相便相 <br>
+            　　第七相误便相负 <br>
+            　　第八相许便相续 <br>
+            　　第九相依便相偎 <br>
+            　　第十相遇便相聚 <br>
+            　　曾相见便相知相见何见 <br>
+            　　安与君相诀绝免教死作相思 <br>
+            第相见便相恋 <br>
+            　　第二相知便相思 <br>
+            　　第三相伴便相欠 <br>
+            　　第四相惜便相忆 <br>
+            　　第五相便相弃 <br>
+            　　第六相便相 <br>
+            　　第七相误便相负 <br>
+            　　第八相许便相续 <br>
+            　　第九相依便相偎 <br>
+            　　第十相遇便相聚 <br>
+            　　曾相见便相知相见何见 <br>
+            　　安与君相诀绝免教死作相思 <br>
+            第相见便相恋 <br>
+            　　第二相知便相思 <br>
+            　　第三相伴便相欠 <br>
+            　　第四相惜便相忆 <br>
+            　　第五相便相弃 <br>
+            　　第六相便相 <br>
+            　　第七相误便相负 <br>
+            　　第八相许便相续 <br>
+            　　第九相依便相偎 <br>
+            　　第十相遇便相聚 <br>
+            　　曾相见便相知相见何见 <br>
+            　　安与君相诀绝免教死作相思 <br>
+            第相见便相恋 <br>
+            　　第二相知便相思 <br>
+            　　第三相伴便相欠 <br>
+            　　第四相惜便相忆 <br>
+            　　第五相便相弃 <br>
+            　　第六相便相 <br>
+            　　第七相误便相负 <br>
+            　　第八相许便相续 <br>
+            　　第九相依便相偎 <br>
+            　　第十相遇便相聚 <br>
+            　　曾相见便相知相见何见 <br>
+            　　安与君相诀绝免教死作相思 <br>
+        </div>
+        <div class="scroll">
+            <div class="bar" id="bar"></div>
+        </div>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        var con = document.getElementById("con");
+        var bar = document.getElementById("bar");
+        //计算红色bar的高度 （容器的高度/内容的高度*容器的高度）
+        var barHeight = (box.offsetHeight/con.offsetHeight) * box.offsetHeight;
+        bar.style.height = barHeight + "px"; //按照比列给bar赋值高度
+        //制作开始拖动红色方块
+        //拖拽原理，先 按下鼠标，后 鼠标移动
+        bar.onmousedown = function (event) {
+            //当我们每次点击的时候，先算出bar距离父级的距离
+            var event = event || window.event; //得到鼠标按下的事件对象
+            var t = event.pageY;        //得到鼠标按下的时候离网页的垂直位置
+            //鼠标每一次按下的时候，t都会改变，t为事件发动光标离页面的高度
+
+            document.onmousemove = function (event) {
+                var event = event || window.event; //得到鼠标移动的事件对象
+                var y = event.pageY - t;
+                //每一次移动鼠标的时候，event.pageY都会变，所以此时的event.pageY为最后一次鼠标的位置
+
+                // (内容的高度 - 容器的高度)  / (容器的高度 - 滚动条的高度)* 滚动条移动的距离
+                var cont = (con.offsetHeight - box.offsetHeight)/(box.offsetHeight - bar.offsetHeight)*y;
+                if(y < 0) {
+                    y = 0;
+                }else if(y > box.offsetHeight - bar.offsetHeight){
+                    y = box.offsetHeight - bar.offsetHeight;
+                }else {
+                    con.style.top = - cont + "px";
+                }
+
+                bar.style.top = y + "px";
+                window.getSelection?window.getSelection().removeAllRanges():document.selection.empty();
+            };
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+
+        }
+    </script>
+</body>
+</html>

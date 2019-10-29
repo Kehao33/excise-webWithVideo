@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hd {
+            background-color: #f00;
+            color: #fff;
+            font: 23px/1.5 "Arial";
+        }
+        .flex-father {
+            /*flex-father是child盒子的父盒子，并且该盒子是弹性的盒子*/
+            display: flex;
+            height: 200px;
+            border: 1px solid #008;
+        }
+        .child {
+            width: 88px;
+            height: 88px;
+            line-height: 88px;
+            color: #fff;
+            background-color: #0f3;
+            border: 1px solid red;
+        }
+        .sun1 {
+            height: 20px;
+        }
+        .sun2 {
+            height: 30px;
+        }
+        .sun3 {
+            height: 40px;
+        }
+        .sun4 {
+            height: 40px;
+        }
+        .sun5 {
+            height: 50px;
+        }
+        .sun6 {
+            height: 60px;
+        }
+        .sun7 {
+            height: 70px;
+        }
+        .sun8 {
+            height: 80px;
+        }
+        .alignItems-flex-start {
+            align-items: flex-start;
+        }
+        .alignItems-flex-end {
+            align-items: flex-end;
+        }
+        .alignItems-center {
+            align-items: center;
+        }
+        .alignItems-stretch {
+            align-items: stretch;
+        }
+        .alignItems-baseline {
+            align-items: baseline;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>设置父盒子主轴，子元素的对齐方式justify-content</h1></center>
+    <div class="wrap">
+
+        <div class="hd">设置父盒子侧轴，子元素的对齐方式align-items：flex-start</div>
+        <div class=" flex-father alignItems-flex-start">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+
+        <div class="hd">设置父盒子侧轴，子元素的对齐方式：align-items:flex-end</div>
+        <div class="flex-father alignItems-flex-end">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+
+        </div>
+
+        <div class="hd">设置父盒子侧轴，子元素的对齐方式：align-items:center</div>
+        <div class="flex-father alignItems-center">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+
+        <div class="hd">设置父盒子侧（y）轴，该方式在有的浏览器中不支持 子元素的对齐方式：align-itmes：baseline</div>
+        <div class="flex-father alignItems-baseline">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+
+        <div class="hd">设置父盒子侧轴（y轴），该方式在有的浏览器中不支持 子元素的对齐方式align-itemes：stretch</div>
+        <div class="flex-father alignItems-stretch">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+    </div>
+</body>
+</html>

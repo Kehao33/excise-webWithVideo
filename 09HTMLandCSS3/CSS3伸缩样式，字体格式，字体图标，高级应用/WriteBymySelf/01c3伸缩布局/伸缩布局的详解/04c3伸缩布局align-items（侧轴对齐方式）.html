@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--注意：
+    只需要给父盒子设置为flex盒子的时候，子盒子就会默认的转换成行内块元素，
+    更加注意的是：
+    如果要设置父盒子的侧轴的对齐方式为stretch的时候，需要给其子盒子加height：auto才能有效果
+    -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap-box {
+             width: 78%;
+             border: 1px solid #eee;
+             border-radius: 8%;
+             margin: 0 auto;
+         }
+        .wrap-box>header {
+            width: 100%;
+            margin: 0 auto 30px;
+            text-align: center;
+            font: 700 33px "Microsoft Yahei";
+        }
+        section {
+            width: 90%;
+            min-height: 800px;
+            margin: 0 auto 20px;
+            border: 1px solid #333;
+        }
+        ul {
+            list-style: none;
+        }
+        section.introduce-align-items {
+            min-height: 200px;
+        }
+        section>header {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            font: 700 23px "Microsoft Yahei";
+        }
+        section p {
+            font: 23px "Microsoft Yahei";
+            padding: 20px;
+            margin: 20px;
+        }
+        section ul li {
+            width: 220px;
+            height: 220px;
+            line-height: 220px;
+            text-align: center;
+            margin: 10px;
+            background-color: #FFB700;
+        }
+        /*全局定义*/
+        section ul {
+            display: flex;
+            min-height: 600px;
+            border: 1px solid #222;
+            margin: 10px;
+        }
+        .flex-start ul {
+            align-items: flex-start;
+        }
+        .flex-end ul {
+            align-items: flex-end;
+        }
+        .center ul {
+            align-items: center;
+        }
+        .stretch ul {
+            align-items: stretch;
+            -webkit-align-items: stretch;
+            border: 1px solid #f00;
+        }
+        .stretch li {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap-box">
+        <header>css3-伸缩布局侧轴对齐方式align-items详解</header>
+        <section class="introduce-align-items">
+            <header>align-items:设置侧轴对齐方式</header>
+            <p>
+                align有调整、排列的意思，items有条的意思 <br>
+                align-items的属性值有：flex-start(侧轴起点对齐）
+                ,flex-end（侧轴终点对齐）,center（侧轴居中对齐）
+                ,stretch （拉长）<br>
+            </p>
+        </section>
+        <section class="flex-start">
+            <header>align-items:设置侧轴对齐方式</header>
+            <p>
+               flex-start(侧轴起点对齐）
+            </p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </section>
+        <section class="flex-end">
+            <header>align-items:flex-end</header>
+            <p>
+               flex-end(侧轴终点对齐）
+            </p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </section>
+        <section class="center">
+            <header>align-items:center设置侧轴对齐方式</header>
+            <p>
+               center(侧轴居中对齐）
+            </p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </section>
+        <section class="stretch">
+            <header>align-items:stretch</header>
+            <p>
+               stretch（拉伸对齐）
+            </p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

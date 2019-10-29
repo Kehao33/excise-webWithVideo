@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ol li{
+            list-style: none;
+            margin: 12px;
+            height: 50px;
+            font: 33px "Microsoft Himalaya";
+        }
+        input {
+            padding: 0 5px;
+            width: 200px;
+            height: 40px;
+            color: #ccc;
+            text-align: center;
+            font: 20px "Microsoft Himalaya";
+        }
+        button {
+            margin: 23px;
+            font: 23px "Microsoft Himalaya";
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>user: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="请输入账号"></li>
+        <li>pass: &nbsp;&nbsp;&nbsp;&nbsp;<input type="password"></li>
+        <li>
+            <button >禁用输入框</button>
+            <button >解禁输入框</button>
+        </li>
+    </ol>
+    <script>
+        var inp = document.getElementsByTagName("input")[0];
+        var chang = document.getElementsByTagName("button");
+        var originalValue = inp.value;
+        inp.onfocus = function() {
+            //获得焦点的时候将清楚输入框的默认值
+            inp.value = "";
+        }
+        inp.onblur = function() {
+            //当文本框失去焦点的时候，如果是""空字符，则回复原来的默认值，否则就不清空用户输入的值
+            if(inp.value == ""){
+                inp.value = originalValue;
+            }else{
+                inp.style.color = "#000"
+            }
+        }
+        chang[0].onclick = function () {
+            inp.disabled = true;
+        }
+        chang[1].onclick = function () {
+            inp.removeAttribute("disabled");
+        }
+    </script>
+</body>
+</html>

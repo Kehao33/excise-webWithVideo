@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>赋诗一首</button>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        /*第一种事件绑定的方法：缺点，容易被层叠*/
+//        btn.onclick = function () {
+//            alert("龙泉九尺万卷书，上天生我意何如？");
+//        }
+        /*第二种时间绑定的方法：事件监听器：addEventListener.
+        * 原事件被执行的时候，后边绑定的时间照样被执行
+        *这种方法不会出现层叠，推荐使用***&*&*&*&*&*
+        * */
+        btn.addEventListener("click",fn1);
+        btn.addEventListener("click",fn2);
+        function fn1(){
+            alert("九尺龙泉万卷书，上天生我意何如？");
+        }
+        function fn2(){
+            alert("我们的爱情到这儿刚刚好！");
+        }
+    </script>
+</body>
+</html>

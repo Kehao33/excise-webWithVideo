@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            margin: 100px auto;
+            /* 如果希望所有的属性都发生过渡，使用all过渡名称即可*/
+            /*过渡属性名称*/
+            -webkit-transition-property: all;
+            -moz-transition-property: all;
+            -ms-transition-property: all;
+            -o-transition-property: all;
+            transition-property: all;
+            /*过渡持续时间*/
+            -webkit-transition-duration: 4s;
+            -moz-transition-duration: 4s;
+            -ms-transition-duration: 4s;
+            -o-transition-duration: 4s;
+            transition-duration: 4s;
+            /*运动曲线效果
+            linear：线性的（匀速的）
+            ease：相对于匀速，中间快，两头慢
+            ease-in: 先慢后快
+            ease-out：先快后慢
+            ease-in-out: 中间快，两头慢
+            */
+            -webkit-transition-timing-function: ease-in-out;
+            -moz-transition-timing-function: ease-in-out;
+            -ms-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+            /*过渡延迟*/
+            -webkit-transition-delay: 2s;
+            -moz-transition-delay: 2s;
+            -ms-transition-delay: 2s;
+            -o-transition-delay: 2s;
+            transition-delay: 2s;
+
+            /*简写*/
+            -webkit-transition: width 4s ease-in-out 0s;
+            -moz-transition: width 4s ease-in-out 0s;
+            -ms-transition: width 4s ease-in-out 0s;
+            -o-transition: width 4s ease-in-out 0s;
+            transition: width 4s ease-in-out 0s;
+        }
+        .box:hover {
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

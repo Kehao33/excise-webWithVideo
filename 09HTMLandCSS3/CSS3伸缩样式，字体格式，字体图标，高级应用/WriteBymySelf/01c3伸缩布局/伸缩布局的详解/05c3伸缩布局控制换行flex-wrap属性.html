@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap-box {
+            width: 78%;
+            border: 1px solid #eee;
+            border-radius: 8%;
+            margin: 0 auto;
+        }
+        .wrap-box>header {
+            width: 100%;
+            margin: 0 auto 30px;
+            text-align: center;
+            font: 700 33px "Microsoft Yahei";
+        }
+        section {
+            width: 90%;
+            min-height: 800px;
+            margin: 0 auto 20px;
+            border: 1px solid #333;
+        }
+        ul {
+            list-style: none;
+        }
+        section.introduce-flex-wrap {
+            min-height: 200px;
+        }
+        section>header {
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            font: 700 23px "Microsoft Yahei";
+        }
+        section p {
+            font: 23px "Microsoft Yahei";
+            padding: 20px;
+            margin: 20px;
+        }
+        section ul li {
+            width: 220px;
+            height: 220px;
+            line-height: 220px;
+            text-align: center;
+            margin: 10px;
+            background-color: #FFB700;
+        }
+        /*全局定义*/
+        section ul {
+            display: flex;
+            min-height: 600px;
+            border: 1px solid #222;
+            margin: 10px;
+        }
+        .wrap ul {
+            flex-wrap: wrap;
+        }
+        .nowrap ul {
+            flex-wrap: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap-box">
+        <header>控制是否换行flex-wrap详解</header>
+        <section class="introduce-flex-wrap">
+            <header>flex-wrap:wrap/nowrap</header>
+            <p>
+                wrap:换行<br>
+                nowrap:不换行
+            </p>
+        </section>
+        <section class="wrap">
+            <header>flex-wrap:wrap</header>
+            <p>
+               换行
+            </p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+        <section class="nowrap">
+            <header>flex-wrap:nowrap</header>
+            <p>
+                flex-wrap:nowrap;不换行(即使总的宽高超过了也不会换行）
+            </p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

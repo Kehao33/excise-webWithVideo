@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rotateX {
+            width: 300px;
+            height: 226px;
+            margin: 200px auto;
+            perspective: 110px;
+
+        }
+        /*
+        透视(perspective)：设置的是用户的眼睛距离，平面的距离
+            透视效果知识视觉上的呈现，并不是真正的3D模型
+        */
+        img {
+            /*谁要过渡，就在谁的里边写过渡属性*/
+            -webkit-transition: transform 2s;
+            -moz-transition: transform 2s;
+            -ms-transition: transform 2s;
+            -o-transition: transform 2s;
+            transition: transform 2s;
+        }
+        .rotateX:hover img {
+            -webkit-transform: rotateX(360deg);
+            -moz-transform: rotateX(360deg);
+            -ms-transform: rotateX(360deg);
+            -o-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="rotateX">
+        <img src="img/x.jpg" alt="">
+    </div>
+</body>
+</html>

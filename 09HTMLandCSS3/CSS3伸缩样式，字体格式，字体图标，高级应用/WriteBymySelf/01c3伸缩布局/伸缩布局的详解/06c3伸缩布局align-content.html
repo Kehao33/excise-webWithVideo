@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap-box {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+        .wrap-box>header {
+            width: 100%;
+            text-align: center;
+            background-color: #999;
+            font: 700 33px "Microsoft Yahei";
+        }
+        .brief-p {
+            color: #f00;
+        }
+        section {
+            width: 90%;
+            margin: 10px auto;
+            border: 1px solid #000;
+        }
+        section>header {
+            margin-bottom: 20px;
+            width: 100%;
+            background-color: #0fd;
+            text-align: center;
+            font: 700 28px "Microsoft Yahei";
+        }
+        section p {
+            margin: 10px;
+            font: 23px "Microsoft Yahei";
+            word-wrap: normal;
+        }
+        section ul {
+            width: 90%;
+            margin: 10px;
+            list-style: none;
+            min-height: 960px;
+            display: flex;
+            border: 1px solid #000;
+        }
+        ul li {
+            width: 180px;
+            height: 180px;
+            line-height: 180px;
+            text-align: center;
+            background-color: #0f0;
+            margin: 10px;
+        }
+        .flex-start ul {
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .flex-end ul {
+            flex-wrap:wrap ;
+            align-content: flex-end;
+        }
+        .center ul {
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .space-around ul {
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+        .space-between ul {
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .stretch ul {
+            align-content: stretch;
+        }
+        .stretch ul li {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap-box">
+        <header>css3-伸缩布局详解</header>
+
+        <section class="brief">
+            <header>align-content</header>
+            <p class="brief-p">
+                堆栈排列，可对应flex-wrap:wrap/wrap-reverse后产生的换行进行控制，
+                包括flex-start，flex-end,center
+                space-between,space-around,stretch
+            </p>
+        </section>
+
+        <section class="flex-start">
+            <header>flex-start</header>
+            <p>起始点对齐，各行向弹性盒子容器的起始位置堆叠。</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+        <section class="flex-end">
+            <header>flex-end</header>
+            <p>终止点对齐，各行向弹性盒子容器的结束位置堆叠。</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+        <section class="center">
+            <header>align-content:center;</header>
+            <p>中点对齐，各行向弹性盒子容器的中点位置堆叠。</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+        <section class="space-around">
+            <header>align-content:space-around;</header>
+            <p>四周环绕，各行向弹性盒子容器中平均分布。</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+        <section class="space-between">
+            <header>align-content：space-between;</header>
+            <p>两端对齐</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+        <section class="stretch">
+            <header>align-content:stretch</header>
+            <p>拉伸对齐，stretch要与子盒子的height：auto联合使用才能够有好的效果</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

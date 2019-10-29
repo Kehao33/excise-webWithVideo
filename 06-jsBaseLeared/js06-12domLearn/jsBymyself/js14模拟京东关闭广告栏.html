@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .site-nav {
+            height: 60px;
+            background-color: #0f0;
+        }
+        .w {
+            width: 1200px;
+            height: 60px;
+            margin: 0 auto;
+            background-color: #008;
+        }
+        a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            font-size: 32px;
+            color: #f00;
+            top: -9px;
+            right: -1168px;
+        }
+        .banner {
+            background-color: #f0c;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-nav">
+        <div class="w adv">
+            <a href="#">×</a>
+        </div>
+    </div>
+    <div class="w banner"></div>
+    <script>
+        //需求；点击×的时候关闭整个广告栏。
+        //1.获取事件源和相关元素
+        var a = document.getElementsByTagName("a")[0];
+        var siteNav = document.getElementsByClassName("site-nav")[0];
+        var adv = document.getElementsByClassName("adv")[0];
+
+        //2.绑定事件
+        a.onclick = function () {
+            //3.书写事件驱动程序
+            siteNav.style.display = "none";
+            adv.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box" value="111">你好</div>
+    <script>
+        var obj = document.getElementById("box");
+        var att = obj.getAttributeNode("id");//得到属性节点
+        var txt = obj.firstElementChild || obj.firstChild;
+        /*
+        * obj 的值为： <div id="box" value="111">你好</div>全部
+        * att的值为： id = “box";
+        * txt的值为 "你好",也就是obj的第一个孩子；
+        * */
+
+        //打印他们的值
+        console.log(obj);
+        console.log(att);
+        console.log(txt);
+
+        //打印他们的节点类型就是其对应的节点类型的数值
+        console.log(obj.nodeType); //节点元素Element的节点类型的值为1
+        console.log(att.nodeType);  //属性节点Attribute的值为2
+        console.log(txt.nodeType);  //文本节点Text的值为3
+
+        //打印他们的节点名字就是打印他们对应的名字
+        console.log(obj.nodeName); //DIV
+        console.log(att.nodeName); // id
+        console.log(txt.nodeName);  // #text
+
+        /*
+        * DOM里常见的三种节点类型
+        * （总共有12种，如docment）：
+        * 元素节点，属性节点以及文本节点，
+        *
+        * 例如<h2 class="title">head</h2>，
+        * 其中h2是元素节点，class是属性节点，
+        * head是文本节点，
+        * tagName和nodeName的语义是一样的
+        * ，都是返回所包含标签的名称，例如上面的h2标签，都是返回h2，
+        * 但是tagName只能在元素标签上使用，
+        * 而nodeName则可以在所有的节点上使用。
+        *
+        * */
+    </script>
+</body>
+</html>

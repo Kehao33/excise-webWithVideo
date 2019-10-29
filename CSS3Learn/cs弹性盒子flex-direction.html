@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,div {
+            padding: 0;
+            margin: 0;
+        }
+        .d-box {
+            width: 960px;
+            margin: 5px auto;
+            border: 1px solid #ccc;
+            color: #c0c0c0;
+            font: 16px/1.5 "Microsoft YaHei UI";
+        }
+        .hd {
+            height: 30px;
+            background-color: #f00;
+            opacity: 0.7;
+            color: #fff;
+            line-height: 30px;
+        }
+        .d-box .bd{
+            display: flex;
+            /*flex-direction: row; 默认方式按照从左往右的行方式排列过去*/
+        }
+        .d-box .bd .child {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background-color: aqua;
+            border: 1px solid maroon;
+            color: #000;
+        }
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+        .row {
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="hd">设置弹性盒子的主轴（x轴的）方向：flex-direction:row-reverse</div>
+        <div class="bd row-reverse">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+            <div class="child">5</div>
+        </div>
+        <div class="hd">设置弹性盒子的主轴（x轴的）方向：flex-direction:column</div>
+        <div class="bd column">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+            <div class="child">5</div>
+        </div>
+        <div class="hd">设置弹性盒子的主轴（x轴的）方向：flex-direction:column-reverse</div>
+        <div class="bd column-reverse">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+            <div class="child">5</div>
+        </div>
+        <div class="hd">设置弹性盒子的主轴（x轴的）方向：flex-direction:row</div>
+        <div class="bd row">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+            <div class="child">5</div>
+        </div>
+
+    </div>
+</body>
+</html>

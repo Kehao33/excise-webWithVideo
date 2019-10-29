@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery选择器</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<ol>
+				<li>英文</li>
+				<li>
+					数学
+					<p>我是子节点</p>
+				</li>
+				<li>语文</li>
+			</ol>
+		</div>
+		<button type="button" onclick="add_node_js()">创建节点byJS</button>
+		<button type="button" onclick="add_node()">创建节点</button>
+		<button type="button" onclick="remove_node()">删除节点</button>
+		<button type="button" onclick="clone_node()">克隆节点</button>
+	</body>
+	<script type="text/javascript">
+		function clone_node(){
+			/* clone() 方法生成被选元素的副本，包含子节点、文本和属性。*/
+			$("ol").append($("li").eq(1).clone());
+		}
+		
+		function remove_node(){
+			/* 1.empty()方法从被选元素移除所有内容，包括所有文本和子节点。 */
+			  /* $("li").empty(); */
+			/* 2.remove() 方法移除被选元素，包括所有文本和子节点。*/
+			$("li").eq(1).remove();
+		}
+		
+		function add_node_js(){
+			/* 1.创建新标签 */
+			var $li = document.createElement("li");
+			/* 2.插入内容到标签 */
+			var TXTNode = document.createTextNode("政治");
+			$li.appendChild(TXTNode);
+			//$li.innerHTML = "政治"
+			/* 3.appendChild() */
+			document.getElementsByTagName("ol")[0].appendChild($li)
+		}
+		
+		function add_node(){
+			/* 1.第一种方法 */
+			/*var $li = $("<li></li>");
+			$li.html("政治");
+			$("ol").append($li);
+			 */
+			
+			/* 2.第二种方法 
+			var $li = $("<li>政治</li>");
+			$("ol").append($li);
+			*/
+		   
+		  /*  3.第三种方法  */
+		  /* 1).append() 向匹配元素集合中的每个元素结尾插入由参数指定的内容。 */
+		  /* $("ol").append("<li>政治</li>") */
+		  /* 2).appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。*/
+		  /* $("<li>政治</li>").appendTo($("li").eq(0)); */
+		  /* 3).before() 方法在被选元素前插入指定的内容。*/
+		  /* $("li").eq(1).before("<li>政治</li>"); */
+		}
+	</script>
+</html>

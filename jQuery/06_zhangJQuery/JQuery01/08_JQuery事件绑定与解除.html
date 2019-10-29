@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>08_JQuery事件绑定与解除</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script>
+			/* bind() 方法为被选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数。
+			$(selector).bind(event,data,function)
+			event 必需。规定添加到元素的一个或多个事件。由空格分隔多个事件。必须是有效的事件。
+			data 可选。规定传递到函数的额外数据。 
+			function 必需。规定当事件发生时运行的函数。 */
+			$().ready(function(){
+				$("input").eq(0).bind("click",function(){
+					alert("你已经绑定了点击事件");
+				});
+				$("input").eq(1).bind("click",function(){
+					$("input").eq(0).unbind();
+					alert("你已经解绑了时间")
+				})
+			});
+			/* function test(){
+				$("input").eq(0).unbind();
+				alert("你已经解绑了时间")
+			} */
+		</script>
+	</head>
+	<body>
+		<input type="button" value="绑定事件"/>
+		<input type="button" value="解绑事件" onclick="test()"/>
+	</body>
+	
+</html>

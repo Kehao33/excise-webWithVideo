@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "abadefg";
+    //给字符串查第一次查到的位置（索引值是固定的，是不会改变的）
+    console.log(str.indexOf("a")); //0      indexOf("str")是从前边向后边遍历的
+    console.log(str.lastIndexOf("a")); //2  lastIndex0f("str")是从后边像前边遍历的
+
+    //一般来说：数据进行传递的过程中往往需要编码后再进行传送，因为在传送的过程中是不允许有的字符出现的(如空格和中文等）
+    //节后后还需要反编译回来才行
+    //一般通过var encodeStr = encodeURLComponent(urlstr)进行编码，通过decodeURLComponent(encodeStr)进行解码
+    var url = "http://www.baidu.com?username='aaa'&password='233' 你好";
+    var encodeUrlStr = encodeURIComponent(url);
+    console.log(encodeUrlStr);
+    /*URI是一个用于标识某一互联网资源名称的字符串。
+        component：组件/元件/成分的意思
+    * */
+    var decodeUrl = decodeURIComponent(encodeUrlStr);
+    console.log("解码后:" + decodeUrl);
+</script>
+</body>
+</html>

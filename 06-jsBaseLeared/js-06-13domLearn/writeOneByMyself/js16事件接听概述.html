@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>赋诗一首</button>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        fn("click",fn1,btn);
+        fn("click",fn2,btn);
+        fn("click",fn3,btn);
+
+        function fn1() {
+            alert("九尺龙泉万卷书，上天生我意何如？");
+        }
+
+        function fn2() {
+            alert("不能报国平天下，枉为男儿大丈夫");
+
+        }
+
+        function fn3() {
+            alert("天行健，君子以厚德载物并自强不息");
+
+        }
+
+        //自己封装的click事件
+        function fn(str,fn,ele){
+            //判断位置要追：如果进入绑定事件本身，那么该事件已经被绑定了
+            //所获取旧的使事件必须咋新的事件绑定之前
+            var oldEvent = ele["on"+ str];
+            ele["on"+str] = function () {
+                //不能直接执行函数，因为我们还不知道以前有没有绑定同样的事件
+                //进行判断，如果以前有过绑定事件，那么把以前的执行完毕在执行现在的事件，
+                    //如果没有就直接执行
+                //如果没有被定义过事件，该事件源的事件属性应该是null对象的boolean值是false
+                //如果已经定义过使劲按，该事件源的事件应该是function本身的boolea值是true
+                if(oldEvent){
+                    //因为oldEvent本身就是函数，后面加一盒()；就是执行函数
+                    oldEvent();
+                    fn();
+                }else {
+                    //没有绑定过事件
+                    fn();
+                }
+
+            }
+        }
+    </script>
+</body>
+</html>

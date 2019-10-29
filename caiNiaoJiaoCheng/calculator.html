@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .calculator {
+            position: absolute;
+            bottom: 183px;
+            left: 75px;
+            border: 2px solid #fafafa;
+            padding-left: 21px;
+            -webkit-border-radius: 10%;
+            -moz-border-radius: 10%;
+            border-radius: 10%;
+        }
+        .calculator td {
+            width: 151px;
+            height: 50px;
+            font: 30px "Microsoft Himalaya";
+        }
+        .calculator input{
+            width: 286px;
+            height: 30px;
+            padding-top: 13px;
+            text-align: center;
+            margin: 20px;
+            outline: none;
+            font-size: 25px ;
+            font-family: "Microsoft Himalaya";
+        }
+        .calculator .choose {
+            display: inline-block;
+            background-color: #00ffcc;
+            width: 160px;
+            text-align: center;
+        }
+        .calculator .calculator-button {
+            margin-left: 23px;
+        }
+        .calculator button {
+            width: 68px;
+            height: 62px;
+            line-height: 62px;
+            text-align: center;
+            font: 700 50px "Microsoft Himalaya";
+        }
+        .alert {
+            display: inline-block;
+            width: 473px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 23px;
+            text-align: center;
+            background-color: transparent;
+        }
+        .alertMessage {
+            border: 2px solid red;
+        }
+        .rightMessage {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <table>
+            <tr>
+                <td><label for="num1"><span class="choose">第一个数:</span></label></td>
+                <td>
+                    <input id="num1" type="text" placeholder="输入数字">
+                </td>
+
+            </tr>
+            <tr>
+                <td><label for="num2"><span class="choose">第二个数：</span></label></td>
+                <td>
+                    <input id="num2" type="text" placeholder="输入数字">
+                </td>
+            </tr>
+            <tr>
+                <td><span class="choose">操作符：</span></td>
+                <td>
+                    <div class="calculator-button">
+                        <button class="calculatorButton">+</button>
+                        <button class="calculatorButton">-</button>
+                        <button class="calculatorButton">*</button>
+                        <button class="calculatorButton">/</button>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td><span class="choose">结果为：</span></td>
+                <td><input id="result" type="text"></td>
+            </tr>
+        </table>
+        <span class="alert"></span>
+    </div>
+    <script>
+        var alertBox = document.getElementsByClassName("alert")[0];
+        var oparatorList = document.getElementsByClassName("calculatorButton");
+        for(var i = 0; i < oparatorList.length; i++){
+            oparatorList[i].addEventListener("click",getResult,false);
+        }
+        function getEventObj(){
+            var e = window.event;
+            var obj = e.target?e.target:e.srcElement;
+            return obj;
+        }
+        function getResult(){
+            var eventObj = getEventObj();
+            var numObj1 = document.getElementById("num1");
+            var numValue1 = numObj1.value;
+            var numObj2 = document.getElementById("num2");
+            var numValue2 = numObj2.value;
+            var result = document.getElementById("result");
+            if(numValue1 == "" || numValue2 == ""){
+                alertBox.innerHTML = "您老忘记输入数字了";
+                alertBox.style.color = "red";
+                numObj2.className = "alertMessage";
+                numObj1.className = "alertMessage";
+            }else if( isNaN(numValue1) || isNaN(numValue2)){
+                alertBox.innerHTML = "丫的，有非数字出现呐！";
+                alertBox.style.color = "red";
+                numObj2.className = "alertMessage";
+                numObj1.className = "alertMessage";
+            }else {
+                var operator = eventObj.innerHTML;
+                if(operator == "/" && numValue2 == "0"){
+                    alertBox.innerHTML = "除数不能为0";
+                    numObj1.className = "rightMessage";
+                    alertBox.style.color = "red";
+                    numObj2.className = "alertMessage";
+                }else{
+                    numObj1.className = "rightMessage";
+                    numObj2.className = "rightMessage";
+                    result.className = "rightMessage";
+                result.value = eval(numValue1 + operator + numValue2);
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

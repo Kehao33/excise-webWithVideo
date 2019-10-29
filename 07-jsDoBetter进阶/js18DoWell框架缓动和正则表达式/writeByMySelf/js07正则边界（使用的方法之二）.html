@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //边界
+    //  /^x Y$/ ：代表的是必须以x开头，且必须是以Y结尾才可以的
+    console.log(/^abc$/.test("abc")); //满足以a开头，以c结尾，所以为true
+    console.log(/^abc$/.test("a")); //false
+    console.log(/^abc$/.test("ac"));//false;
+    console.log(/^abc$/.test("abcabc"))//false;
+
+    /*
+     ^ 会匹配行或者字符串的起始位置
+
+     $ 会匹配行或字符串的结尾位置
+
+     ^$在一起 表示必须是这个（精确匹配）
+
+     * */
+
+</script>
+</body>
+</html>

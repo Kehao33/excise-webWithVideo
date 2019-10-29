@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #flag{
+            background: #f00; /*国旗背景*/
+            display: block;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="flag">
+        你的浏览器不支持canvas!
+    </canvas>
+    <script>
+        var myCanvas = document.getElementById("flag")
+        myCanvas.width = 600;
+        myCanvas.height = 400;
+
+        var ctx = myCanvas.getContext("2d"); //创建画笔
+
+        // 创建绘制路径开始点
+
+        // 大星星
+        ctx.beginPath();
+        ctx.fillStyle = "#ffff00";
+        ctx.strokeStyle = "#ffff00";
+        ctx.moveTo(103,49);
+        ctx.lineTo(141,164);
+        ctx.lineTo(43,92);
+        ctx.lineTo(164,92);
+        ctx.lineTo(66,164);
+        ctx.lineTo(103,49);
+        ctx.fill();
+        ctx.stroke();
+
+        // 小星星 第一个
+        ctx.beginPath();
+        ctx.fillStyle = "#ffff00";
+        ctx.strokeStyle = "#ffff00";
+        ctx.moveTo(186,61);
+        ctx.lineTo(216,26);
+        ctx.lineTo(214,72);
+        ctx.lineTo(189,33);
+        ctx.lineTo(231,50);
+        ctx.lineTo(186,61);
+        ctx.fill();
+        ctx.stroke();
+
+        // 小星星 第二个
+        ctx.beginPath();
+        ctx.fillStyle = "#ffff00";
+        ctx.strokeStyle = "#ffff00";
+        ctx.moveTo(228,96);
+        ctx.lineTo(269,76);
+        ctx.lineTo(247,117);
+        ctx.lineTo(241,71);
+        ctx.lineTo(273,104);
+        ctx.lineTo(244,99);
+        ctx.fill();
+        ctx.stroke();
+
+        // 小星星 第三个
+        ctx.beginPath();
+        ctx.fillStyle = "#ffff00";
+        ctx.strokeStyle = "#ffff00";
+        ctx.moveTo(224,148);
+        ctx.lineTo(273,148);
+        ctx.lineTo(236,175);
+        ctx.lineTo(249,131);
+        ctx.lineTo(265,175);
+        ctx.lineTo(224,148);
+        ctx.fill();
+        ctx.stroke();
+
+        // 小星星 第4个
+        ctx.beginPath();
+        ctx.fillStyle = "#ffff00";
+        ctx.strokeStyle = "#ffff00";
+        ctx.moveTo(189,182);
+        ctx.lineTo(231,199);
+        ctx.lineTo(186,211);
+        ctx.lineTo(216,175);
+        ctx.lineTo(213,221);
+        ctx.lineTo(189,182);
+        ctx.fill();
+        ctx.stroke();
+    </script>
+</body>
+</html>

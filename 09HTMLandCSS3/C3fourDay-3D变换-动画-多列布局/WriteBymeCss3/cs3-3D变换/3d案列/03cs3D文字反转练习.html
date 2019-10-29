@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #0f0;
+        }
+        .box {
+            margin-top: 100px;
+            text-align: center;
+            line-height: 1;
+            font-size: 100px;
+        }
+        .box span {
+            display: inline-block;
+            position: relative;
+        }
+        .box span::before,
+        .box span::after {
+            /*得到该盒子里边的属性值*/
+            content: attr(data-cont);
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            -webkit-transform-origin: left center;
+            -moz-transform-origin: left center;
+            -ms-transform-origin: left center;
+            -o-transform-origin: left center;
+            transform-origin: left center;
+        }
+        .box span::before {
+            z-index: 3;
+            color: #fff;
+            -webkit-transform: rotateY(-15deg);
+            -moz-transform: rotateY(-15deg);
+            -ms-transform: rotateY(-15deg);
+            -o-transform: rotateY(-15deg);
+            transform: rotateY(-15deg);
+        }
+        .box span::after {
+            z-index: 2;
+            color: rgba(0,0,0,0.3);
+        }
+        .box:hover span::before {
+            -webkit-transform: rotateY(-40deg) skew(0deg,5deg);
+            -moz-transform: rotateY(-40deg) skew(0deg,5deg);
+            -ms-transform: rotateY(-40deg) skew(0deg,5deg);
+            -o-transform: rotateY(-40deg) skew(0deg,5deg);
+            transform: rotateY(-40deg) skew(0deg,5deg);
+        }
+        .box:hover span::after {
+            -webkit-transform: skew(0deg,20deg);
+            -moz-transform: skew(0deg,20deg);
+            -ms-transform: skew(0deg,20deg);
+            -o-transform: skew(0deg,20deg);
+            transform: skew(0deg,20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span data-cont="举">举</span>
+        <span data-cont="世">世</span>
+        <span data-cont="无">无</span>
+        <span data-cont="双">双</span>
+    </div>
+</body>
+</html>

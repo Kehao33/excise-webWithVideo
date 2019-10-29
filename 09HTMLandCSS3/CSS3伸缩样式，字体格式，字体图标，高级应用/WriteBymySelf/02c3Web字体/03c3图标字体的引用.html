@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图标字体的应用</title>
+    <style>
+        /*1.图标字体的申明*/
+        @font-face {
+            font-family: 'iconfont';
+            src: url('iconfont/iconfont.eot');
+            src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('iconfont/iconfont.woff2') format('woff2'),
+            url('iconfont/iconfont.woff') format('woff'),
+            url('iconfont/iconfont.ttf') format('truetype'),
+            url('iconfont/iconfont.svg#iconfont') format('svg');
+        }
+        /*2.在给定的选择器中引用font-family:"iconfont";*/
+        .iconf {
+            font-family: "iconfont";
+            font-size: 44px;
+        }
+        span {
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <!--3.引用对应的图标文字编码-->
+    <p class="iconf">常常都说这样的人 <span>&#xe661;</span>喜欢打<span>&#xe632;</span></p>
+</body>
+</html>

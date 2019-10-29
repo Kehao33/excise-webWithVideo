@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //window.onload颜面加载完成后再执行此代码
+        window.onload = function() {
+            //需求：鼠标放到img上，修改路径（src的值）
+            //步骤
+            //1.获取事件源
+            //2.绑定事件
+            //3.书写事件驱动程序
+
+            //1.获取事件源
+            var imgBox = document.getElementById("box");
+            //2.绑定事件（悬停事件：鼠标进入事件源中立即触发事件）
+            imgBox.onmouseover = function () {
+                //3.书写事件驱动程序
+                //imgBox.src = "img/jd2.png"
+                this.src = "img/jd2.png"; //this指函数的调用者
+            }
+            imgBox.onmouseout = function () {
+                //3.书写事件驱动程序
+                //imgBox.src = "img/jd1.png";
+                this.src = "img/jd1.png"; //this指函数的调用者
+            }
+
+            /*
+            元素可以不获取，直接使用id的值 但是该方法不建议使用
+            //函数调用
+            box.onmouseover = fn1;  //函数名等于整个函数体
+            box.onmouseout = fn2;
+
+            function fn1(){
+                box.src = "img/jd2.png";
+            }
+            function fn2(){
+                box.src = "img/jd1.png";
+            }
+*/
+        }
+    </script>
+</head>
+<body>
+<img id="box" src="img/jd1.png" alt="girl.jpeg" style="cursor: pointer; border: 1px solid red;">
+</body>
+</html>

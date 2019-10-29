@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: green;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            //点击按钮后产生动画
+            $("button:eq(0)").click(function () {
+                //滑入动画方法1： slideDown（）； 没有参数
+//                $("div").slideDown();
+
+                //滑入方法2： slideDown(2000); 毫秒值
+//                $("div").slideDown(2000);
+                //滑入方法3： slideDown（字符串）：slow(600ms) normal(400ms） fast(200ms)
+//                $("div").slideDown("slow");
+                //滑入方法4：slideDown(毫秒值，回调函数[执行完毕后进行的操作]);
+                $("div").slideDown(2000,function () {
+                    console.log("执行完毕le");
+                });
+            });
+
+            //画出动画slideUp(),slideToggle()的用法和slideDown（）的用法相同，同样有四种方法
+
+            //画出动画
+            $("button:eq(1)").click(function () {
+                //画出动画用法1： slideUp()；不带参数
+//                $("div").slideUp();
+                //滑出用法2: slideUp(2000); 毫秒值
+//                $("div").slideUp(2000);
+                //滑出用法3：slideUp(字符串) slow（600ms) normal(400ms) fast(200ms)
+//                $("div").slideUp("slow");
+                //滑出用法4：slideUp(毫秒值，回调函数[执行完后的操作]);
+                $("div").slideUp(200,function () {
+                    console.log("执行完毕");
+                })
+            });
+
+            //滑动切换 slideToggle()也有四种相同的用法
+            $("button:eq(2)").click(function () {
+                $("div").slideToggle();
+            })
+        })
+    </script>
+</head>
+<body>
+<button>滑入</button>
+<button>滑出</button>
+<button>切换</button>
+<div></div>
+</body>
+</html>

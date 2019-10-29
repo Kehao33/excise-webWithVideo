@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function() {
+            var eleNode = document.getElementsByTagName("img")[0];
+            //属性/赋值获取两种方式
+            //1.元素节点.属性或者元素节点["属性名"]
+            console.log(eleNode.src);
+            console.log(eleNode["id"]);
+            console.log(eleNode["alt"]);
+            console.log(eleNode.title);
+            //2.元素节点.方法名（）；
+            console.log("获取id名为：" + eleNode.getAttribute("id"));//通过方法来获得属性值
+            eleNode.setAttribute("id","my_imgID");//通过方法来设置属性的值
+            console.log("id修改过后为：" + eleNode.getAttribute("id"));//通过方法来获得属性值
+
+            eleNode.removeAttribute("alt");//通过方法来删除属性
+
+            var cdf = document.createDocumentFragment();
+            var br = document.createElement("br");
+            var text = document.createTextNode("hello");
+            cdf.appendChild(br);
+            cdf.appendChild(text);
+            document.body.appendChild(cdf);
+        }
+    </script>
+</head>
+<body>
+    <img src="img/jd1.png" alt="jd.png" id="image" title="图片">
+</body>
+</html>

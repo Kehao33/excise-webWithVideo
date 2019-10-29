@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap {
+            width: 450px;
+            height: 600px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .box1,
+        .box2{
+            display: inline-block;
+            width: 200px;
+            height: 400px;
+            background-color: #f00;
+            border-radius: 100px 100px 0 0;
+        }
+        .box1 {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        .box2 {
+            -webkit-transform: rotate(45deg) translate(-43px,32px);
+            -moz-transform: rotate(45deg) translate(-43px,32px);
+            -ms-transform: rotate(45deg) translate(-43px,32px);
+            -o-transform: rotate(45deg) translate(-43px,32px);
+            transform: rotate(45deg) translate(-43px,32px);
+        }
+    </style>
+</head>
+<body>
+   <div class="wrap">
+       <div class="box1"></div>
+       <div class="box2"></div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span {
+            color: #0f0;
+            font: 33px "Microsoft Himalaya";
+        }
+    </style>
+</head>
+<body>
+    <p>navigator对象包含了 <span>浏览器的信息</span></p>
+    <script>
+        document.writeln("您现在使用的浏览器的名字为: " + navigator.appName + "<br>");
+        document.writeln("你现在使用的浏览器的版本是: " + navigator.appVersion + "<br>")
+        document.writeln("浏览器代码名：" + navigator.appCodeName + "<br>");
+        document.writeln("浏览器的操作平台为：" + navigator.platform + "<br>");
+        document.writeln("你的电脑的分辨率为：" + screen.pixelDepth + "<br>");
+    </script>
+</body>
+</html>

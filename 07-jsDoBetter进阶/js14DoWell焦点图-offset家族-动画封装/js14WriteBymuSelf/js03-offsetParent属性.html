@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box1" style="position: absolute;">
+    <div class="box2" style="position: fixed;">
+        <div class="box3"></div>
+    </div>
+
+    <script>
+        //offsetParent:检测父系盒子中带有定位的盒子
+        //如果父系盒子中没有定位，就返回body，如果有，就返回最近的那个
+
+        var box3 = document.getElementsByClassName("box3")[0];
+
+        console.log(box3.offsetParent);
+        console.log(typeof box3.offsetParent);
+    </script>
+</div>
+</body>
+</html>

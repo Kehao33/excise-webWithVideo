@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            animation: gun 1s infinite linear;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-origin: border-box;
+            background: radial-gradient(at center,
+            #f00 0%,
+            #00f 25%,
+            #fa0 50%,
+            #0f0 75%,
+            #ff0 100%
+            );
+        }
+        @keyframes gun {
+        0% {
+            border-top: 1px solid red;
+        }
+        25% {
+            border-right: 1px solid red;
+        }
+        75% {
+            border-bottom: 1px solid red;
+        }
+        100% {
+            border-left: 1px solid red;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="box"></div>
+<script>
+    var sn = '1';
+    var sn2 = '2';
+    var z = parseInt(sn) + parseInt(sn2);
+ /*   alert(z);*/
+
+    var arr = ["在","反","思","中","去","了","自己"];
+    var box = document.getElementsByClassName("box")[0];
+
+    /*Object.keys(objName) 返回对象的可枚举属性和方法的名称数组。*/
+    console.log(Object.keys(box));
+
+    /*Object.getOwnPropertyNames()
+    返回数组的所有属性(可枚举或不可枚举)直接找到给定对象。*/
+    console.log(Object.getOwnPropertyNames(box));
+</script>
+</body>
+</html>

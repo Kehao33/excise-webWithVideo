@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {
+            background-color: #999;
+        }
+        ul {
+            width: 900px;
+            margin: 100px auto;
+            height: 80px;
+            position: relative;
+        }
+        ul::after,
+        ul::before{
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 80px;
+            background-color: #ccc;
+            left: -100px;
+        }
+        ul::after {
+            /*left设置auto，左边的left属性不再控制left值*/
+            left: auto;
+            right: -100px;
+        }
+        ul li {
+            float: left;
+            width: 180px;
+            height: 80px;
+        }
+        ul li span {
+            float: left;
+            height: 80px;
+        }
+        ul li .left,
+        ul li .right {
+            width: 30px;
+            height: 100%;
+            background-color: #ccc;
+        }
+        ul li .center {
+            width: 120px;
+            height: 80px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 80px;
+            font: 24px "Microsoft Himalaya";
+        }
+        ul li:hover .left {
+            transform-origin: left;
+            -webkit-transform: skew(0deg,-30deg);
+            -moz-transform: skew(0deg,-30deg);
+            -ms-transform: skew(0deg,-30deg);
+            -o-transform: skew(0deg,-30deg);
+            transform: skew(0deg,-30deg);
+            background-color: #c1c1c1;
+            box-shadow: 10px 20px 20px -10px #666;
+        }
+        ul li:hover .center {
+            -webkit-transform: translateY(-17px);
+            -moz-transform: translateY(-17px);
+            -ms-transform: translateY(-17px);
+            -o-transform: translateY(-17px);
+            transform: translateY(-17px);
+            text-shadow: 5px 5px 3px #666;
+            box-shadow: 0 20px 20px -10px #666;
+        }
+        ul li:hover .right {
+            transform-origin: right;
+            -webkit-transform: skew(0deg,30deg);
+            -moz-transform: skew(0deg,30deg);
+            -ms-transform: skew(0deg,30deg);
+            -o-transform: skew(0deg,30deg);
+            transform: skew(0deg,30deg);
+            background-color: #c1c1c1;
+            box-shadow: -10px 20px 20px -10px #666;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span class="left"></span>
+            <span class="center">传智播客</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">传智播客</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">传智播客</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">传智播客</span>
+            <span class="right"></span>
+        </li>
+        <li>
+            <span class="left"></span>
+            <span class="center">传智播客</span>
+            <span class="right"></span>
+        </li>
+    </ul> 
+</body>
+</html>

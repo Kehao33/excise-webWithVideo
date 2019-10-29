@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            color: #fff;
+            line-height: 300px;
+            background-color: #f930cc;
+            margin-bottom: 66px;
+        }
+    </style>
+</head>
+<body>
+    <div id="get" style="position: relative; left: 38.5px;">offsetLeft的取值问题</div>
+    <script>
+        var div = document.getElementById("get");
+        document.write("offsetLeft:" + div.offsetLeft);
+        document.write("offsetLeft只能取到整数（不论当前位置是否为负数）");
+        document.write("<br>style.left:" + div.style.left);
+        document.write("<br>style.left只能在有定位且该样式是在行内定义的时候才能取得到该值");
+    </script>
+</body>
+</html>

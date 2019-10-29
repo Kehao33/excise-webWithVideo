@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            color: rgba(44,209,100,0.8);
+            font: 700 50px "Arial";
+            text-shadow: 3px 3px 10px rgba(44,209,100,0.4);
+            margin: 15% auto;
+            text-align: center;
+            -webkit-animation: shake 2s ease infinite alternate;
+            -o-animation: shake 2s ease infinite alternate;
+            animation: shake 2s ease infinite alternate;
+        }
+        @keyframes shake {
+            from {
+                -webkit-transform: translate3d(0,-15px,0);
+                -moz-transform: translate3d(0,-15px,0);
+                -ms-transform: translate3d(0,-15px,0);
+                -o-transform: translate3d(0,-15px,0);
+                transform: translate3d(0,-15px,0);
+
+            }
+            40%,78%,90%{
+                -webkit-transform: translate3d(0,-4px,0);
+                -moz-transform: translate3d(0,-4px,0);
+                -ms-transform: translate3d(0,-4px,0);
+                -o-transform: translate3d(0,-4px,0);
+                transform: translate3d(0,-4px,0);
+            }
+            50%,86%,100% {
+                -webkit-transform: translate3d(0,0,0);
+                -moz-transform: translate3d(0,0,0);
+                -ms-transform: translate3d(0,0,0);
+                -o-transform: translate3d(0,0,0);
+                transform: translate3d(0,0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">天下第一喜欢你 Kingj</div>
+</body>
+</html>

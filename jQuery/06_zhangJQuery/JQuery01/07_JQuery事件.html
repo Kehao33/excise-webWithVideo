@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery选择器</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("button").click(function(){
+					alert("你点击了按钮");
+				});
+			});
+			
+			$().ready(function(){
+				$("button").click(test);
+			});
+			
+			function test(){
+				alert("你点击了按钮1");
+			};
+		</script>
+		<script>
+			$(document).ready(function(){
+				$("img").eq(0).click(function(){
+					$("p").remove();
+					var img_ = $("img").eq(0);
+					var p_ = $("<p></p>")
+					var src_ = img_.attr("src");
+					if(src_.match("off")){
+						img_.attr("src","on.jpg");
+						p_.html("灯亮了");
+						p_.css({
+							"font-size":"20px",
+							"color":"red",
+						})
+						img_.after(p_);
+					}else{
+						img_.attr("src","off.jpg");
+						p_.html("灯灭了");
+						p_.css({
+							"font-size":"20px",
+							"color":"black",
+						})
+						img_.after(p_);
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="off.jpg"/>
+			<br />
+			<img src="off.jpg"/>
+		</div>
+		<button>点击</button>
+	</body>
+	
+</html>

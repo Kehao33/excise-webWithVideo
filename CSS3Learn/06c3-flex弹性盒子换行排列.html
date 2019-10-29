@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            border: 1px solid #000;
+            width: 750px;
+            height: 1000px;
+            margin: 0 auto;
+        }
+        .nav {
+            display: flex;
+            /*默认子盒子水平且不会换行排列  */
+            flex-wrap: wrap;
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: pink;
+            border: 1px solid deepskyblue;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="nav">
+        <div class="item">分类</div>
+        <div class="item">大聚得</div>
+        <div class="item">苏宁易购</div>
+        <div class="item">京东</div>
+        <div class="item">淘宝</div>
+        <div class="item">海澜之家</div>
+        <div class="item">中心广场</div>
+        <div class="item">杭州西湖</div>
+        <div class="item">万里长城</div>
+        <div class="item">生活家电</div>
+        <div class="item">篮球场</div>
+        <div class="item">直播现场</div>
+    </div>
+</div>
+</body>
+</html>

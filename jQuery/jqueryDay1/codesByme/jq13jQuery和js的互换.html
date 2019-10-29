@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height:200px;
+            background: #000;
+        }
+    </style>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //dom对象转换成jquery对象
+           /* var btn = document.getElementById("btn");
+            $(btn).click(function () {
+                $("div").hide();
+            });*/
+
+            //jQuery对象转换成dom对象 [index] index代表的是选中第几个 index从0开始
+            $("button")[1].onclick = function () {
+                alert("jquery对象转换成了dom对象");
+            };
+            //js里面的click()方法：触发click事件
+            //js里边的onclick是绑定点击事件
+            var btn = document.getElementById("btn");
+            btn.onclick = function () {
+                alert("我是btn的onclick");
+            };
+            btn.click();
+        });
+    </script>
+</head>
+<body>
+<body>
+<button id="btn">我是阿牛</button>
+<button>我是阿妹</button>
+<div>
+
+</div>
+</body>
+</html>

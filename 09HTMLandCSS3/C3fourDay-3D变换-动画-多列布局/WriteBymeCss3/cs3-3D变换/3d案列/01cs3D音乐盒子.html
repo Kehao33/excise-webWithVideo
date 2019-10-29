@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #00ffcc;
+            transform-style: preserve-3d;
+        }
+        .music {
+            width: 300px;
+            height: 300px;
+            margin: 66px auto;
+            position: relative;
+            -webkit-transform: rotateY(30deg);
+            -moz-transform: rotateY(30deg);
+            -ms-transform: rotateY(30deg);
+            -o-transform: rotateY(30deg);
+            transform: rotateY(30deg);
+        }
+        .music::before,
+        .music::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #f00 url("img/musicb.jpg") no-repeat;
+            border: 1px solid #ccc;
+
+        }
+        .music::after {
+            -webkit-transition: transifrom 1s;
+            -moz-transition: transifrom 1s;
+            -ms-transition: transifrom 1s;
+            -o-transition: transifrom 1s;
+            transition: transifrom 1s;
+            -webkit-transform-origin: bottom;
+            -moz-transform-origin: bottom;
+            -ms-transform-origin: bottom;
+            -o-transform-origin: bottom;
+            transform-origin: bottom;
+            background-image: url("img/musict.jpg");
+        }
+        .music:hover::after {
+            -webkit-transform: rotateX(100deg);
+            -moz-transform: rotateX(100deg);
+            -ms-transform: rotateX(100deg);
+            -o-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="music"></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+            -webkit-transition: all 4s ;
+            -moz-transition: all 4s ;
+            -ms-transition: all 4s ;
+            -o-transition: all 4s ;
+            transition: all 4s ;
+            /*调用方式：
+            animation: 动画名称 持续时间 执行次数 是否反向 运动曲线（运动方式) 延迟执行*/
+
+            /*animation: move 2s alternate linear 3
+            infinite:无限次
+            */
+            -webkit-animation: dodo 3s infinite;
+            -o-animation: dodo 3s infinite;
+            animation: dodo 3s infinite;
+
+        }
+
+        @keyframes dodo {
+            0% {
+                
+            }
+            25% {
+                background-color: #ff4500;
+                border-radius: 60%;
+                -webkit-transform: translate(450px,0px);
+                -moz-transform: translate(450px,0px);
+                -ms-transform: translate(450px,0px);
+                -o-transform: translate(450px,0px);
+                transform: translate(450px,0px);
+            }
+            50% {
+                background-color: #f00;
+                border-radius: 50%;
+                -webkit-transform: translate(450px,400px);
+                -moz-transform: translate(450px,400px);
+                -ms-transform: translate(450px,400px);
+                -o-transform: translate(450px,400px);
+                transform: translate(450px,400px);
+            }
+            75% {
+                background-color: #f90;
+                border-radius: 80%;
+                -webkit-transform: translate(0px,400px);
+                -moz-transform: translate(0px,400px);
+                -ms-transform: translate(0px,400px);
+                -o-transform: translate(0px,400px);
+                transform: translate(0px,400px);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="text" disabled="disabled">
+    <input type="text" readonly value="nihao">
+</body>
+</html>

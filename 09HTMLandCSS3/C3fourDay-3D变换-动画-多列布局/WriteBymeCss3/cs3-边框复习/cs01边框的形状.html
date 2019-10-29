@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: 200px solid red;
+
+            border-left:200px solid blue ;
+            border-right:200px solid green;
+            border-top: 200px solid yellow;
+        }
+        .box2 {
+            margin: 90px;
+            width: 88px;
+            height: 88px;
+            border: 100px solid red;
+
+            border-left: none;
+            /*当设置一条边没有任何样式的时候，
+            在设置这条边对应的角度为圆角的时候，
+            这个角就会产生奇怪的角度*/
+            border-bottom-left-radius: 164px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

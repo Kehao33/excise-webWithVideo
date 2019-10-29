@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .change-button {
+            margin: 10px 0 0;
+            width: 300px;
+            height: 20px;
+            text-align: center;
+        }
+        .content {
+            width: 300px;
+            font-size: 18px;
+            text-align: center;
+            height: 300px;
+            line-height: 300px;
+            margin-top: 23px;
+            background-color: #000;
+            color: white;
+        }
+        div.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="change-button">
+        <button id="change">隐藏</button>
+    </div>
+    <div id="div-content" class="content">
+        临千仞之溪，非才长也，非高也！
+    </div>
+
+    <script>
+        //需求：点击按钮，隐藏盒子或者显示盒子，改变文字
+        //步骤
+        //1.获取事件和相关的元素
+        //2.绑定事件
+        //3.书写事件和驱动程序
+        
+        var change = document.getElementById("change");
+        var div_content = document.getElementById("div-content");
+        
+        change.onclick = function() {
+            //如果按钮的内容为隐藏，那么就隐藏文本内容，并修改按钮的内容为显示
+            if(this.innerHTML === "隐藏"){
+                div_content.className = "hide";
+                //改变按钮的文字
+                this.innerHTML = "显示";
+            }else{
+                div_content.className = "content";
+                this.innerHTML = "隐藏";
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

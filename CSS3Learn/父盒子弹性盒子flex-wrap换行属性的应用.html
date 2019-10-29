@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,div {
+            padding: 0;
+            margin: 0;
+        }
+        .d-box {
+            width: 960px;
+            margin: 5px auto;
+            border: 1px solid #ccc;
+            color: #c0c0c0;
+            font: 16px/1.5 "Microsoft YaHei UI";
+        }
+        .hd {
+            height: 30px;
+            background-color: #f00;
+            opacity: 0.7;
+            color: #fff;
+            line-height: 30px;
+        }
+        .d-box .bd{
+            display: flex;
+            /*flex-direction: row; 默认方式按照从左往右的行方式排列过去*/
+        }
+        .d-box .bd .child {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            background-color: aqua;
+            border: 1px solid maroon;
+            color: #000;
+        }
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+        .row {
+            flex-direction: row;
+        }
+        .flex-wrap {
+            flex-wrap: wrap; /*换行*/
+        }
+        .flex-nowrap {
+            flex-wrap: nowrap; /*默认不换行*/
+        }
+        .flex-wrap-reverse {
+            flex-wrap: wrap-reverse; /*与wrap相反，先放超过的，再放之前的*/
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="hd">1设置弹性盒子主轴flex-wrap的是换行wrap</div>
+    <p>当父盒子flex-wrap: wrap；的时候，父盒子的子盒子总的宽度超过了父盒子超过的就会换行</p>
+    <div class="bd row-reverse  flex-wrap">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+    </div>
+    <div class="hd">2设置弹性盒子column主轴的是不换行：flex-nowrap</div>
+    <p>当父盒子flex-wrap:nowrap；的时候，父盒子的子盒子会主动缩小自己的高度或者高度来保证不换行</p>
+    <div class="bd row flex-nowrap">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+        <div class="child">6</div>
+        <div class="child">7</div>
+        <div class="child">8</div>
+        <div class="child">9</div>
+        <div class="child">10</div>
+        <div class="child">11</div>
+        <div class="child">12</div>
+        <div class="child">13</div>
+        <div class="child">14</div>
+        <div class="child">15</div>
+    </div>
+    <div class="hd">3设置弹性盒子column-reverse主轴的</div>
+    <div class="bd column-reverse">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+        <div class="child">5</div>
+
+        <div class="hd">4设置弹性盒子主轴的是换行相反:flex-wrap-reverse</div>
+        <div class="bd column flex-wrap-reverse">
+            <div class="child">1</div>
+            <div class="child">2</div>
+            <div class="child">3</div>
+            <div class="child">4</div>
+            <div class="child">5</div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

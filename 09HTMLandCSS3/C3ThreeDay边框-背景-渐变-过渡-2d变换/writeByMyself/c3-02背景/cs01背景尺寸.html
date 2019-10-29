@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            background: url("img/baby0.jpg") no-repeat;
+            /*控制背景的大小background-size:xxx;*/
+            /*具体数值*/
+            /*-webkit-background-size: 500px 500px;
+            background-size: 500px 500px;*/
+            /*百分比*/
+            /*-webkit-background-size: 50% 50%;
+            background-size: 50% 50%;*/
+
+            /*
+            cover保证完全覆盖盒子，但是不能保证完整的显示
+            contain 不能保证铺满盒子，但是能保证背景图片最大化在盒子中等比显示
+            */
+            /*-webkit-background-size: cover;
+            background-size: cover;*/
+
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

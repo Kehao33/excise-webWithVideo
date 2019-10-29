@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        /*装小鱼的盒子*/
+        .fishbox,
+        .fish {
+            width: 174px;
+            height: 126px;
+        }
+
+        .fishbox {
+            /*
+            animation: 动画名字 持续时间 曲线函数 延迟时间 执行次数 执行的方向
+            */
+            -webkit-animation: fishDo 18s linear infinite normal;
+            -o-animation: fishDo 18s linear infinite normal;
+            animation: fishDo 18s linear infinite normal;
+        }
+        .fish {
+            background: url("img/fish8.png") no-repeat top center;
+            -webkit-animation: swing 2s steps(8) infinite;
+            -o-animation: swing 2s steps(8) infinite;
+            animation: swing 2s steps(8) infinite;
+        }
+        .sharkbox,
+        .shark {
+            width: 516px;
+            height: 273px;
+        }
+
+        .sharkbox {
+            -webkit-animation: sharkDo 18s infinite 1s;
+            -o-animation: sharkDo 18s infinite 1s;
+            animation: sharkDo 18s infinite 1s;
+        }
+
+        .shark {
+            background: url("img/shark2.png") no-repeat left top;
+            -webkit-animation: sharkSwing 1s steps(8) infinite;
+            -o-animation: sharkSwing 1s steps(8) infinite;
+            animation: sharkSwing 1s steps(8) infinite;
+
+        }
+        @keyframes sharkSwing {
+            0% {
+
+            }
+            100% {
+                background-position: left -2184px;
+            }
+
+        }
+        @keyframes sharkDo {
+            0% {
+                -webkit-transform: translateX(-2px);
+                -moz-transform: translateX(-2px);
+                -ms-transform: translateX(-2px);
+                -o-transform: translateX(-2px);
+                transform: translateX(-2px);
+            }
+            25% {
+                -webkit-transform: translateX(400px);
+                -moz-transform: translateX(400px);
+                -ms-transform: translateX(400px);
+                -o-transform: translateX(400px);
+                transform: translateX(400px);
+            }
+            50% {
+                -webkit-transform: translateX(800px);
+                -moz-transform: translateX(800px);
+                -ms-transform: translateX(800px);
+                -o-transform: translateX(800px);
+                transform: translateX(800px);
+            }
+            75% {
+                -webkit-transform: translateX(1000px);
+                -moz-transform: translateX(1000px);
+                -ms-transform: translateX(1000px);
+                -o-transform: translateX(1000px);
+                transform: translateX(1000px);
+            }
+            100% {
+                -webkit-transform: translateX(2000px);
+                -moz-transform: translateX(2000px);
+                -ms-transform: translateX(2000px);
+                -o-transform: translateX(2000px);
+                transform: translateX(2000px);
+            }
+        }
+        @keyframes fishDo {
+            0% {
+                -webkit-transform: rotate(0deg) translate(0px);
+                -moz-transform: rotate(0deg) translate(0px);
+                -ms-transform: rotate(0deg) translate(0px);
+                -o-transform: rotate(0deg) translate(0px);
+                transform: rotate(0deg) translate(0px);
+            }
+            25% {
+                -webkit-transform: translate(960px,200px) rotate(90deg);
+                -moz-transform: translate(960px,200px) rotate(90deg);
+                -ms-transform: translate(960px,200px) rotate(90deg);
+                -o-transform: translate(960px,200px) rotate(90deg);
+                transform: translate(960px,200px) rotate(90deg);
+            }
+            50% {
+                -webkit-transform: translate(400px,300px) rotate(180deg);
+                -moz-transform: translate(400px,300px) rotate(180deg);
+                -ms-transform: translate(400px,300px) rotate(180deg);
+                -o-transform: translate(400px,300px) rotate(180deg);
+                transform: translate(400px,300px) rotate(180deg);
+            }
+            75% {
+                -webkit-transform: translate(200px,180px) rotate(270deg);
+                -moz-transform:translate(250px,180px) rotate(270deg);
+                -ms-transform: translate(200px,180px) rotate(270deg);
+                -o-transform: translate(200px,180px) rotate(270deg);
+                transform: translate(200px,180px) rotate(270deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg) translate(0px);
+                -moz-transform: rotate(360deg) translate(0px);
+                -ms-transform: rotate(360deg) translate(0px);
+                -o-transform: rotate(360deg) translate(0px);
+                transform: rotate(360deg) translate(0px);
+            }
+        }
+
+        @keyframes  swing{
+            0% {
+
+            }
+            100% {
+                background-position: center -1008px ;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--装小鱼的盒子-->
+<div class="fishbox">
+    <div class="fish"></div>
+</div>
+<!--装鲨鱼的盒子-->
+<div class="sharkbox">
+    <div class="shark"></div>
+</div>
+
+
+</body>
+</html>

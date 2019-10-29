@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JQuery动画</title>
+		<style type="text/css">
+			#panel,#flip{
+				padding:5px;
+				text-align:center;
+				background-color:#e5eecc;
+				border:solid 1px #c3c3c3;
+			}
+			#panel{
+				padding:50px;
+				display:none;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("#flip").bind("click",function(){
+					$("#panel").slideToggle(2000);
+				});
+				$("#stop").bind("click",function(){
+					$("#panel").stop();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="stop">停止滑动</button>
+		<div id="flip">点击这里，向下滑动面板</div>
+		<div id="panel">Hello world!</div>
+	</body>
+</html>

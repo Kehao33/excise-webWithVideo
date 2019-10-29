@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>运动到400</button>
+    <div></div>
+
+    <script>
+        var btnArr = document.getElementsByTagName("button");
+        var div = document.getElementsByTagName("div")[0];
+
+        btnArr[0].onclick = function () {
+            var json = {"left":10,"top":200,"width":300,"height":200};
+            animate(div.json);
+        };
+        //参数变为3个
+        function animate(ele,json){
+            //先清除定时器
+            clearInterval(ele.timer);
+            ele.timer =  setInterval(function () {
+                    //遍历属性和值，分辨单独处理json
+                    //attr == k (键，属性） target == json[k](值）
+                    for(var k in json) {
+                        //四部
+                        var leader = parseInt(getStyle(ele,k)) || 0;
+                        //1.获取步长
+                        var step = (json[k] - leader)/10;
+                        //2.二次加工步长
+                        step = step>0?Math.ceil(step):Math.floor(step);
+                        leader = leader + step;
+                        //3.赋值
+                        ele.style[k] = leader + "px";
+                        console.log(1);
+                        //4.清除定时器，以下的清除会出现问题
+//                    if(Math.abs(json[k]-leader)<=Math.abs(step)){
+//                        ele.style[k] = json[k] + "px";
+//                        clearInterval(ele.timer);
+//                    }
+                    }
+            },25)
+
+        }
+    </script>
+</body>
+</html>

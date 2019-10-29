@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        .wrap {
+            display: inline-block;
+            margin: 30px;
+            position: relative;
+        }
+        .wrap img {
+            width: 234px;
+            height: 300px;
+            margin: 10px;
+        }
+        .cont {
+            display: none;
+            width: 234px;
+            height: 140px;
+            position: absolute;
+            bottom: 16px;
+            left: 11px;
+            background-color: #ff4500;
+        }
+        .wrap:hover {
+            box-shadow: 1px 2px 6px 10px #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="img/1.jpg" alt="">
+        <div class="cont"></div>
+    </div>
+    <div class="wrap">
+        <img src="img/2.jpg" alt="">
+        <div class="cont"></div>
+    </div>
+    <div class="wrap">
+        <img src="img/3.jpg" alt="">
+        <div class="cont"></div>
+    </div>
+    <div class="wrap">
+        <img src="img/4.jpg" alt="">
+        <div class="cont"></div>
+    </div>
+    <div class="wrap">
+        <img src="img/5.jpg" alt="">
+        <div class="cont"></div>
+    </div>
+    <script>
+        var wrapList = document.querySelectorAll(".wrap");
+        var contList = document.querySelectorAll(".cont");
+        for(var i = 0; i < wrapList.length; i++){
+            wrapList[i].index = i;
+            wrapList[i].onmouseover = function () {
+                for(var j = 0; j < wrapList.length; j++){
+                    contList[j].style.display = "none";
+                }
+                contList[this.index].style.display = "block";
+            }
+            wrapList[i].onmouseout = function () {
+                contList[this.index].style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

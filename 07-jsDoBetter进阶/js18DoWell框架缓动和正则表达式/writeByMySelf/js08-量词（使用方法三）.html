@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //量词( *+? {} )
+    //a的个数要 >= 0             *代表出现0个以上
+    //          /^a*$/ ：代表至少有0个a出现
+    console.log(/^a*$/.test("b")); //false
+    console.log(/^a*$/.test("")); //true;
+    console.log(/^a*$/.test("a")); //true;
+    console.log(/^a*$/.test("aa")); //ture;
+    console.log(/^a*$/.test("aaaaaaaaaaaa")); //ture;
+    console.log(/^a*$/.test("aaaaaab")); //false
+
+    console.log("**********************（+代表个数要 >= 1)****************");
+    //                  /^a+$/:代表的是：至少只有一个a出现，且字符串中全部是a才能为true
+    console.log(/^a+$/.test("b")); //false
+    console.log(/^a+$/.test("")); //false因为+代表的是至少出现1个
+    console.log(/^a+$/.test("a")); //true
+    console.log(/^a+$/.test("aaa"));//true;;
+    console.log(/^a+$/.test("aabb")); //false;
+    console.log(/^a+$/.test("aba")); //false
+
+    console.log("a的个数要么1个，要么0个， /^a?$/:代表只能有1个a或者0个a");
+
+    console.log(/^a?$/.test("b")); //false
+    console.log(/^a?$/.test("a")); //true
+    console.log(/^a?$/.test("")); //true
+    console.log(/^a?$/.test("aa")); //false;
+    console.log(/^a?$/.test("a")); //true;
+    console.log(/^a?$/.test("ab")); //false;
+
+    console.log("+++++++++++++++{n}循环n次，{n,}循环>=n次。{n,m}循环n次到m次[n,m]+++++++++++++");
+    console.log(/^a{1}$/.test("a")); //true
+    console.log(/^a{1,}$/.test("aa")); //true
+    console.log(/^a{1,4}$/.test("aaaaa")); //false;
+    console.log(/^a{1,4}$/.test("aaaa")); //true;
+
+    console.log("-----括号提高运算优先级，| 前后只要有一个括号中的内容全部出现符合就为true=========");
+    console.log(/(abc)|(xyz)/.test("a")); //false;
+    console.log(/(abc) | (xyz)/.test("abc")); //false ，
+    // 因为中间出现了空格，所以在写//中写正则的时候不要出现多余的空格
+
+    console.log(/(abc)|(xyz)/.test("abc")); //true
+
+    console.log(/(abc) | (xyz)/.test("abc")); //false
+    console.log(/(abc)|(xyz)/.test("abc"))//true
+    console.log(/(abc) | (xyz)/.test("ax")); //false
+    console.log(/(abc)|(xyz)/.test("xyzaaa")); //true
+    console.log(/(abc) | (xyz)/.test("abxy")) //false;
+
+    console.log(/^a*b$/.test("aaabb")); //这是false，因为a可以以多个开头，但是b只能只有一个
+
+
+    console.log(/[^abc]/.test("abcd")); //true 多了括号里边的，或者没有空号里边的任何字符都是true
+    console.log(/[^abc]/.test("abd")); //true
+    console.log(/[^abc]/.test("a")); //false;
+    console.log(/[^abc]/.test("abc"))//false
+    /*中括号内，前面加个元字符^进行取反，不是括号里面的字符（一部分也不行）。
+     (可以不够，但是不能多)（不够和正好，返回false；多了或者没有返回true）*/
+
+
+</script>
+</body>
+</html>

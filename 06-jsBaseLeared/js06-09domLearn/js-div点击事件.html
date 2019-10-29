@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--    /*事件源：引发后续事件的标签
+    事件：js直接定义好的，可以直接引用的
+    事件处理程序：对html和样式的处理*/
+
+    /*  一般处理事件的步骤：
+    获取事件源： document.getElementById("idName");
+    绑定事件： 事件源.事件 = function(){事件处理代码}
+    书写程序驱动程序
+    */
+    -->
+    <meta charset="UTF-8">
+    <title>点击事件显示提示</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #0000dd;
+            cursor: pointer; /*让鼠标放在上边会产生小手*/
+        }
+        .box1 {
+            background-image: url("img/basketbllgirl.JPEG");
+            -webkit-background-size: cover;
+            background-size: cover;
+            width: 1000px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+        <!--行内绑定事件-->
+    <div id="click" ondblclick="show()">   </div>
+        <script>
+            function show(){
+                alert("Your life is beautiful ！");
+            }
+        </script>
+<script>
+
+    //获取事件源
+    var src= document.getElementById("click");
+    //绑定事件  事件源.事件
+
+    /*以下的事件处理为匿名绑定*/
+    src.onclick = function() {
+       /* alert("祝你飞驰人生，走向辉煌！")  //事件驱动程序*/
+        src.className = "box1";
+        src.style.backgroundColor = "#ccc";
+    }
+
+
+
+
+</script>
+</body>
+</html>

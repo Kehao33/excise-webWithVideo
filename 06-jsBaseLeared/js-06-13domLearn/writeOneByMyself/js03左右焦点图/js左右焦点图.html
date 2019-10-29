@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,ol,li,img{
+        margin:0;
+        padding:0;
+        list-style:none;
+        }
+        #box{
+        width:490px;
+        height:170px;
+        padding:5px;
+        position: relative;
+        border:1px solid #ccc;
+        margin:100px auto 0;
+        overflow:hidden;
+        }
+        .ad{
+        width:490px;
+        height:170px;
+        overflow:hidden;
+        position:relative;
+        }
+        #box img{width:490px;}
+        .ad ol{
+        position:absolute;
+        right:10px;
+        bottom:10px;
+        }
+        .ad ol li{
+        width:20px;height:20px;
+        line-height:20px;
+        border:1px solid #ccc;
+        text-align:center;
+        background:#fff;
+        float:left;
+        margin-right:10px;
+        cursor:pointer;
+        display:inline;
+        }
+        .ad ol li.current{
+        background:yellow;
+        }
+        .ad ul li{float:left;}
+        .ad ul{
+        position:absolute; top:0; width:2940px;
+        }
+        .ad ul li.current{
+        display:block;
+        }
+        #arr {
+        display: none;}
+        #arr span{
+        width:40px;
+        height:40px;
+        position:absolute;
+        left:5px; top:50%;
+        margin-top:-20px;
+        background:#000;
+        cursor:pointer;
+        line-height:40px;
+        text-align:center;
+        font-weight:bold;
+        font-family:'黑体';
+        font-size:30px;
+        color:#fff; opacity:0.3;
+        border:1px solid #fff;
+        }
+        #arr #right{right:5px; left:auto;}
+    </style>
+</head>
+<body>
+    <div class="all" id="box">
+        <div class="ad">
+            <ul id="imgs">
+                <li><img src="img/1.jpg" alt=""></li>
+                <li><img src="img/2.jpg" alt=""></li>
+                <li><img src="img/3.jpg" alt=""></li>
+                <li><img src="img/4.jpg" alt=""></li>
+                <li><img src="img/5.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div id="arr">
+            <span id="left"><</span>
+            <span id="right">></span>
+        </div>
+    </div>
+
+    <script>
+        //获取相关元素
+        var box = document.getElementById("box");
+        var ad = box.children[0].children[0];
+        var lis = ad.children;
+        var arr = box.children[1];
+        var arrLeft = arr.children[0];
+        var arrRight = arr.children[1];
+
+        //需求：1，鼠标放在图片上显示切换按钮，移开图片，隐藏按钮
+        box.onmouseover = function () {
+            arr.style.display = "block";
+        }
+        box.onmouseout = function () {
+            arr.style.display = "none";
+        }
+        var target = 0;
+        //需求1：点击按钮让图片显示下一张
+        arrLeft.onclick = function () {
+            target += 490;
+            if(target >= 0){
+                target = 0;
+            }
+            animate(ad,target);
+        }
+        arrRight.onclick = function () {
+            target -= 490;
+            var change = -(lis.length - 1)*490;
+            if(target <= change){
+                target = change;
+            }
+            animate(ad,target);
+        }
+
+        function animate(obj,target) {
+            clearInterval(obj.timer);
+            var speed = obj.offsetLeft < target ? 15:-15;
+
+            obj.timer = setInterval(function () {
+                var result = target - obj.offsetLeft;
+                obj.style.left = obj.offsetLeft + speed + "px";
+                console.log(speed);
+                if(Math.abs(result) <= 10){
+                    clearInterval(obj.timer);
+                    obj.style.left = target + "px";
+                }
+            },30)
+        }
+    </script>
+</body>
+</html>

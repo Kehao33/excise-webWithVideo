@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //属性选择器的标志[]
+//            $("a[href]").css("color","red");
+
+            //属性名[attr=value]
+//            $("a[href='http://web.itcast.cn']").css("font-size","40px");
+            //属性名[attr != value]
+//            $("a[href != 'http://www.baidu.com']").css("font-size","40px");
+
+            //[attr ^= value]
+//            $("a[href ^= 'http']").css("font-size","40px");
+            //[attr $= value]
+//            $("a[href $= 'cn']").css("font-size","40px");
+            //[attr *= value]
+//            $("a[href *= 'it']").css("font-size","40px");
+            //[attr1][attr2] 交集 都满足
+            $("a[href][title *= '的']").css("font-size","40px");
+        });
+    </script>
+</head>
+<body>
+<div class="divItem">
+    <a href="http://www.baidu.com" title="谁啊？">百度</a>
+    <a href="http://web.itcast.cn" title="我是title的内容">前端移动</a>
+    <a href="http://sina.com.cn">新浪</a>
+    <a>我没有href</a>
+</div>
+</body>
+</html>

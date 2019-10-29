@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            font: 23px "Arial";
+            text-shadow: 3px 2px 8px #f20;
+            color: #008;
+            -webkit-transition: animation 2s;
+            -moz-transition: animation 2s;
+            -ms-transition: animation 2s;
+            -o-transition: animation 2s;
+            transition: animation 2s;
+            -webkit-animation: myPage 1s infinite;
+            -o-animation: myPage 1s infinite;
+            animation: myPage 1s infinite;
+        }
+        @keyframes myPage {
+            from{
+                color: #000;
+                font-size: large;
+            }
+            40%,80%{
+                color: #0fc;
+            }
+            20%,60%,100%{
+                color: #f2d;
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    /*window是dom的顶级对象，可以省略，一般没有前缀的调用函数都是省略了window.*/
+    window.alert("这里的window.可以不要");
+
+    //自定义一个window方法
+    function Myfn() {
+        document.write("<p>我们要有最遥远的梦想与朴素的生活，即使明日天寒地冻，路远马亡！</p>")
+    }
+    //调用自己定义的方法
+    Myfn();
+    window.Myfn();
+    //以上两种方式是一样的
+</script>
+</body>
+</html>

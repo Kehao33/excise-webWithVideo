@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul></ul>
+
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    //创建节点1: （动态创建标签) $("标签名样式") 类比js中的document.createElement("li);
+    console.log($("<p>我是通过$方法创建出来的p标签</p>"));// 不推荐使用此方法来创建标签
+    //创建节点2： $("selector").html("标签样式"); 类比innerHTML属性，因为此属性识别标签
+    $("ul").html("<li>通过html()创建出来的li标签哦</li>");
+    
+</script>
+</body>
+</html>

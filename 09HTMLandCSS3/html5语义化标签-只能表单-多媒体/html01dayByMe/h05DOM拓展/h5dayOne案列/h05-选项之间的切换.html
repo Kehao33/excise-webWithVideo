@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+        .tabs {
+            width: 400px;
+            margin: 30px auto;
+            background-color: #fff;
+            border: 1px solid #c0dcc0;
+            box-sizing: border-box;
+        }
+        .tabs nav {
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            overflow: hidden;
+            background-color: #c0dcc0;
+            display: flex;
+        }
+        nav a {
+            display: block;
+            width: 100px;
+            border-right: 1px solid #fff;
+            color: #000;
+            text-decoration: none;
+        }
+        nav a:last-child {
+            border-right: 0 none;
+        }
+        nav a.active {
+            background-color: #9BAF9B;
+        }
+        .cont {
+            overflow: hidden;
+            display: none;
+        }
+        .cont ol {
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <nav>
+            <a href="javascript:;" data-cont="local"> 国内新闻</a>
+            <a href="javascript:;" data-cont="global">国际新闻</a>
+            <a href="javascript:;" data-cont="sports">体育新闻</a>
+            <a href="javascript:;" data-cont="funny"> 娱乐新闻</a>
+        </nav>
+        <section class="cont" id="local" >
+            <ol>
+                <li>000河感在生矿难，死伤在全10</li>
+                <li>禽流感在感在广1处继续蔓延，温家宝指示</li>
+                <li>南方大旱，农作物减产绝收面积上亩</li>
+                <li>猪流感在广在全国暴发</li>
+                <li>禽流感在全国多处继续蔓延，温家宝指示</li>
+                <li>南方大旱，农作物减产绝收面积上亩</li>
+                <li>猪流感在广东群体性暴发</li>
+            </ol>
+        </section>
+        <section class="cont" id="global">
+            <ol>
+                <li>11111河南再次发生矿难，死伤人数超过100</li>
+                <li>禽流感次发生蔓延，温家宝指示</li>
+                <li>南方大旱，农作物减产绝收面积上亩</li>
+                <li>猪流感在广减产绝收发</li>
+                <li>禽流感在全国多作物减产绝收面积上亩</li>
+                <li>猪流感在广东群体性暴发</li>
+            </ol>
+        </section>
+        <section class="cont" id="sports">
+            <ol>
+                <li>222河南再次发生矿难，死伤人数超过100</li>
+                <li>禽流感在全国多处农作物农延，温家宝指示</li>
+                <li>南方大旱，农作物减产绝收面积上亩</li>
+                <li>猪流感在广东群体性暴发</li>
+                <li>禽流感在全农作物继续蔓延，温家宝指示</li>
+                <li>南方大农作物减产绝收面积上亩</li>
+                <li>猪流感在广东群体性暴发</li>
+            </ol>
+        </section>
+        <section class="cont" id="funny">
+            <ol>
+                <li>333福建发生血腥命案:两女遭割喉 1男孩被砍数刀</li>
+                <li>四川原副省长李成云被查 5年前曾违纪又复出</li>
+                <li>胡歌反对粉丝探班：以前请吃饭现在会黑脸</li>
+                <li>曝郑爽爸爸歌厅撩妹 与女子勾肩搭背显亲密</li>
+                <li>宜宾公安副局长无证驾驶出车祸 弃车离开现场</li>
+                <li>国子监大街门匾现错字 已悬挂近10年(图)</li>
+                <li>猪流感在广东群体性暴发</li>
+            </ol>
+        </section>
+    </div>
+
+    <script>
+        (function (key) {
+            //得到所有的nav下的超链接
+            var navs = document.querySelectorAll("nav a");
+
+            for(var i = 0; i < navs.length; i++){
+
+               if(key === i){
+                   //给当前的第key个nav下的超链接添加样式
+                   navs[i].classList.add("active");
+                   //显示对应的cont内容；
+                   var secId = navs[i].dataset["cont"];
+                   document.querySelector("#"+secId).style.display = "block";
+               }
+
+                //给每一个链接添加一个事件
+                navs[i].onclick = function () {
+                    //得到之前的active的样式对象,并移除掉此样式
+                    var oldLink = document.querySelector(".active");
+                    oldLink.classList.remove("active");
+                    //通过dataset["cont"]得到之气那的active对应的section的id名字
+                    var oldSecId = oldLink.dataset["cont"];
+                    document.querySelector("#" + oldSecId).style.display = "none";
+
+                    //给点击的a标签添加active类名，并通过a标签中的dataset["cont"]得到对应的
+                        // section中的id名字，并显示section中的内容;
+
+                    this.classList.add("active");
+                    var nowSecId = this.dataset["cont"];
+                    document.querySelector("#"+nowSecId).style.display = "block";
+                }
+            }
+        })(0);
+
+
+    </script>
+</body>
+</html>

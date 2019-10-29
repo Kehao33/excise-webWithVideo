@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="hi">Hello jquery,I'm coming</div>
+    <script>
+        /*在文档的加载时间中为div添加事件*/
+        $(document).ready(function () { //document可以省略
+            $("#hi").click(function () {
+                alert("我必成王，傲视天下");
+            });
+            $("#hi").css("color","red");
+            jQuery("#hi").css("font-size","100px");  //$可以被jQuery取代
+        });
+        //$可以被jQuery取代，比如
+        jQuery(document).ready(function () {
+            alert("我叫全科举，举世无双的举");
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+            background-color: #00ffcc;
+            margin: 20px;
+        }
+        .box2 {
+            -webkit-transition: transform 1s ease-in;
+            -moz-transition: transform 1s ease-in;
+            -ms-transition: transform 1s ease-in;
+            -o-transition: transform 1s ease-in;
+            transition: transform 1s ease-in;
+            background: #91B81D;
+        }
+        .box2:hover {
+            /* translate:(水平位移，垂直位移)；
+           正值：向右向下
+           负值：向左向上
+           如果只写一个值 水平移动
+           百分比 ：相对于自身移动
+            */
+            -webkit-transform: translate(-80px,200px);
+            -moz-transform: translate(-80px,200px);
+            -ms-transform: translate(-80px,200px);
+            -o-transform: translate(-80px,200px);
+            transform: translate(-80px,200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

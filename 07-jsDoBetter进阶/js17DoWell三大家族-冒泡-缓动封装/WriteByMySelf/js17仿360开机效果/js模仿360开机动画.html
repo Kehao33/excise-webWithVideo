@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 322px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #0f0;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //需求：下面的盒子高度变为0，然后大盒子的宽变为0
+            var guanbi = document.getElementById("guanbi");
+            var box = guanbi.parentNode;
+            var b  = document.getElementById("b");
+
+            guanbi.onclick =  function () {
+                //下面的盒子高度变为0，然后大盒子的宽在变为0
+                animate(b,{"height":0},function () {
+                    animate(box,{"width":0});
+                });
+            };
+
+           function animate(ele,json,fn){
+               //先清除定时器；
+               clearInterval(ele.timer);
+               ele.timer = setInterval(function () {
+                   var bool = true;
+                   for(var k in json){
+                       //得到现在的元素的属性值
+                       var nowValue = parseInt(getStyleValue(ele,k));
+                       //得到步长 json[k]是得到现在要设置的属性值,所以步长为 json[k] - nowValue
+                       var step = (json[k] - nowValue)/10;
+                       //二次处理步长
+                       step = step>0?Math.ceil(step):Math.floor(step);
+                       var target = nowValue + step;    //目标值等于步长加上现在的属性值
+
+                       //为元素属性k对应的样式赋值
+                       ele.style[k] = target + "px";
+                       //当将json中的目标全部设置完的时候，bool才真正的为false，这个时候才能清除定时器
+                       if(target !==json[k]){
+                           bool = false;
+                       }
+                   }
+                    console.log(2)
+                   //清除定时器
+                   if(bool){
+                       clearInterval(ele.timer);
+                       //所有的程序执行完毕了，现在才可以执行回调函数
+                       //且只有传递过来了回调函数，才执行回调函数
+                       if(fn){
+                           fn();
+                       }
+                   }
+               },20);
+
+           }
+
+            function getStyleValue(ele,attr){
+                return window.getComputedStyle(ele,null)[attr] || ele.currentStyle[attr] || 0;
+            }
+
+            /*1.style.
+             在前面的一篇博客中我也有说到,ele.style.xxx; 通常用于赋值,用它来取值的话，它只能取到内联样式.
+             今天有另外发现,ele.style.display可以被获取到!–2016.11.10
+
+             2.currentStyle
+             这是ie用来获取样式的方法,通常这样使用:ele.currentStyle.xxx;
+
+             3.getComputedStyle
+             除了ie貌似都支持,使用方法:getComputedStyle(ele,false)[xxx];这里出现false的原因是getComputedStyle可以获取伪元素,如果想获取伪元素的 话，将false替换掉即可.
+
+             4.getAttribute
+             ele.getAttribute()可以获取元素中的内联属性,并且可以获得自定义的属性.
+             */
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <span class="guanbi" id="guanbi"></span>
+        <div class="hd" id="t">
+            <img src="img/t.jpg" alt="">
+        </div>
+        <div class="bd" id="b">
+            <img src="img/b.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

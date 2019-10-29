@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="box-class">
+        <div id="box-id">
+            <a href="#" class="a-class"></a>
+            <a href="#" class="a-class"></a>
+            <a href="#" class="a-class"></a>
+            <a href="#" class="a-class"></a>
+            <a href="#" class="a-class"></a>
+        </div>
+        <div id="box-id2">
+            <a href="#" class="a-class1"></a>
+            <a href="#" class="a-class2"></a>
+            <a href="#" class="a-class3"></a>
+            <a href="#" class="a-class4"></a>
+            <a href="#" class="a-class5"></a>
+        </div>
+    </div>
+    <script>
+        var aclass = document.getElementsByClassName("a-class");//得到的是一个伪数组
+        for(var i in aclass){
+            console.log(i);
+        }
+
+        var aArr = document.getElementsByTagName("a"); //得到的是一个伪数组
+        console.log(aArr);
+
+        var a0 = document.getElementsByTagName("a")[0]; //得到属于a标签的第一个标签节点（对象）
+
+
+    </script>
+</body>
+</html>

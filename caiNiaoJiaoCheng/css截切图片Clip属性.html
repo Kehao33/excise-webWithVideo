@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clip属性截切图片</title>
+    <style>
+        img {
+            position: absolute;
+            width: 300px;
+            display: inline-block;
+        }
+        .img1 {
+            clip: rect(0px,10px,3px,8px);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <img class="img1" src="../img/car.jpg" alt="chengzi">
+        <img class="img2" src="../img/car.jpg" alt="chengzi">
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: pink;
+        }
+        .current {
+            background-color: red;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button:eq(0)").on("click",function () {
+                $("div:eq(0)").addClass("current");
+            });
+            $("button:eq(1)").on("click",function () {
+                $("div[class='current']").removeClass("current");
+            });
+            $("button:eq(2)").on("click",function () {
+                $("div:eq(2)").toggleClass("current");
+            });
+
+            $("button:eq(3)").on("click",function () {
+                $("div").each(function (index,ele) {
+                    if($(this).hasClass("current")){
+                        console.log("第" + ($(this).index()+1) + "有current类名")
+                    }else {
+                        console.log("第" + ($(this).index()+1) +"无此current类名");
+                    }
+
+                });
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>添加</button>
+    <button>删除</button>
+    <button>切换</button>
+    <button>判断是否有类名</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="current"></div>
+</body>
+</html>

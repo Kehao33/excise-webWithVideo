@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hd {
+            background-color: #f00;
+            color: #fff;
+            font: 23px/1.5 "Arial";
+        }
+        .flex-father {
+            /*flex-father是child盒子的父盒子，并且该盒子是弹性的盒子*/
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #008;
+        }
+        .child {
+            width: 88px;
+            height: 88px;
+            line-height: 88px;
+            color: #fff;
+            background-color: #0f3;
+            border: 1px solid red;
+        }
+        .sun1 {
+            height: 20px;
+        }
+        .sun2 {
+            height: 30px;
+        }
+        .sun3 {
+            height: 40px;
+        }
+        .sun4 {
+            height: 40px;
+        }
+        .sun5 {
+            height: 50px;
+        }
+        .sun6 {
+            height: 60px;
+        }
+        .sun7 {
+            height: 70px;
+        }
+        .sun8 {
+            height: 80px;
+        }
+        .alignContent-flex-start {
+            align-content: flex-start;
+        }
+        .alignContent-flex-end {
+            align-content: flex-end;
+        }
+        .alignContent-center {
+            align-content: center;
+        }
+        .alignContent-stretch {
+            align-content: stretch;
+        }
+        .alignContent-baseline {
+            align-content: baseline;
+        }
+    </style>
+</head>
+<body>
+<center><h1>设置父盒子的多行子元素内容对齐方式</h1></center>
+    <div class="wrap">
+        <div class="hd">设置父盒子的多行子元素内容对齐方式：align-content：flex-start</div>
+        <div class="flex-father alignContent-flex-start">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+        <div class="hd">设置父盒子的多行子元素内容对齐方式：align-content：flex-end</div>
+        <div class="flex-father alignContent-flex-end">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+
+        </div>
+        <div class="hd">设置父盒子的多行子元素内容对齐方式：align-content：baseline</div>
+        <div class="flex-father alignContent-baseline">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+        <div class="hd">设置父盒子的多行子元素内容对齐方式：align-content：stretch</div>
+        <div class="flex-father alignContent-stretch">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+        <div class="hd">设置父盒子的多行子元素内容对齐方式：align-itmes：center</div>
+        <div class="flex-father alignContent-center">
+            <div class="child sun1">1</div>
+            <div class="child sun2">2</div>
+            <div class="child sun3">3</div>
+            <div class="child sun4">4</div>
+            <div class="child sun5">5</div>
+            <div class="child sun6">6</div>
+            <div class="child sun7">7</div>
+            <div class="child sun8">8</div>
+        </div>
+    </div>
+</body>
+</html>

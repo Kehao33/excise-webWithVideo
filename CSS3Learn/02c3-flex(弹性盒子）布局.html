@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            border: 1px solid #f00;
+            display: flex;
+            flex-direction: row-reverse;
+            /*一般display:flex；加在父级的盒子中*/
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son">3</div>
+    </div>
+</body>
+</html>

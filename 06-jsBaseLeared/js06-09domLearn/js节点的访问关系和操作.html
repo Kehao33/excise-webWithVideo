@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2" id="box2"> </div>
+        <div class="box3" id="box3"> </div>
+        <div class="box4">
+            <p>这是一个段落</p>
+        </div>
+    </div>
+    <script>
+        //节点的访问关系是以属性形式存在
+        //box1是box2的父节点
+//        var box2 = document.getElementsByClassName("box3")[0]; //获取box3中的第一个元素节点
+        var box3 = document.getElementById("box3"); //获取box3中元素节点
+        /*var parentelement = box2.parentNode;//获取box2的父节点
+        //打印box2的父节点
+        console.log(parentelement);*/
+        //获取box3的父节点 box1
+        var parentOfbox3 = box3.parentNode;
+        console.log(parentOfbox3);
+
+        //获取box3的上一个兄弟节点 box2
+        var presiblingOfbox3 = box3.previousElementSibling || box3.previousSibling;
+        console.log(presiblingOfbox3);
+
+        //获取box3的下一个节点box4
+        var nextSiblingOfbox3 = box3.nextElementSibling || box3.nextElementSibling;
+        console.log(nextSiblingOfbox3);
+        //获取box3父节点box1的第一个子节点box2
+        var firstNodeOfbox3_parent = box3.parentNode.firstChild;
+        console.log(firstNodeOfbox3_parent);
+        //获取box3父节点box1的最后一个节点box4
+        var lastNodeOfbox3_parent = box3.parentNode.lastChild;
+        console.log(lastNodeOfbox3_parent);
+
+        var h3 = document.createElement("h3");
+        h3.innerHTML = "这是插入的标题h3";
+        var box4 = document.getElementsByClassName("box4")[0];
+        var p = document.getElementsByTagName("p")[0];
+        /*将h3插入到p结点之前*/
+        box4.insertBefore(h3,p);
+
+        //将h3插入到p节点之后
+        box4.insertAfter(h3,p);
+        //box4.appendChild(h3);
+
+
+
+
+
+    </script>
+</body>
+</html>

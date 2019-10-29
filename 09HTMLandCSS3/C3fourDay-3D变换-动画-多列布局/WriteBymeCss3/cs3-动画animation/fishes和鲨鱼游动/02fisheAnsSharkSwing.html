@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        /*大盒子负责移动旋转，小盒子负责背景改变*/
+        .fishbox {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-animation: run 20s linear infinite normal;
+            -o-animation: run 20s linear infinite normal;
+            animation: run 20s linear infinite normal;
+        }
+        .fish {
+            width: 174px;
+            height: 126px;
+            position: absolute;
+            left: 35%;
+            top: 0;
+            background: url("img/fish8.png") no-repeat left top;
+            -webkit-animation: active1 0.8s steps(8) infinite;
+            -o-animation: active1 0.8s steps(8) infinite;
+            animation: active1 0.8s steps(8) infinite;
+        }
+        .sharkbox {
+            width: 500px;
+            height: 270px;
+            -webkit-animation: run2 20s linear infinite;
+            -o-animation: run2 20s linear infinite;
+            animation: run2 20s linear infinite;
+        }
+        .shark {
+            width: 509px;
+            height: 270px;
+            background: url("img/shark1.png") no-repeat;
+            -webkit-animation: active2 1s steps(8) infinite;
+            -o-animation: active2 1s steps(8) infinite;
+            animation: active2 1s steps(8) infinite;
+        }
+        @keyframes run {
+            0% {
+
+            }
+            15% {
+                -webkit-transform: translate(600px,0px) rotate(45deg);
+                -moz-transform: translate(600px,0px) rotate(45deg);
+                -ms-transform: translate(600px,0px) rotate(45deg);
+                -o-transform: translate(600px,0px) rotate(45deg);
+                transform: translate(600px,0px) rotate(45deg);
+            }
+            50% {
+                -webkit-transform: translate(600px,350px) rotate(135deg);
+                -moz-transform: translate(600px,350px) rotate(135deg);
+                -ms-transform: translate(600px,350px) rotate(135deg);
+                -o-transform: translate(600px,350px) rotate(135deg);
+                transform: translate(600px,350px) rotate(135deg);
+            }
+            75% {
+                -webkit-transform: translate(50px,300px) rotate(235deg);
+                -moz-transform: translate(50px,300px) rotate(235deg);
+                -ms-transform: translate(50px,300px) rotate(235deg);
+                -o-transform: translate(50px,300px) rotate(235deg);
+                transform: translate(50px,300px) rotate(235deg);
+            }
+            100% {
+                -webkit-transform: translate(0px,0px) rotate(360deg);
+                -moz-transform: translate(0px,0px) rotate(360deg);
+                -ms-transform: translate(0px,0px) rotate(360deg);
+                -o-transform: translate(0px,0px) rotate(360deg);
+                transform: translate(0px,0px) rotate(360deg);
+            }
+
+        }
+        @keyframes active1 {
+            0% {
+                
+            }
+            100% {
+                background-position: left -1008px;
+            }
+        }
+        @keyframes run2 {
+            0% {
+                -webkit-transform: translateX(-600px);
+                -moz-transform: translateX(-600px);
+                -ms-transform: translateX(-600px);
+                -o-transform: translateX(-600px);
+                transform: translateX(-600px);
+            }
+            100% {
+                -webkit-transform: translateX(2000px);
+                -moz-transform: translateX(2000px);
+                -ms-transform: translateX(2000px);
+                -o-transform: translateX(2000px);
+                transform: translateX(2000px);
+            }
+
+        }
+        @keyframes active2 {
+            0% {
+
+            }
+            100% {
+                background-position: left -2160px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="fishbox">
+        <div class="fish"></div>
+    </div>
+    <div class="sharkbox">
+        <div class="shark"></div>
+    </div>
+</body>
+</html>

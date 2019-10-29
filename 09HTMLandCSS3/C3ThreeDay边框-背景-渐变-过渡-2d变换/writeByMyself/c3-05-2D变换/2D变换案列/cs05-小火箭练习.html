@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            height: 100%;
+            background-color: #0f9;
+        }
+        .rocket {
+            width: 50px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            -webkit-transform: translate(-200px,200px) rotate(45deg);
+            -moz-transform: translate(-200px,200px) rotate(45deg);
+            -ms-transform: translate(-200px,200px) rotate(45deg);
+            -o-transform: translate(-200px,200px) rotate(45deg);
+            transform: translate(-200px,200px) rotate(45deg);
+            /*设置过度效果*/
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+        body:hover .rocket {
+            -webkit-transform: translate(900px,-800px) rotate(45deg);
+            -moz-transform: translate(900px,-800px) rotate(45deg);
+            -ms-transform: translate(900px,-800px) rotate(45deg);
+            -o-transform: translate(900px,-800px) rotate(45deg);
+            transform: translate(900px,-800px) rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <img src="img/rocket.png" alt="" class="rocket">
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>淡入淡出</title>
+		<style>
+			div{
+				height: 100px;
+				width: 100px;
+				background-color: #FF0000;
+				margin-top: 10px;
+			}
+			#box{
+				background-color: blue;
+			}
+			#box2{
+				background-color: aqua;
+			}
+		</style>
+		<script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				/* fadeOut() 方法使用淡出效果来隐藏被选元素，假如该元素是隐藏的。
+				$(selector).fadeTo(speed,opacity,callback) */
+				$("button").eq(0).bind("click",function(){
+					$("#box").fadeOut(1000);
+					$("#box1").fadeOut(2000);
+					$("#box2").fadeOut(3000);
+				}); 
+				/* fadeIn() 方法使用淡入效果来显示被选元素，假如该元素是隐藏的。 */
+				$("button").eq(1).bind("click",function(){
+					$("#box").fadeIn(1000);
+					$("#box1").fadeIn(5000);
+					$("#box2").fadeIn(3000);
+				}); 
+				/* fadeTo() 方法将被选元素的不透明度逐渐地改变为指定的值。 
+				$(selector).fadeTo(speed,opacity,callback)*/
+				$("button").eq(2).bind("click",function(){
+					$("#box").fadeTo(1000,0.15);
+					$("#box1").fadeTo(5000,0.2);
+					$("#box2").fadeTo(3000,0.5);
+				}); 
+			});
+			
+			
+
+				
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box1"></div>
+		<div id="box2"></div><br />
+		<button>fadeOut()</button>
+		<button>fadeIn()</button>
+		<button>fadeTo()</button>
+	</body>
+	
+</html>

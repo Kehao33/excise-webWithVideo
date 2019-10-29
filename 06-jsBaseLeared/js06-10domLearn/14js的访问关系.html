@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="box1"></li>
+    <li class="box2"></li>
+    <li id="box3"></li>
+    <li class="box4"></li>
+    <li class="box5"></li>
+</ul>
+<script>
+    function getById(id){
+        return document.getElementById(id);
+    }
+    var box3 = getById("box3");
+    box3.parentNode.style.backgroundColor = "blue";
+    //box3的父节点是ul，ul被挤开了，所以ul的背景颜色变成了蓝色
+
+    //兼容性的写法
+    //有Element的为非ie678支持的，没有Element的为ie678支持
+    var next = box3.nextElementSibling || box3.nextSibling;
+    var pre = box3.previousElementSibling || box3.previousSibling;
+
+    next.style.backgroundColor = "red";
+    pre.style.backgroundColor = "yellow";
+
+    //获得所有的子盒子的方法
+    //该方法用得比较多
+    var sunBoxList = box3.parentNode.children; //得到父级元素的所有子元素数组
+    for(var i = 0; i < sunBoxList.length; i++){
+        sunBoxList[i].style.backgroundColor = "black";
+    }
+    console.log("子盒子的元素有" + sunBoxList);
+
+    var sun2List = box3.parentNode.childNodes;
+    console.log("第二种方法得到" + sun2List);
+    for (var i = 0; i < sun2List.length; i++){
+        if(sun2List.nodeType == 1){ //1代表的是元素节点
+            console.log(sun2List[i]);
+        }
+    }
+</script>
+</body>
+</html>

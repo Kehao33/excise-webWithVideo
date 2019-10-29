@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--
+    目标元素的拖拽事件有四个(如下都是目标元素调用）：
+     1. ondragenter: 拖动对象进入目标元素时触发
+     2. ondragleave: 拖动对象离开目标元素时触发
+     3. ondragover:
+     （但是要清除事件默认事件 因为默认事件不能将把拖拽元素放在目标对象上，，e.preventDefualt;）
+            拖动对象覆盖到目标元素时可连续触发。
+     4. ondrop:  拖动对象在目标元素上松开鼠标
+
+    -->
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .one{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: red;
+        }
+
+        .two{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            left:500px;
+            top:100px;
+            border: 1px solid #000;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="one" draggable="true"></div>
+    <div class="two"></div>
+
+    <script>
+        //目标元素的拖拽事件
+        var two=document.querySelector('.two');
+
+//        当被拖拽元素进入是触发
+        two.ondragenter=function(){
+            console.log('来了...');
+        }
+
+        // 当被拖拽元素离开时触发
+        two.ondragleave=function(){
+            console.log('走了...');
+        }
+
+//      当 拖拽元素在 目标元素上是 连续触发
+        two.ondragover=function(e){
+//             阻止拖拽事件的默认行为；
+            e.preventDefault();
+            console.log('over...');
+        }
+
+//        当在目标元素上松开鼠标是触发
+        two.ondrop=function(){
+            console.log("松开鼠标了...");
+        }
+    </script>
+</body>
+</html>

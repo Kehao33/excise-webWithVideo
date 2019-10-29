@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 300px;
+            padding-top: 280px;
+            text-align: center;
+            background-color: #0f0;
+            border-radius: 30%;
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box" draggable="true">
+        当要为目标元素进行拖拽的时候，需要有draggable="true",
+    </div>
+    <p>
+        为了能够使元素可被拖动，把draggable="true"加载对应的标签上，
+    </p>
+    <script>
+        var box = document.querySelector(".box");
+        //绑定拖拽事件
+        //拖拽事件开始
+        box.ondragstart = function () {
+            console.log("拖拽开始..");
+        }
+        //拖拽结束
+        box.ondragend = function () {
+            console.log("拖拽结束...");
+        }
+        //拖拽离开：鼠标拖拽时离开被拖拽的元素的时候触发
+        box.ondragleave = function () {
+            console.log("拖拽离开原来的位置了...");
+        }
+        box.ondrag = function () {
+            console.log("在拖拽中...");
+        }
+    </script>
+</body>
+</html>

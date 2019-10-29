@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>学生的信息</h1> <br> <br>
+    name：<span></span> <br> <br>
+    course：<span></span> <br> <br>
+    sex： <span></span> <br> <br>
+    grade：<span></span> <br> <br>
+    <button onclick="getContent()">请求数据</button>
+    <button>下一个</button>
+
+    <script>
+       function creatXHR() {
+           var xhr;
+           if(window.XMLHttpRequest){
+               xhr = new XMLHttpRequest();
+           }else {
+               xhr = new ActiveXObject("Microsoft.XMLHTTP");
+           }
+           return xhr;
+       } 
+        function getContent() {
+            var xhr = creatXHR();
+            //创建请求
+            xhr.open("get","XML/student.XML",true);
+            //发送请求
+            xhr.send();
+            //状态码改变的时候触发匿名方法
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var Data = xhr.responseText;
+
+                    var personList = Data.getElementsByTagName("stu1");
+                    alert(personList[0].getElementsByTagName("name")[0].childNodes[0].nodeValue);
+                    var nameList = personList[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                    var course = personList[0].getElementsByTagName("course")[0].childNodes[0].nodeValue;
+                    var sex = personList[0].getElementsByTagName("sex")[0].childNodes[0].nodeValue;
+                    var grade = personList[0].getElementsByTagName("grade")[0].childNodes[0].nodeValue;
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>

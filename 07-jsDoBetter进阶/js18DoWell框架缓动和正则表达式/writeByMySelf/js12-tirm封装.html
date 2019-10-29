@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*自己封装trim()方法的原因：有的浏览器不支持内置的trim（）,
+            自己写的才是比较靠谱的
+        *
+        * */
+        var str = "           你好，我    更好    ！";
+        console.log(str);
+//        console.log(str.trim()); //内置方法（系统提供的）trim()只能去掉前后的空格
+        console.log(trim(str));
+
+        //自己封装的trim()去前后的所有空格，用正则的replace()来完成去掉
+        function trim(str) {
+            var change= str.replace(/(^\s+)|(\s+$)/g,"");
+            return change;
+        }
+
+
+        //面向对象学习
+        //        String.prototype.aaa = function () {
+        //意思是为String添加一个方法，以便好调用。
+        //            var aaa = str.replace(/(^\s+)|(\s+$)/g,"");
+        //            return aaa;
+        //        }
+        //        console.log(str.aaa());
+    </script>
+</body>
+</html>

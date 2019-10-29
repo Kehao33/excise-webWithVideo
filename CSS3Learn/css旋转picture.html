@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d-box {
+            perspective: 800px;
+            perspective-origin: 50% 50%;
+            overflow: hidden;
+            width: 400px;
+            height: 500px;
+            border: 1px solid azure;
+            margin: 88px auto 2px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .page {
+            color: #fafafa;
+            background-color: #003;
+            width: 400px;
+            height: 500px;
+            line-height: 500px;
+            text-align: center;
+            font-size: 36px;
+            left: 50%;
+            margin-left: -200px;
+            -webkit-transition: transform 1s;
+            -moz-transition: transform 1s;
+            -ms-transition: transform 1s;
+            -o-transition: transform 1s;
+            transition: transform 1s;
+            position: absolute;
+            -webkit-transform-origin: bottom;
+            -moz-transform-origin: bottom;
+            -ms-transform-origin: bottom;
+            -o-transform-origin: bottom;
+            transform-origin: bottom;
+        }
+        #page1 {
+        }
+        #page2,#page3,#page4,#page5,#page6{
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -o-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        }
+        .ctrl {
+            width: 300px;
+            height: 200px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            text-align: center;
+            font-size: 23px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="page" id="page1">1</div>
+        <div class="page" id="page2">2</div>
+        <div class="page" id="page3">3</div>
+        <div class="page" id="page4">4</div>
+        <div class="page" id="page5">5</div>
+        <div class="page" id="page6">6</div>
+    </div>
+    <div class="ctrl">
+        <a href="javascript:next()" id="nex">next</a>&nbsp;&nbsp;&nbsp;<a id="pre" href="javascript:prev()">prev</a>
+    </div>
+    <script>
+        //设置当前的索引为1
+        var nowIndex = 1;
+        function next() {
+            if(nowIndex == 6) return;
+            //得到当前的盒子对象
+            var curPage = document.getElementById("page" + nowIndex);
+            curPage.style.transform = "rotateX(" + "-90deg)";
+            nowIndex++;
+            var nexPage = document.getElementById("page" + nowIndex);
+            nexPage.style.transform = "rotateX(" + "0deg)";
+        }
+        function prev() {
+            if(nowIndex == 1) return;
+            //得到当前的盒子对象
+            var curPage = document.getElementById("page" + nowIndex);
+            curPage.style.transform = "rotateX(" + "90deg)";
+            nowIndex--;
+            var nexPage = document.getElementById("page" + nowIndex);
+            nexPage.style.transform = "rotateX(" + "0deg)";
+        }
+    </script>
+</body>
+</html>

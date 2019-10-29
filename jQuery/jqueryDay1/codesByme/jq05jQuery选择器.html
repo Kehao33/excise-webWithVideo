@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+        li {
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            //# id选择器
+            //js dom.style.backgroundColo = "";
+            //设置被选择元素的样式属性
+            //$("#b03").css("background","red");
+            //获取被选择元素的啊样式属性
+//            var bg = $("#b03").css("color");
+//            console.log(bg);
+
+//            var bg = $("#b03").css("font-size");
+//            console.log(bg);
+
+            //类选择器
+//            $(".liItem").css("background","red");
+
+            //标签选择器
+//            $("li").css("background","red");
+            //jQuery的一个特点：饮食迭代
+
+            //*通配符选择器
+//            $("*").css("font-size","40px");
+
+            //, 并集选择器
+//            $(".liItem,div").css("background","blue");
+            //通过json对象的方式来给元素css设置多个属性样式
+          /*  $("#demo").css({
+                "color": "#fff",
+                "font-size": "30px",
+                "background-color": "#f60"
+            });*/
+
+            //交集选择器
+            $("li#b03").css("font-size","30px");
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li class="liItem aa" id="demo">Bro1</li>
+    <li>Bro2</li>
+    <li id="b03">Bro3</li>
+    <li>Bro4</li>
+    <li class="liItem">Bro5</li>
+    <li id="demo1">Bro6</li>
+    <li>Bro7</li>
+    <li class="liItem">Bro8</li>
+</ul>
+<div class="aa">
+    我是div的内容
+</div>
+</body>
+</html>

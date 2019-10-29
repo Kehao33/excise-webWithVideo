@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            background-color: #0f0;
+            margin: 100px;
+            /*animation: move 2s 3 alternate linear;等于如下代码综合*/
+            /*
+            animation: name duration timing-function delay iteration-count direction;
+            animation: 动画名字 持续时间 曲线函数 延迟时间 执行次数 执行的方向
+            */
+
+            /*animation属性详解*/
+            /*动画名称：animation-name（必须要的）*/
+            -webkit-animation-name: move;
+            -moz-animation-name: move;
+            -o-animation-name: move;
+            animation-name: move;
+            /*完成一个动画周期持续的时间animation-duration，（必须要的,且单位是秒s）*/
+            -webkit-animation-duration: 3s;
+            -moz-animation-duration: 3s;
+            -o-animation-duration: 3s;
+            animation-duration: 3s;
+            /*动画执行次数animation-iteration-count:（可选） infinite：无数次*/
+            -webkit-animation-iteration-count: 15;
+            -moz-animation-iteration-count: 15;
+            -o-animation-iteration-count: 15;
+            animation-iteration-count: 15;
+            /*动画方向（可选）animation-direction：normal 正常， alternate 往返运动*/
+            -webkit-animation-direction: alternate;
+            -moz-animation-direction: alternate;
+            -o-animation-direction: alternate;
+            animation-direction: alternate;
+            /*动画延迟执行 animation-delay: 1s;(可选）*/
+            animation-delay: 1s;
+
+            /*设置动画结束后盒子的填充状态 animation-fill-mode：
+             forwards（动画结束后的状态） backwards:保持动画开始前的状态*/
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+
+            /*运动曲线：linear(匀速） */
+            /*step(3) 以多少帧运动*/
+           /* -webkit-animation-timing-function: ease-in;
+            -moz-animation-timing-function: ease-in;
+            -o-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;*/
+
+            animation-timing-function: steps(8);
+        }
+        @keyframes move {
+            0% {
+
+            }
+            100% {
+                -webkit-transform: translateX(500px) rotate(345deg);
+                -moz-transform: translateX(500px) rotate(345deg);
+                -ms-transform: translateX(500px) rotate(345deg);
+                -o-transform: translateX(500px) rotate(345deg);
+                transform: translateX(500px) rotate(345deg);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

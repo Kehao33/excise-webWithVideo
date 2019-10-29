@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="box">
+        <input type="text">
+        <span>请输入！！！</span>
+    </div>
+
+    <script>
+        //需求：输入座机号
+        //直辖市：三位-八位（010-82935150）
+        //普通市：四位-七位（0114-3160186）
+
+        //步骤
+        //1.老三步
+        //2.判断input里边的值，是否符合正则标准
+        //判断市辖区的电话：必须是以0开头，并且第二，三个数是数字即\d{2}（数字要重复两次才行），
+        // 紧接着出现“-”，必须要出现的，接着8开头的是市辖区的接着数字重复7次即\d{7},且最后以数字结束
+        //判断普通区 的电话：必须是以0开头，并且第二，三个数是数字即\d{2}（数字要重复两次才行），
+        // 紧接着出现“-”，必须要出现的，接着8开头的是市辖区的接着数字重复7次即\d{7},且最后还是以数字结尾
+        //3.符合给一个样式，不符合给另外一个样式
+
+        //1.老三步
+        var inp = document.getElementsByTagName("input")[0];
+        var span = inp.nextElementSibling || inp.nextSibling;
+
+        inp.onblur = function () {
+            //2.判断input里边的值，是否符合正则标准
+            //综上判断var reg1 = /^0\d{2}-8\d{7}$/; var reg2 = /^0\d{3}-3\d{6}$/;
+            //因为两个都要执行，所以可以
+            var reg1 = /(^0\d{2}-8\d{7}$)|(^0\d{3}-3\d{6}$)/;
+
+            if(reg1.test(inp.value)){
+                //3.符合给一个样式，不符合给另外一个样式
+                span.style.color = "green";
+                span.innerHTML = "right!";
+            }else{
+                span.style.color = "red";
+                span.innerHTML = "error!";
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>

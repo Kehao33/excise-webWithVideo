@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            display: inline-block;
+            width:  60px;
+            height: 30px;
+            background-color: #0f0;
+            margin: 12px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>tr0：1</td>
+            <td>tr0：2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <script>
+        var tab = document.getElementsByTagName("table")[0];
+        console.log(tab.rows); //tab.rows返回的是table中的行数
+        var tr1 = document.createElement("tr");
+        tab.insertRow(1); //指定在tab索引为1的位置插入一个tr标签
+        tab.deleteRow(0);//删除tab中的索引为0的tr标签
+
+        //***Row()方法的都只有table才能使用
+        //***Cell()方法的只有tr才能使用
+        var tr = tab.children[0];
+        tr.insertCell(0);
+        tr.deleteCell(1);
+
+    </script>
+</body>
+</html>

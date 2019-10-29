@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <style type="text/css">
+        body{
+            background:black;
+            color:white;
+        }
+    </style>
+    <script>
+        function toNum(num)   //以为当是个位数时，要显示01的状态
+        {
+            if (num<10)
+            {return '0'+num;}
+            else
+            {return ""+num;}
+
+        }
+        window.onload=function()
+        {
+
+            var obj=document.getElementsByTagName("img");
+            function tick()
+            {
+                var time= new Date();
+                var time1=toNum(time.getHours())+
+
+                        toNum(time.getMinutes())+toNum(time.getSeconds());
+
+                //获取小时分钟秒的一个字符串
+                // console.log(time1);
+                for (var i=0;i<obj.length;i++)     //一个有六张图片，前两张代表小时，中间两张代表分钟，后两张代表秒，
+                {
+                    obj[i].src=time1[i]+'.png';   //时间字符串是什么，就显示什么图片
+                }
+            }
+            window.setInterval(tick, 1000);
+            tick();  //为了一开始不显示000000
+
+
+        }
+    </script>
+
+</head>
+<body>
+<img src="../img/good.jpg" alt="" />
+<img src="../img/good.jpg" alt="" />
+<img src="../img/good.jpg" alt="" />
+<img src="../img/good.jpg" alt="" />
+<img src="../img/good.jpg" alt="" />
+<img src="../img/good.jpg" alt="" />
+
+</body>

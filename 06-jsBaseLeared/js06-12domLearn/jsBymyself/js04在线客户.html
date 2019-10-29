@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            -ms-word-wrap:;
+            word-wrap: break-word;
+        }
+        .wp {
+            width: 730px;
+            margin: 0px auto;
+        }
+        .mtn {
+            margin-top: 5x!important;
+        }
+        #ct .frame {
+            margin: 0;
+            border: none;  
+        }
+        .xfs_2 .frame-title,
+        .xfs_s .frametitle,
+        .xfs_2 .tab-title {
+            background-color: #A90000;
+            background-position: 0 -99px;
+        }
+        .xfs .frame-title,
+        .xfs .frametitle,
+        .xfs .tab-title,
+        .xfs .frame-title a,
+        .xfs .frametitle a,
+        .xfs .tab-tile a {
+            color: #fff!important;
+        }
+        .xfs .frame-title,
+        .xfs .frametitle,
+        .xfs .tab-title {
+            border: none;
+            background: transparent url(img/mu.png) repeat-x 0 95;
+        }
+        .title {
+            padding: 0 10px;
+            height: 32px;
+            font: 700 14px "Arial";
+            line-height: 32px;
+            overflow: hidden;
+        }
+        .block {
+            margin: 10px 10px 0;
+        }
+        ul,menu,dir {
+            display: block;
+            list-style: none;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -moz-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -moz-padding-start: 25px;
+        }
+        .mls li {
+            padding: 0 0 5px;
+            width: 66px;
+            height: 85px;
+        }
+        .ml li {
+            float: left;
+            text-align: center;
+            overflow: hidden;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+            font: 12px/1.4 Tahoma,"Microsoft YaHei UI","Simsun";
+        }
+        .mls p {
+            margin-top: 5px;
+        }
+        .ml p,
+        .ml span {
+            display: block;
+            width: 100%;
+            height: 20px;
+            white-space: nowrap;
+            /*white-space属性对空白的处理
+            white-space的属性值有：pre（空白会被浏览器一一保留）
+            nowrap（不会换行）等等
+            */
+            -ms-text-overflow: ellipsis; /*显示省略符号来代表被修剪的文本。*/
+            text-overflow: ellipsis;;
+            overflow: hidden;
+        }
+        .mls img {
+            width: 48px;
+            height: 48px;
+        }
+        .ml img {
+            display: inline-block;
+            margin: 0 auto;
+        }
+        a img {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wp mtn">
+        <div id="diy3" class="area">
+            <div id="frameipq7f2" class="xfs xfs_2 frame move-span c1 frame-1">
+                <div class="title frame-title"><span class="titletext">当前在线用户</span></div>
+                <div id="frameipq7f2_left" class="column frame-1-c">
+                    <div id="frameipq7f2_left_temp" class="move-span temp"></div>
+                    <div id="poratl_block_695" class="block move-span">
+                        <div id="portal_block_695_content" class="dxb_bc">
+                            <div class="module c1 m1 mls" id="users">
+                                <ul>
+                                  <!--  <li>
+                                        <a href="#" target="_blank"><img src="img/noavatar_small.gif" width="48" height="48" alt="沉睡楚人"></a>
+                                        <p><a href="#" title="沉眠楚人" target="_blank">沉眠楚人</a></p>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //模拟从服务器获取数据
+        var users = [
+            {"name":"jake","icon":"img/noavatar_small.gif"},
+            {"name":"Alice","icon":"img/noavatar_small.gif"},
+            {"name":"jakeone","icon":"img/noavatar_small.gif"},
+            {"name":"kehao","icon":"img/noavatar_small.gif"},
+            {"name":"fay","icon":"img/noavatar_small.gif"},
+            {"name":"chenhao","icon":"img/noavatar_small.gif"},
+            {"name":"成龙","icon":"img/noavatar_small.gif"},
+            {"name":"陈豪","icon":"img/noavatar_small.gif"},
+            {"name":"郑秋冬","icon":"img/noavatar_small.gif"},
+            {"name":"罗伊人","icon":"img/noavatar_small.gif"},
+            {"name":"郑爽","icon":"img/noavatar_small.gif"},
+            {"name":"张翰","icon":"img/noavatar_small.gif"},
+            {"name":"林东","icon":"img/noavatar_small.gif"},
+            {"name":"余华","icon":"img/noavatar_small.gif"},
+            {"name":"王富贵","icon":"img/noavatar_small.gif"},
+            {"name":"张柏芝","icon":"img/noavatar_small.gif"},
+            {"name":"Queen","icon":"img/noavatar_small.gif"},
+        ];
+        //需求：页面显示所有的在线用户
+        //思路：模拟服务器获取数据（数组中装的是json），获取ul，把ul的innerHTML属性获取到，
+            //然后不间断的网inner HTML属性中赋值
+        //赋值要求：li标签的内容
+        //步骤：获取元素
+        var div = document.getElementById("users");
+        var ul = div.firstElementChild || div.firstChild; //兼容性写法  还可以写成var ul = div.children[0];
+        //1.模拟服务器获取数据（定义数据），通过循环添加元素（定义for）
+        //数组中有多少元素，我们就床渐渐多杀个li标签
+        for(var i = 0; i <users.length; i++){
+            //2.模拟实验操作方式
+            ul.innerHTML += '<li>' +
+                                    '<a href="#" target="_blank"><img src="'+users[i].icon+'" width="48" height="48" alt="' + users[i].name+ '"> </a>' +
+                            '<p><a href="#" title="'+ users[i].name + '" target="_blank"></a></p>'+
+                            '</li>';
+        }
+    </script>
+</body>
+</html>

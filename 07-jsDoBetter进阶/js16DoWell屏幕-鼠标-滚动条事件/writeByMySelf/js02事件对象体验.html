@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //点击颜面的任何部分
+    document.onclick = function (event){
+        //兼容性写法
+        event = event || window.event;  //window.event是用来得到ie678事件对象的 无参
+        console.log("event:" + event);
+        console.log("event.timeStamp:" + event.timeStamp);
+        console.log("event.bubbles  :" + event.bubbles  );
+        console.log("event.button   :" + event.button   );
+        console.log("event.pageX    :" + event.pageX    );
+        console.log("event.pageY    :" + event.pageY    );
+        console.log("event.screenX  :" + event.screenX  );
+        console.log("event.screenY  :" + event.screenY  );
+        console.log("event.target   :" + event.target   );
+        console.log("event.type     :" + event.type     );
+        console.log("event.clientX  :" + event.clientX  );
+        console.log("event.clientY  :" + event.clientY  );
+    }
+</script>
+</body>
+</html>

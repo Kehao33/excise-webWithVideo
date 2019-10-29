@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#如下是要缓存的文件
+CACHE:
+    images/img1.jpg
+    images/img2.jpg
+
+#指定必须联网才能访问的文件
+NETWORK:
+    images/img3.jpg
+    images/img4.jpg
+
+#当 当前页面无法访问时退回的界面
+    FALLBACK:
+    back.html

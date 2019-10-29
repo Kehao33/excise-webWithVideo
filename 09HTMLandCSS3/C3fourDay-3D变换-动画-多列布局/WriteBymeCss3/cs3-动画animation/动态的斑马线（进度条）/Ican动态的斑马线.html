@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .linear {
+            overflow: hidden;
+            width: 1000px;
+            height: 200px;
+            margin: 300px auto;
+            background: linear-gradient(104deg,
+                #fff 0%,
+                #fff 10%,
+                #000 10%,
+                #000 20%,
+                #fff 20%,
+                #fff 30%,
+                #000 30%,
+                #000 40%,
+                #fff 40%,
+                #fff 50%,
+                #000 50%,
+                #000 60%,
+                #fff 60%,
+                #fff 70%,
+                #000 70%,
+                #000 80%,
+                #fff 80%,
+                #fff 90%,
+                #000 90%,
+                #000 100%
+            );
+            -webkit-transition: animation 1s;
+            -moz-transition: animation 1s;
+            -ms-transition: animation 1s;
+            -o-transition: animation 1s;
+            transition: animation 1s;
+            background-size: 261px 260px;
+            -webkit-animation: move 2s infinite linear;
+            -o-animation: move 2s infinite linear;
+            animation: move 2s infinite linear;
+
+        }
+        @keyframes move {
+            0% {
+               background-position: -800px 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="linear"></div>
+</body>
+</html>

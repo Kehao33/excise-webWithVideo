@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JQuery动画</title>
+		<style type="text/css">
+			div{
+				background:#98bf21;
+				height:100px;
+				width:200px;
+				position:absolute;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$().ready(function(){
+				$("button").eq(0).bind("click",function(){
+					$("div").eq(0).animate({"left":"200px"},2000);
+					$("div").eq(0).animate({"font-size":"50px"},2000);
+				})
+				$("button").eq(1).bind("click",function(){
+					$("div").stop();
+				})
+				$("button").eq(2).bind("click",function(){
+					$("div").stop(true);
+				})
+				$("button").eq(3).bind("click",function(){
+					$("div").stop(true,true);
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<button id="start">开始</button>
+		<button id="stop">停止</button>
+		<button id="stop2">停止所有</button>
+		<button id="stop3">停止但要完成</button>
+		<p><b>"开始"</b> 按钮会启动动画。</p>
+		<p><b>"停止"</b> 按钮会停止当前活动的动画，但允许已排队的动画向前执行。</p>
+		<p><b>"停止所有"</b> 按钮停止当前活动的动画，并清空动画队列；因此元素上的所有动画都会停止。</p>
+		<p><b>"停止但要完成"</b> 会立即完成当前活动的动画，然后停下来。</p> 
+		<div>HELLO</div>
+	</body>
+
+</html>

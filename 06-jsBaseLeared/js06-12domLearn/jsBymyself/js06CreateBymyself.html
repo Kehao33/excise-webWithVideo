@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 400px;
+            margin: 200px auto;
+        }
+        input {
+            height: 40px;
+            line-height: 40px;
+            width: 200px;
+        }
+        button {
+            height: 40px;
+            width: 100px;
+            font: 23px "Arial";
+        }
+        ul {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            list-style: none;
+        }
+        li {
+            width: 300px;
+            height: 40px;
+            color: #004;
+            border: 1px dashed greenyellow;
+        }
+        li:hover {
+            background-color: #A90000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" placeholder="请输入你要提交的信息">
+        <button>提交</button>
+    </div>
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+        var arr = ["jake","javascript","jQuery","jony j","Keju"];
+        //1获取事件源
+        //2绑定事件（绑定onkeyup事件）
+        //3.写事件驱动程序
+        var newArr = [];
+        var inp = document.getElementsByTagName("input")[0];
+        inp.onkeyup = function () {
+            //将input中的value值与arr数组进行匹配，如果匹配上就创建li加上arr的内容
+            //将input中的value转换乘正则表达式对象，与arr匹配
+            var val = new RegExp(this.value);
+            for(var i = 0; i < arr.length; i++){
+                if(val.test(arr[i])){
+                    newArr.push("<li>" + arr[i] + "</li>");
+                }
+            }
+            //1.如果input中是空值，就直接切断该函数
+            if(val==="" || newArr.length === 0) return;
+            var str = newArr.join("");
+            //将newArr的内容添加到ul中去，添加之前需要将以前的ul删除掉
+            if(box.children[2]){
+                box.removeChild(box.children[2]);
+            }else {
+                var ul = document.createElement("ul");
+                ul.innerHTML = str;
+                box.appendChild(ul);
+                ul.cssText = "color:red;"
+            }
+
+
+        }
+    </script>
+</body>
+</html>

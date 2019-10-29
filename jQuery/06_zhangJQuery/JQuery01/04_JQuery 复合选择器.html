@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery选择器</title>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<p>我是段落1</p>
+		<a href="http://www.baidu.com">百度一下</a>
+		<div>
+			<p id="box3" class="box3">我是div中的p标签</p>
+			<span>我是div中的span标签</span>
+			<div id="box2" class="txt2">
+				<p>red</p>
+				<p>
+					我是段落<br/>
+					<img src="1.jpg"/>
+					<ul>
+						<li>语文</li>
+						<li>数学</li>
+						<li>英语</li>
+					</ul>
+				</p>
+				<span>我是span标签</span>
+			</div>
+			<span>我是div中的span标签1315615641564545</span>
+		</div>
+		<ol>
+			<li>c</li>
+			<li>c++</li>
+			<li>java</li>
+		</ol>
+		<input type="text" id="box" class="txt" value="123"/><br /><br>
+		<input type="button"  onclick="test()" value="后代选择器"/><br /><br />
+		<input type="button"  onclick="test_child()" value="子元素选择器"/><br /><br />
+		<input type="button"  onclick="test_brother()" value="相邻兄弟选择器"/><br /><br />
+		<input type="button"  onclick="test_brother_pt()" value="普通兄弟选择器"/><br /><br />
+		<input type="button"  onclick="test_brother()" value="相邻兄弟选择器"/><br /><br />
+		
+		<input type="button"  onclick="muli_select()" value="并集选择器"/>
+		<input type="button"  onclick="jiaoji_select()" value="交集选择器"/>
+		<div id="new"></div>
+	</body>
+	<script>
+		function test(){
+			/* 1.后代选择器 $("ancestor descendant"); */
+			$("ol li").css("color","red");
+			$("div .txt2 ul li").css("color","blue");
+		}
+		
+		function test_child(){
+			/* 子元素选择器 只能选中直系后代 $("parent > child"); */
+			//$("ol > li").css("color","red");
+			$("#box2 > p").css("color","red");
+		}
+		
+		function test_brother(){
+			/* 相邻兄弟选择器  $("prev + next");*/
+			var context = $("p+span").html();
+			alert(context);
+		}
+		
+		function test_brother_pt(){
+			/* 普通兄弟选择器  $("prev ~ sibling） */
+			$("p~span").css("font-size","25px");
+		}
+		
+		function muli_select(){
+			/* $(" selector1,selector2,selectorN"); */
+			$("a,div").css("color","red");
+		}
+		 
+		function jiaoji_select(){
+			/* <div id="box2" class="txt2"> */
+			alert($("div#box2.txt2").get(0));
+			alert($("div").eq(0).html());
+			var context = $("div#box2.txt2").text();
+			alert(context);
+		}
+	</script>
+</html>

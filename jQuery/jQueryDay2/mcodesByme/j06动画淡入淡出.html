@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            display: none;
+            /*opacity: 1;*/
+            background-color: pink;
+        }
+    </style>
+    <!--
+    淡入淡出fadeXX()的作用是操作透明度
+    主要操作有fadeIn(),fadeOut(),fadeTo();
+    用法都是用四种，以fadeIn()为列
+    第一种： fadeIn()不带参数
+    第二种： fadeIn(毫秒值) 参数为毫秒值
+    第三种: fadeIn(字符串) slow(600ms) normal(400ms) fast(200ms)
+    第四种： fadeIn(毫秒值，回调函数)
+    -->
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            //淡入操作
+            $("button:eq(0)").click(function () {
+                $("div").fadeIn(200,function () {
+                    console.log("fadeIn()over!")
+                });
+            });
+            //淡出操作
+            $("button:eq(1)").click(function () {
+                $("div").fadeOut(200);
+            });
+            //淡入淡出切换
+            $("button:eq(2)").click(function () {
+                $("div").fadeToggle("fast");
+            });
+            //淡入到
+            $("button:eq(3)").click(function () {
+                $("div").fadeTo(1000,0.5,function () {
+                    console.log("fadeTo()")
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<button>淡入</button>
+<button>淡出</button>
+<button>切换</button>
+<button>改透明度为0.5</button>
+<div></div>
+
+</body>
+</html>

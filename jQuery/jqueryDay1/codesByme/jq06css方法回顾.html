@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //当css方法只有一个参数的时候一般就是获取其参数的属性值
+//            $("li").css("font-size");
+            //css方法有两个参数的时候，一般就是给参数1设置参数2的属性值
+//            $("li").css("background-color","red");
+
+            //设置多个css样式
+           /* $("li").css({
+             "background-color": "red",
+             "font-size" : "20px",
+             "color" : "white"
+             });*/
+
+            //设置样式，可以根据我们自己的意愿来设置
+            $("li").css("font-size",function (index,value) {
+                //index: 指定当前元素的索引号，索引从0开始的
+                //value: 当前元素要设置的样式
+//                console.log(index);
+//                console.log(value);
+                //只设置第三个li的font-size，即其索引值为2
+                if(index === 2) {
+                    return (index +1) * parseInt(value) + "px";
+                }
+                //否则
+                return (index + 1) * parseInt(value) + "px";
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>我是li元素</li>
+    <li>我是li元素</li>
+    <li>我是li元素</li>
+    <li>我是li元素</li>
+</ul>
+
+</body>
+</html>

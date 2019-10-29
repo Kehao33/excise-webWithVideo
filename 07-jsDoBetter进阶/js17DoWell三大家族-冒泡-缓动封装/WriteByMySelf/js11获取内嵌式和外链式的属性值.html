@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            background-color: pink;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100px; height: 100px;"></div>
+
+    <script>
+        //赋值：div.style......
+        var div = document.getElementsByTagName("div")[0];
+        div.style.width = "1000px";
+
+        //获取行内式和内嵌式
+//        console.log(typeof window.getComputedStyle(div,null));
+//        console.log(window.getComputedStyle(div,null).border);
+//        console.log(window.getComputedStyle(div,null)["background-color"]);
+//        console.log(div.currentStyle.padding); //此padding得不到
+//        console.log(div.currentStyle["background-color"]);
+
+        console.log(getStyle(div,"padding"));
+        console.log(getStyle(div,"background-color"));
+
+        //兼容性获取元素样式
+        function getStyle(ele,attr){
+            if(window.getComputedStyle){
+                return window.getComputedStyle(ele,null)[attr];
+            }
+            return ele.currentStyle[attr];
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: 'ball';
+            src: url('iconfont/iconfont.eot');
+            src: url('iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('iconfont/iconfont.woff2') format('woff2'),
+            url('iconfont/iconfont.woff') format('woff'),
+            url('iconfont/iconfont.ttf') format('truetype'),
+            url('iconfont/iconfont.svg#iconfont') format('svg');
+        }
+        p {
+            width: 200px;
+            height: 150px;
+            font-size: 23px;
+            border: 1px solid #000;
+            text-align: center;
+            position: relative;
+        }
+        p::after {
+            /*&#xe645;*/
+            content: '\e645';
+            /*引用图标字体编码*/
+            font-family: "ball";
+            position: absolute;
+            left: 100px;
+            top: 50px;
+            font-size: 44px;
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <!--3.引用对应的图标文字编码-->
+    <p>我喜欢的</p>
+</body>
+</html>

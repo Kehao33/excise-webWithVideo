@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width:  200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            background-color: #f00;
+
+            /*
+            过渡属性(谁要过渡在谁那里写过渡）
+            格式 transition: 过渡名称 过渡时间 过渡效果 过渡延时时间
+            */
+            -webkit-transition: width 2s ease 0.2s;
+            -moz-transition: width 2s ease 0.2s;
+            -ms-transition: width 2s ease 0.2s;
+            -o-transition: width 2s ease 0.2s;
+            transition: width 2s ease 0.2s;
+        }
+        .box:hover {
+            width: 600px;
+            background-color: #FFB700;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

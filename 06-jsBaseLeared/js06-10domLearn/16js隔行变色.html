@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            width: 1210px;
+            margin: 100px auto;
+        }
+        li {
+            height: 34px;
+            cursor: pointer;
+            font: 500 16px/34px "simsun";
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>北京股指  3063.31-22.18 (-0.72%)</li>
+    <li>上海股指  3063.31-22.18 (-0.72%)</li>
+    <li>广州股指  3063.31-22.18 (-0.72%)</li>
+    <li>深圳股指  3063.31-22.18 (-0.72%)</li>
+    <li>北京股指  3063.31-22.18 (-0.72%)</li>
+    <li>上海股指  3063.31-22.18 (-0.72%)</li>
+    <li>广州股指  3063.31-22.18 (-0.72%)</li>
+    <li>深圳股指  3063.31-22.18 (-0.72%)</li>
+</ul>
+
+    <script>
+        //需求:利用childNodes来实现各行元素的变色
+        //简单版
+        /*var liArr = document.getElementsByTagName("li");
+        for(var i = 0; i < liArr.length; i++){
+            if(i % 2 == 0){
+                //让偶数行变为色
+                liArr[i].style.backgroundColor = "red";
+            }
+        }*/
+
+        //复杂版
+        //现获取ul
+        var ul = document.getElementsByTagName("ul")[0];
+        var liArr = ul.childNodes;
+
+        //把元素节点重新放入一个新的数组里边去
+        var newArr = [];
+        for (var i = 0; i < liArr.length; i++){
+            if(liArr[i].nodeType == 1){//如果是元素节点的话
+                newArr.push(liArr[i]); //相当于每一个新数组中的元素都是一个节点元素（对象）；
+            }
+        }
+
+        //实现隔行变色
+        for ( var i = 0; i <newArr.length; i++){
+            if(i % 2 != 0){
+                //让奇数行变色
+                newArr[i].style.backgroundColor = "blue";
+            }
+        }
+    </script>
+</body>
+</html>

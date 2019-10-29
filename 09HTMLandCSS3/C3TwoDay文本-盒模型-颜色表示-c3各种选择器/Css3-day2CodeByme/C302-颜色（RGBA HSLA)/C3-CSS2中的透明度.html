@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            width: 400px;
+            height: 400px;
+            background-color: #00f;
+            margin: 100px auto;
+            border: 1px solid #eee;
+            opacity: 0.3;
+        }
+        .in {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            margin: 100px auto;
+            opacity: 1; /*此语句不起作用，因为受了父盒子opacity的影响*/
+        }
+    </style>
+</head>
+<body>
+    <!--opacity:中文意思事“模糊”范围事0-1，
+    可以给盒子设置半透明，但是也会影响子盒子，并且子盒子无法改变透明度
+    -->
+    <div class="out">
+        <div class="in"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <ul>
+       <li id="li1">我是参照标签</li>
+   </ul>
+    <script>
+        //document.write();不常用，因为容易覆盖原来的页面
+        //innerHTML:用的比较多，绑定属性和内容比较方便（节点套节点）
+        //document.createElement:也是比较多的，指定数量的时候一般用它
+        var ul = document.getElementsByTagName("ul")[0];
+        var li1 = document.getElementById("li1");
+
+        //创建、添加、删除、替换
+        var li2 = document.createElement("li");
+        li2.innerHTML = "我是createElement创建的标签，用的是appedChild的方法添加的";
+        ul.appendChild(li2);
+        //用insertBefore添加
+        var li3 = document.createElement("li");
+        li3.innerHTML = "li3用insertBefore（）li1的节点之间，并添加到ul标签中间"
+        ul.insertBefore(li3,li1);
+    </script>
+</body>
+</html>

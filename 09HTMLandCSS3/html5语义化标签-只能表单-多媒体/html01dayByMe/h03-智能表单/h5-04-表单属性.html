@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form {
+            width: 100%;
+            /*最大宽度*/
+            max-width: 640px;
+            /*最小宽度*/
+            min-width: 320px;
+            margin: 0 auto;
+            font: 23px "Microsoft YaHei UI";
+        }
+        input {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!--&lt; !&ndash; 表单新增属性：&ndash; &gt;-->
+    <!--
+        placeholder: 提示文字（占位符）
+        autofocus: 自动获取焦点
+        autocomplete： 自动完成（填充的） 其属性值有on（开启，默认的） off取消自动提示
+        required：必须要填写的
+        multiple： 多选的
+        novalidate： 关闭默认的验证功功能（只能给form加）
+        pattern： 自定义正则验证
+        pattern="1\d{10}"
+    -->
+    <!--<form action="" novalidate></form>-->
+    <form action="#">
+        <fieldset>
+            <legend>表单验证</legend>
+            <label for="">
+                用户名; <input type="text" placeholder="例如：梅长苏" autocomplete="on"
+                            autofocus="autofocus"   name="userName">
+            </label>
+
+            <label for="">
+                电话： <input type="tel" pattern= "1\d{10}">
+            </label>
+            <!--上传多个文件可以用multiple-->
+            <input type="file" name="file" multiple>
+
+            <input type="submit" value="提交">
+        </fieldset>
+    </form>
+</body>
+</html>

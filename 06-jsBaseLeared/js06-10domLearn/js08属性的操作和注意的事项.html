@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box1">绑定标签的两种方法和注意事项，按F12查询结果</div>
+    <script>
+/*绑定元素节点属性的方法有两种
+* 第一种：元素节点.属性名（或者元素节点[属性名])，但是该方法绑定的属性不会出现在标签上
+* 第二种: 元素节点.setAttribute("属性名","属性值");该方法绑定的属性会出现在标签上
+* 注意：该两种方法不能交换使用，赋值和获取的值必须在使用同一个方法
+* */
+        var box = document.getElementById("box1");
+        //第一种绑定
+        box.className = "div-box";
+        //第二种绑定
+        box.setAttribute("className","box2"); //该绑定会出现在对应的节点标签中
+
+        //获取节点对应的属性
+        console.log(box.className);   //获得的是div-box
+        //该方法并不能得到box.setAttribute("class","box2")中的box2的值
+
+        console.log(box.getAttribute("className")); //获取的是自己设置的box2值
+        //并不能获得box.className = "div-box";的值
+    </script>
+</body>
+</html>

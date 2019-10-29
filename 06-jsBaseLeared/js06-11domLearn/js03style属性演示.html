@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            border: 10px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" style="width: 100px; height: 100px;background-color: pink;">我爱您中国</div>
+    <script>
+        var box = document.getElementsByTagName("div")[0];
+        //样式少的时候使用
+        console.log(box.style.backgroundColor);
+
+        //2style是对象
+        console.log(box.style);
+        console.log(typeof box.style);
+
+        //3.值是字符串
+        console.log("lineheight:" + box.style.lineHeight);
+        console.log("border:" + box.style.border);//获取的原因是因为border实在内嵌style中设置的
+        //style.属性 == style.行内块元素
+
+        //4.名命规则：驼峰命名
+        console.log(box.style.backgroundColor);
+        //设置了类样式不能获取（只和行内式交互，和内嵌和外联无关
+        console.log(typeof box.className);
+
+        //6. box.style.cssText = "字符形式的样式”;
+        console.log(box.style.cssText);
+        box.style.cssText = "width: 200px; height: 200px; background-color: #f00; line-height:200px; text-align: center";
+    </script>
+</body>
+</html>

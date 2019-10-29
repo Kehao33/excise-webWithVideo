@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            border: 1px solid #000;
+            width: 400px;
+            height: 400px;
+            /*弹性盒子让子盒子水平垂直居中*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /*position: relative;*/
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            border: 1px solid deepskyblue;
+            /*如下为普通盒子垂直居中于父盒子*/
+            /*position: absolute;*/
+            /*left: 50%;*/
+            /*top: 50%;*/
+            /*margin-left: -50px;
+            margin-top: -50px;*/
+            /*-webkit-transform: translate(-50%,-50%);*/
+            /*-moz-transform: translate(-50%,-50%);*/
+            /*-ms-transform: translate(-50%,-50%);*/
+            /*-o-transform: translate(-50%,-50%);*/
+            /*transform: translate(-50%,-50%);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son">3</div>
+    </div>
+</body>
+</html>

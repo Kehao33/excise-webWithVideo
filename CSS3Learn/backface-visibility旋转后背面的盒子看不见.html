@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box-wrap {
+            width: 500px;
+            height: 600px;
+            font: 24px "Arial";
+            position: relative;
+            margin: 50px auto;
+            perspective: 1000px;
+        }
+        .box-wrap img {
+            width: 500px;
+
+        }
+        .box-wrap .front,
+        .box-wrap .back{
+            text-align: center;
+            width: 100%;
+            height: 50%;
+            border: 1px solid #ccc;
+            margin-bottom: 66px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.8;
+            backface-visibility: hidden;
+            -webkit-transition: transform 1s ease;
+            -moz-transition: transform 1s ease;
+            -ms-transition: transform 1s ease;
+            -o-transition: transform 1s ease;
+            transition: transform 1s ease;
+        }
+        .box-wrap .back {
+            background-color: #ccc;
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+        }
+        .box-wrap:hover .front {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+        .box-wrap:hover .back {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box-wrap">
+        <div class="front">
+            <img src="img/d4.jpg" alt="">
+            <p>
+                我要宣布爱你的人就是我，
+                对没有错就是要，简简单单爱就是我，你爱我，不需要啰嗦。
+                ——《就是我》
+            </p>
+        </div>
+        <div class="back">
+            <img src="img/j5.jpg" alt="">
+            <p>
+                我相信成败不是注定，我相信严肃不叫酷，我相信智慧最珍贵，
+                我相信你摇头是不对，我相信好奇让人进步，
+                我相信恐惧是折磨，我相信人靠爱存活。——《相信无限》
+            </p>
+        </div>
+    </div>
+</body>
+</html>

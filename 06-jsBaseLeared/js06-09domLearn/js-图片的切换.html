@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>girl</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">下一张</a> <br>
+    <img src="img/basketbllgirl.JPEG" alt="girl.jpg" id="change"  width="1000px">
+
+    <script>
+        var aClick = document.getElementsByTagName("a")[0];
+//      var imgChange = document.getElementsByClassName("img")[0];
+        var changeImg = document.getElementById("change");
+
+        aClick.onclick = function(){
+            changeImg.src = "img/basketgirl.JPEG";
+            changeImg.style.width = "1280px";
+            /*return false; 的目的是为了让a链接禁止跳转*/
+            return false;
+
+        }
+    </script>
+</body>
+</html>

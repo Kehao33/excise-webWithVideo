@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //去掉字符串的前后空格 trim()，中间的空格不能求掉哈
+    var s1 = " ab   c       d";
+    console.log(s1);
+    console.log(s1.trim());
+
+    //replace()替换
+    var s2 = "Today is fine day,today is fine day!!!";
+    console.log(s2);
+    console.log(s2.replace(/today/gi,"tomorrow")); //用tomrrow来替换不分大小写的today
+
+    //字符串边数组split(); 无参的时候，十八字符串作为一个元素添加进数组中
+    //空字符串，分割字符串中每一个字符，分别添加进数组中
+    //指定字符串分割数组，特殊符号将不会出现在数组的任意一个元素中
+
+    var s3 = "荃科皓-全科举-全科彬";
+    console.log(s3);
+    console.log(s3.split("-")); //用-作为分隔符，将s3的每一个子字符串添加进数组中,返回的是一个数组
+    console.log(s3.split(""));  //当时一个空的字符串时，默认将原字符中的每个字符都一一装进一个数组中，返回的仍然是一个数组
+</script>
+</body>
+</html>

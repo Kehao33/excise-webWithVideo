@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #F7F7F7;
+        }
+        li {
+            float: left;
+            list-style: none;
+        }
+        span {
+            background-color: #eee;
+            float: left;
+            /*只要转化成float的时候，就相当于转化成了块级标签*/
+            width: 66px;
+            height: 66px;
+        }
+        span.con {
+            width: 100px;
+            height: 66px;
+            text-align: center;
+            line-height: 66px;
+        }
+        ul {
+            width: 80%;
+            height: 66px;
+            margin: 100px auto;
+        }
+        ul li:hover .left {
+            transform-origin: left;
+            -webkit-transform: skew(0deg,-30deg);
+            -moz-transform: skew(0deg,-30deg);
+            -ms-transform: skew(0deg,-30deg);
+            -o-transform: skew(0deg,-30deg);
+            transform: skew(0deg,-30deg);
+        }
+        ul li:hover .right {
+            transform-origin: right;
+            -webkit-transform: skew(0deg,-150deg);
+            -moz-transform: skew(0deg,-150deg);
+            -ms-transform: skew(0deg,-150deg);
+            -o-transform: skew(0deg,-150deg);
+            transform: skew(0deg,-150deg);
+        }
+        ul li:hover .con {
+            -webkit-transform: translateY(-36px);
+            -moz-transform: translateY(-36px);
+            -ms-transform: translateY(-36px);
+            -o-transform: translateY(-36px);
+            transform: translateY(-36px);
+        }
+        ul li:hover span{
+            box-shadow: 1px 1px 10px #000;
+        }
+        ul::after,
+        ul::before {
+            margin: 0;
+            padding: 0;
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 66px;
+            background-color: #eee;
+            left: 122px;
+            top: 100px;
+        }
+        ul::after {
+            left: auto; /*释放掉left*/
+            background-color: #eee;
+            right: 587px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <span class="left"></span>
+                <span class="con">我们的青春</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="con">我们的青春</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="con">我们的青春</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="con">我们的青春</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="con">我们的青春</span>
+                <span class="right"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onscroll = function () {
+        //文档类型定义（DTD）:在html中即html版本的标准的申明
+
+        //没有DTD约束(没有<!DOCTYPE html>申明的时候使用：
+//        document.title = document.body.scrollTop;
+
+        //有DTD约束的时候（即有<!DOCTYPE html>申明的时候使用：
+//        document.title = document.documentElement.scrollTop;
+
+        //兼容性的写法
+//        document.title = document.body.scrollTop || document.documentElement.scrollTop;
+//        document.title = document.body.scrollTop + document.documentElement.scrollTop;
+
+        //所有的主流的浏览器都支持pageXOffset 和 pageYOffset属性
+        document.title = window.pageYOffset;
+       /* alert(window.pageYOffset);*/
+        //注意：pageYOffset的对象是window，而scrollTop的最大的对象是document;
+        //兼容性的最好的写法;
+        document.title = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+        /*pageXOffset 和 pageYOffset 属性返回文档在窗口左上角水平和垂直方向滚动的像素。
+
+         pageXOffset 设置或返回当前页面相对于窗口显示区左上角的 X 位置。
+         pageYOffset 设置或返回当前页面相对于窗口显示区左上角的 Y 位置。*/
+
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        /*$(document).ready(function () {
+//            var $ = "我是$"; 当这一行的注释被放开过后，$变量将会和jquery中的$()方法冲突。
+            $("#btn").click(function () {
+                alert("按钮被点击了");
+            });
+        });*/
+       /*jQuery(document).ready(function(){});
+       * 和$(docuement).ready(function(){});两个函数都是一样的
+       * */
+      /*  jQuery(document).ready(function () {
+            jQuery("#btn").click(function () {
+                alert("按钮被hit了");
+            })
+        });*/
+
+        var iQuery = function (dom) {
+            //return {}  代表的是返回一个对象，{}就是对象的标志
+            var obj = {
+                ready: function (func) { //此时的ready是一个方法
+                    /*
+                    * 判断一下document.onload 有没有被赋值（或则说没有这个事件）
+                    * //1.如果有，接收一个旧的函数，先掉调用新的函数，接着再调用旧的函数
+                    * //2.没有：直接赋值个onload事件
+                    * */
+                    if(typeof dom.onload === "function") {
+                        var oldFunc = dom.onload;
+                        dom.onload = function () {
+                            //调用新的函数
+                            func();
+                            //调用旧的函数
+                            oldFunc();
+                        }
+                    }else {
+                        dom.onload = func;
+                    }
+                }
+            };
+            return obj;
+        };
+        iQuery(window).ready(function () {
+            alert("第一调用");
+        });
+        iQuery(window).ready(function () {
+            alert("第二次调用");
+        })
+
+        var obj = {
+            ready: function () {
+
+            }
+        };
+        var obj1 = new Object();
+        obj1.ready = function () {
+
+        };
+        //Object.create();
+    </script>
+</head>
+<body>
+<input type="button" value="我是按钮" id="btn" />
+</body>
+</html>

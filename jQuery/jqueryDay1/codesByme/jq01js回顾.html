@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100%;
+            height: 300px;
+            background-color: #f60;
+            color: #fff;
+            font-size: 23px;
+            text-transform: capitalize;
+        }
+        div {
+            display: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">显示内容</button>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var divList = document.getElementsByTagName("div");
+        btn.onclick = function () {
+            for(var i = 0; i < divList.length; i++){
+                divList[i].style.display = "block";
+                divList[i].innerHTML = "this is a box....";
+            }
+
+        }
+    </script>
+</body>
+</html>

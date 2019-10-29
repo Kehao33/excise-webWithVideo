@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        符号：冒号
+        结构伪类：通过结构来进行筛选
+        */
+        html {
+            text-align: center;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            width: 520px;
+            font-size: 20px;
+            height: auto;
+            margin: 100px auto;
+        }
+        li {
+            float: left;
+            width: 70px;
+            height: 70px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+        /*通过结构性，找到父类，在里边指定选中那个标签*/
+        /*选中第一个*/
+        li:first-child {
+            background-color: pink;
+        }
+        
+        /*选中最后一个*/
+        li:last-child {
+            background-color: #00a;
+        }
+        /*注意：
+        x：nth-child(m) m必须是从1开始的，小于1是无效的。
+        m： odd或者2n-1(奇数） even或者2n（偶数）
+        编号从1开始*/
+        li:nth-child(11){
+            background-color: #0f0;
+        }
+        
+        /*选中前5个*/
+        li:nth-child(-n + 5){
+            background-color: #00d;
+        }
+        /*选中后5个*/
+        li:nth-last-child(-n + 5){
+            background-color: #eee;
+        }
+        /*选中3的倍数*/
+        li:nth-child(3n) {
+            background-color: #303030;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li>31</li>
+        <li>32</li>
+        <li>33</li>
+        <li>34</li>
+        <li>35</li>
+    </ul>
+</body>
+</html>

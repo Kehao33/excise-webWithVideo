@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点的操作</title>
+</head>
+<body>
+    <div class="box-father">
+        <div class="box1">
+            <a href="#" class="aLink"></a>
+        </div>
+    </div>
+
+    <script>
+        //节点的操作
+        //1.创建
+        var myLi = document.createElement("li");
+        var myPage = document.createElement("p");
+        console.log(myLi);
+        console.log(myPage);
+
+        //2.添加节点
+        var aLink  = document.getElementsByClassName("aLink")[0];
+        var box1 = document.getElementsByClassName("box1")[0];
+        box1.appendChild(myPage);
+        box1.insertBefore(myLi,aLink);
+
+        //3.删除节点
+        box1.removeChild(myLi)//删除box1的子节点li标签
+        myPage.parentNode.removeChild(myPage)//通过自己的节点删除自己
+        //克隆节点
+        var cloneBox1 = box1.cloneNode(true);//深度克隆
+        var clonebox2  = box1.cloneNode(false);//只赋值节点本身，不复制子节点
+        console.log(cloneBox1);
+        console.log(clonebox2);
+    </script>
+</body>
+</html>

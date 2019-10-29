@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            vertical-align: top;
+        }
+        .main {
+            margin: 10px auto 0;
+            width: 1000px;
+        }
+        #q-nav1 {
+            overflow: hidden;
+        }
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <!--引入自己写的js代码-->
+    <script src="fixedNav.js"></script>
+    <script>
+        window.onload = function () {
+            //需求1：当我们滚动页面的时候，被卷曲的头部超过第二个盒子距离的位置
+                //那么直接给第二个盒子加类名.fixed
+            //需求2：当我们滚动页面的时候，被卷曲的头部小于第二个盒子距离顶部的位置，
+                //那么直接给第二个盒子却笑类名.fixed
+            //步骤1，获取对象，添加事件，书写驱动程序
+            //2.判断，被攫取的头部的大小
+            //3.满足条件添加类，否则删除类
+
+            //步骤1，获取对象，添加事件，书写驱动程序
+            var topDiv  = document.getElementById("top");
+            var height = topDiv.offsetHeight;
+            var middle = document.getElementById("q-nav1");
+            var main = document.getElementById("main");
+
+            window.onscroll = function () {
+                //2.判断，被卷曲头部的大小
+                if(scroll().top > height){
+                    //3.满足条件添加类，否则删除类
+                    middle.className += " fixed";
+                    //第二个盒子不占位置了，所以我们给第三个盒子一个上padding占位置，
+                    // 不出现盒子抖动问题
+                    main.style.paddingTop = middle.offsetHeight + "px";
+                }else {
+                    middle.className = "";
+                    //清零
+                    main.style.paddingTop = 0;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="top" id="top">
+        <img src="img/top.png" alt="">
+    </div>
+    <div id="q-nav1">
+        <img src="img/nav.png" alt="">
+    </div>
+    <div class="main" id="main">
+        <img src="img/main.png" alt="">
+    </div>
+</body>
+</html>

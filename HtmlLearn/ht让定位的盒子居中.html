@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .out {
+            width: 1200px;
+            height: 800px;
+            background-color: #005;
+            margin: 0 auto; /*让标准的盒子居中的方法*/
+        }
+        .in {
+            position: fixed;
+            width: 800px;
+            height: 400px;
+            background-color: #0f0;
+            /*以下的方法给定位了的盒子居中*/
+            left: 50%;
+            margin-left: -400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="in">
+
+        </div>
+    </div>
+</body>
+</html>

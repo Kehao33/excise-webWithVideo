@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid #008;
+            margin: 100px auto;
+            position: relative;
+        }
+        .sec {
+            width: 2px;
+            height: 250px;
+            background-color: #000;
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+            -webkit-transform-origin: center top;
+            -moz-transform-origin: center top;
+            -ms-transform-origin: center top;
+            -o-transform-origin: center top;
+            transform-origin: center top;
+            -webkit-animation:runtime 60s steps(60)  infinite;
+            -o-animation:runtime 60s steps(60)  infinite;
+            animation:runtime 60s steps(60)  infinite;
+
+        }
+        @keyframes runtime {
+            0% {
+
+            }
+            100%{
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="sec"></div>
+    </div>
+</body>
+</html>

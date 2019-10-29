@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = 0;
+    setInterval(function(){
+        console.log(num);
+        num++;
+    },1000);
+    //setInterval(可以作为一个循环来使用）
+    //setInterval（）循环定时器：周而复始的执行（循环执行）
+    //setTimeout()粘单定时器：用完以后立即报废（只执行一次）
+
+    //定义方法1（匿名函数）
+    setInterval(function() {
+        console.log("中国人民站起来了");
+    },1000);
+
+    //定义方法2
+    setInterval(fn1,1000);
+    function fn1(){
+        console.log(23);
+    }
+
+    //定义方法3
+    setInterval("fn2(3)",1000);
+    function fn2(a){
+        console.log(a);
+    }
+</script>
+</body>
+</html>

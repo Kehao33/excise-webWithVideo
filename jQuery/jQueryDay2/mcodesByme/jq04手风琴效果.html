@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .wrap {
+            width: 1010px;
+            margin: 100px auto 0;
+        }
+        .wrap li {
+            width: 200px;
+            height: 251px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".wrap li").each(function (i,ele) {
+                $(ele).css("background","url(imgs/0" + (i + 1) + ".jpg) no-repeat");
+
+            }).mouseenter(function () {
+                $(this).stop().animate({width: 600},500).siblings("li").stop().animate({width:100},500);
+            }).mouseleave(function () {
+                $(".wrap li").stop().animate({width:200},500);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     .	[^\n\r]	除了换行和回车之外的任意字符
+     \d	[0-9]		数字字符
+     \D	[^0-9]	非数字字符
+     \s	[ \t\n\x0B\f\r]	空白字符
+     \S	[^ \t\n\x0B\f\r]	非空白字符
+     \w	[a-zA-Z_0-9]		单词字符
+     \W	[^a-zA-Z_0-9]	非单词字符
+     */
+    console.log("-------0---------------预定义类-------0--------");
+    console.log("/./: ([^\n\r]	除了换行和回车之外的任意字符)  " + /./.test("\n\r"));
+    console.log("/./: ([0-9]		数字字符)  " + /./.test("adsfaddsgdfa")); //.	[^\n\r]	除了换行和回车之外的任意字符
+    console.log("/\d/:([^0-9]	非数字字符)  " + /\d/.test(2343));
+    console.log("/\d/:([ \t\n\x0B\f\r]	空白字符)  " + /\d/.test("adafddf"));
+    console.log("/\s/:([^ \t\n\x0B\f\r]	非空白字符)  " + /\s/.test("   "));
+    console.log("/\s/:([a-zA-Z_0-9]		单词字符)  " + /\w/.test("$"));
+    console.log("/\w/:([^a-zA-Z_0-9]	非单词字符)  " + /\W/.test("_"));
+
+
+    console.log("--------------------简单----------------------------------");
+    console.log("/xxx/形式: " +/chaoge/.test("chaoge"));
+    console.log("/xxx/形式: " +/chaoge/.test("chaogenihao"));
+    console.log("/xxx/形式: " +/chaoge/.test("我的chaogenihao"));
+    console.log("/xxx/形式: " +/chaoge/.test("我的chaonidegenihao"));
+    console.log("/xxx/形式: " +/chaoge/.test("chao"));
+    console.log("[xxx]形式：" + /[chaoge]/.test("chaoge"));
+    console.log("[xxx]形式:" + /[chaoge]/.test("chaogenihao"));
+    //只要所检测的字符中有[]中的任何一个值的时候就是true;
+    console.log("[xxx]形式:" + /[chaoge]/.test("chaonigenihao"));
+    console.log("[xxx]形式:" + /[chaoge]/.test("chao"));
+    console.log("[xxx]形式:" + /[chaoge]/.test("a;1jr jglikrj grjgr"));
+    console.log("[xxx]形式:" + /[chaoge]/.test("*"));
+
+    console.log("---------------负向类-----------------");
+    console.log("/[^xxx]/形式的:" + /[^abc]/.test("iiii"))//true;
+    console.log(/[^abc]/.test("aiii")); //只要配备的中有一个是非[]里的数字就算是正确的，true
+    console.log(/[^abc]/.test("abc")); //false
+    console.log(/[^abc]/.test("ac"));//false
+    console.log(/[^abc]/.test("a")); //false
+    console.log(/[^abc]/.test("bcdef"));//true;
+    console.log(/[^abc]/.test("dagfasfdasc"));// true;
+
+    console.log("==========范围内----------------");
+    console.log(/[a-c]/.test("fdafdasg"));//只要有[]里的范围就是true;
+    console.log(/[a-c]/.test("ac")); //true;
+
+    console.log("===========组合类==========");
+    console.log(/[a-c1-8]/.test(9));//fasle,就不再这个组合范围内
+    console.log(/[a-c2-8]/.test(3)); //ture 3在这个范围内;
+    console.log(/[a-c3-8]/.test("b")); //ture
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            font-size: 23px;
+            width: 200px;
+            min-height: 100px;
+            border: 1px solid #3de;
+            padding: 10px;
+            border-radius: 20%;
+            margin: 200px auto;
+            text-align: center;
+        }
+        span {
+            font-size: 33px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        li {
+            font-size: 33px;
+        }
+    </style>
+    <script src="../jquery-1.11.1.js"></script>
+    <script>
+        var starNone = '☆'; //空心五角星
+        var starSel = '★'; //实心五角星
+
+        $(function () {
+            $(".comment").on("mouseenter","li",function () {
+                //鼠标移入，让当前的元素和他前边的所有兄弟变为实心
+                //end方法：结束当前链最近的一次过滤操作，并且返回匹配元素之前的状态
+                $(this).text(starSel).prevAll().text(starSel).end().nextAll().text(starNone);
+            }).on("mouseleave",function () {
+                //先让所有的五角星变为空心
+                $(".comment").children().text(starNone);
+                //让觉有clicked类的元素
+                $(".clicked").text(starSel).prevAll().text(starSel);
+            }).on("click","li",function () {
+                //给当前元素添加类，给它所有的兄弟元素移出类
+                //给此处的click类，只能做标识用
+                $(this).addClass("clicked").siblings().removeClass("cliced");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        星级评分：
+        <ul class="comment">
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+            <li>☆</li>
+        </ul>
+    </div>
+</body>
+</html>

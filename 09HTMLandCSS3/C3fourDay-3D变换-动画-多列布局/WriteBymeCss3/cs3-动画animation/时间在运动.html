@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .clock {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #000;
+            border-radius: 110px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .line {
+            background: rgba(62,62,38,0.18);
+            width: 4px;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .line2 {
+            -webkit-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+        .line3 {
+            -webkit-transform: rotate(60deg);
+            -moz-transform: rotate(60deg);
+            -ms-transform: rotate(60deg);
+            -o-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }
+        .line4 {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        .line5 {
+            -webkit-transform: rotate(120deg);
+            -moz-transform: rotate(120deg);
+            -ms-transform: rotate(120deg);
+            -o-transform: rotate(120deg);
+            transform: rotate(120deg);
+        }
+        .line6 {
+            -webkit-transform: rotate(150deg);
+            -moz-transform: rotate(150deg);
+            -ms-transform: rotate(150deg);
+            -o-transform: rotate(150deg);
+            transform: rotate(150deg);
+        }
+        .line1,
+        .line4 {
+            width: 6px;
+            margin-left: -3px;
+        }
+        /*盖住中间的长线*/
+        .cover {
+            width: 160px;
+            height:160px;
+            background-color: #fff;
+            border-radius: 80px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -80px 0px 0px -80px;
+        }
+        .hour {
+            height: 60px;
+            width: 6px;
+            background-color: pink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -60px 0px 0px -3px;
+            transform-origin: bottom center;
+            /*60*60*60秒走完一圈*/
+            -webkit-animation: move 21600s steps(60) infinite;
+            -o-animation: move 21600s steps(60) infinite;
+            animation: move 21600s steps(60) infinite;
+        }
+        .minute {
+            height: 70px;
+            width: 4px;
+            background-color: deeppink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -70px 0px 0px -2px;
+            -webkit-transform-origin: bottom center;
+            -moz-transform-origin: bottom center;
+            -ms-transform-origin: bottom center;
+            -o-transform-origin: bottom center;
+            transform-origin: bottom center;
+            -webkit-animation: move 3600s steps(60) infinite;
+            -o-animation: move 3600s steps(60) infinite;
+            animation: move 3600s steps(60) infinite;
+        }
+        .second {
+            height: 80px;
+            width: 2px;
+            background-color: pink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -80px 0px 0px -1px;
+            -webkit-transform-origin: bottom center;
+            -moz-transform-origin: bottom center;
+            -ms-transform-origin: bottom center;
+            -o-transform-origin: bottom center;
+            transform-origin: bottom center;
+            -webkit-animation: move 60s steps(60) infinite;
+            -o-animation: move 60s steps(60) infinite;
+            animation: move 60s steps(60) infinite;
+        }
+        .dotted {
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 10px;
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            margin: -10px 0px 0px -10px;
+        }
+        @keyframes move {
+            from {
+                -webkit-transform: rotateZ(0deg);
+                -moz-transform: rotateZ(0deg);
+                -ms-transform: rotateZ(0deg);
+                -o-transform: rotateZ(0deg);
+                transform: rotateZ(0deg);
+            }to {
+                 -webkit-transform: rotateZ(360deg);
+                 -moz-transform: rotateZ(360deg);
+                 -ms-transform: rotateZ(360deg);
+                 -o-transform: rotateZ(360deg);
+                 transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+        <div class="line line5"></div>
+        <div class="line line6"></div>
+        <div class="cover"></div>
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+        <div class="dotted"></div>
+    </div>
+</body>
+</html>

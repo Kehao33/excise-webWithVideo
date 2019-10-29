@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+        div {
+            text-align: center;
+            color: #f00;
+            font: 23px "Arial";
+        }
+    </style>
+</head>
+<body>
+    <div>
+        按住F12可以看出，触动事件后可以显示这些值：
+        <img src="img/get.png" alt="">
+    </div>
+<script>
+    document.onclick = function (event) {
+        event = event || window.event;
+
+        console.log("event.pageY  : " + event.pageY  );
+        //事件离页面（body）顶部的距离
+
+        console.log("event.screenY: " + event.screenY);
+        //离屏幕的顶部距离
+
+
+        console.log("event.clientY: " + event.clientY);
+        //浏览器可是区域的垂直距离
+
+    }
+</script>
+</body>
+</html>

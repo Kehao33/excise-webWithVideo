@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            display: block;
+            border: 0;
+        }
+        .wrapper {
+            width: 752px;
+            border: 1px solid #ccc;
+            padding: 10px 0 0 10px;
+            font-family: Arial;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+        .wrapper li {
+            float: left;
+            margin: 0 10px 10px 0;
+            width: 178px;
+            height: 125px;
+            overflow: hidden;
+            position: relative;
+        }
+        .wrapper li div,
+        .wrapper li p {
+            width: 178px;
+            height: 25px;
+            position: absolute;
+            font-size: 14px;
+            text-align: center;
+            line-height: 25px;
+            color: #fff;
+            left: 0;
+            bottom: -25px;
+        }
+        .wrapper li div {
+            background-color: #000;
+        }
+        .wrapper li p {
+            background: url("img/bg.png") no-repeat 5px 0;
+        }
+    </style>
+    <script>
+        $(function () {
+            var div = $("<div></div>"),speed = 388,$p = $(".wrapper p");
+            $p.before(div);
+            $(".wrapper div").fadeTo(0,0.5);
+            $p.each(function (index,ele) {
+                var y = index*25;
+                $(ele).css("background-position","5px -" + y + "px");
+            });
+
+            $(".wrapper li").hover(function () {
+                $(this).children("div,p").stop().animate({"bottom":0},speed);
+            },function () {
+                $(this).children("div,p").stop().animate({"bottom":0 -26},speed);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <ul>
+        <li><a href="#"><img src="img/01.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/02.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/03.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/04.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/05.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/06.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/07.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="img/08.jpg" alt=""/></a><p>百度一下，你就知道</p></li>
+    </ul>
+</div>
+</body>
+</html>

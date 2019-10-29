@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        pre {
+            font: 26px "Arial";
+        }
+        .do {
+            float: left;
+            border: 1px solid #f00;
+        }
+        /*使用字体的步骤：
+            1.要在网页上使用用户电脑上没有的这种web字体，
+            先用@font-face{ font-family:"fontName";}申明（告诉浏览器在哪里找这个字体）
+
+            2.定义一个类名，谁家在这个类名，就会使用webfont字体
+            .webClassName{ font-family: "fontName";}
+
+            3.在body中写出对应的文字，在css中写入对应的样式，便于浏览
+        */
+        @font-face {
+            font-family: 'webfont1';
+            font-display: swap;
+            src: url('afont/webfont.eot'); /* IE9 */
+            src: url('afont/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('afont/webfont.woff2') format('woff2'),
+            url('afont/webfont.woff') format('woff'), /* chrome、firefox */
+            url('afont/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('afont/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+        }
+        .my {
+            float: left;
+            font-family: "webfont1" ;
+            font-size: 44px;
+            font-weight: 700;
+            margin-top: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="do">
+        <p>
+            <pre>
+            第一步：在css中使用font-face声明字体
+            @font-face {
+                font-family: 'webfont';
+                font-display: swap;
+                src: url('webfont.eot'); /* IE9 */
+                src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('webfont.woff2') format('woff2'),
+                url('webfont.woff') format('woff'), /* chrome、firefox */
+                url('webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url('webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+            }
+            第二步：定义使用 webfont 的样式
+            .web-font {
+                font-family: "webfont" !important;
+                font-size: 16px;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            第三步：为文字加上对应的样式
+           &lt;i class="web-font"&gt;你连世界都没观过，哪来的世界观。&lt;/i&gt;
+            </pre>
+        </p>
+    </div>
+    <p class="my">
+        你连世界都没观过，哪来的世界观。
+    </p>
+</body>
+</html>

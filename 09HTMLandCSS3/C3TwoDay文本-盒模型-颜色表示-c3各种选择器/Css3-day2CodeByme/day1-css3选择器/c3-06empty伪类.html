@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin-top: 23px;
+        }
+        
+        /*选中空的div盒子*/
+        div:empty {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+<body>
+<!--如下div是空的，即empty-->
+    <div></div>
+    <div>
+    这不是空的div，因为这里边有文字哦~
+    </div>
+</body>
+</html>

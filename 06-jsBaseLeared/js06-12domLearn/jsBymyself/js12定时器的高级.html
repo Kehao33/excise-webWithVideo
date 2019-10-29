@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //返回值，清楚定时器。
+    var num = 1;
+    //setinterval()返回的就是定时器的名字
+    var timer = setInterval(function() {
+        console.log(num);
+        num++;
+        if(num === 8){
+            //清理定时器
+            console.log("定时器的清理方法：" + "clearinterval(" + "定时器返回的对象名)")
+            clearInterval(timer);
+        }
+    },1000)
+</script>
+</body>
+</html>

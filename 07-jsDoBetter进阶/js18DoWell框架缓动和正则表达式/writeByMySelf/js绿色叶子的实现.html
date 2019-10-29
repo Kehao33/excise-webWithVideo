@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        var div = document.getElementsByTagName("div")[0];
+        div.style.cssText = "width:100px;height:100px;background-color:green";
+
+        //div.style["border-radius"] = "50px";
+        //给div的border-radius的属性赋值，即ele.style["attr"] = "属性值";
+
+        div.style["zIndex"] = "1";
+
+        //很多浏览器支持的是
+        div.style.borderTopLeftRadius = "80px";
+        div.style.borderBottomRightRadius = "80px";
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    stop([clearQueue],[gotoEnd]);
+    clearQueue:如果设置成true，则清空队列。可以立即结束动画。
+    gotoEnd:让当前正在执行的动画立即完成，
+    并且重设show和hide的原始样式，调用回调函数等。
+    -->
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: #0f0;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            //点击按钮后产生动画
+            $("button:eq(0)").click(function () {
+                $("div").slideDown(2000);
+            });
+            //滑出动画
+            $("button:eq(1)").click(function () {
+                $("div").slideUp(2000);
+            });
+            //停止动画
+            $("button:eq(2)").click(function () {
+                //$("div").stop(); //没有参数的时候，默认两个都是false
+                //第一个参数表示是否要清空动画队列，
+                //true:清空队列，后续动画不执行； flast;不清空队列，后续动画会继续执行
+
+                //第二个参数表示正在执行的动画是否立即执行完成
+                //如果为ture,怎立即跳到动画完成的状态，反之
+
+                //情况1：当参数为两个true的时候,表示清空了动画队列，后续动画不执行，并且立即执行完当前的动画
+//                $("div").stop(true,true);
+                //情况2：false,true(没有清空动画队列，后续的动画会继续执行，并且立即执行完当前动画
+//                $("div").stop(false,true);
+                //情况3：true,false（清空了动画队列，后边的动画不执行，立即停止当前动画
+//                $("div").stop(true,false);
+                //情况4：false,false(没有清空动画队列，立即停止当前动画)
+                $("div").stop(false,false);
+            })
+
+        })
+    </script>
+</head>
+<body>
+<button>滑入</button>
+<button>滑出</button>
+<button>停止</button>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <input type="text"><br><br>
+    <button>赋值</button>
+    <button>取值</button>
+    <script>
+        var inpList = document.getElementsByTagName("input");
+        var btnList = document.getElementsByTagName("button");
+        btnList[0].onclick = function() {
+            for(var i = 0; i < inpList.length; i++){
+                inpList[i].value = i;
+            }
+        }
+        btnList[1].onclick = function() {
+            var arr = [];
+            for(var i = 0; i < inpList.length; i++){
+                arr.push(inpList[i].value);
+            }
+            for(var i = 0; i < inpList.length; i++){
+                console.log(arr.join("-"));
+            }
+        }
+    </script>
+</body>
+</html>

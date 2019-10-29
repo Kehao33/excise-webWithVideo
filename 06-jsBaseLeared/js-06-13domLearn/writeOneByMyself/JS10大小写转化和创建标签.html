@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file">
+<script>
+    var s1 = "abcDeFG";
+    //转化成小写
+    console.log(s1.toLowerCase()); //abcdefg
+    //转化成大写
+    console.log(s1.toUpperCase()); //ABCDEFG
+
+    //验证上传文件格式（图片：img/png/jpg/gif)查找最后一个“.”，截取到最后，判断valu属性值
+   /* document.getElementsByTagName("input")[0].onchange = function () {
+        alert(this.value)
+    }*/
+
+    var s2 = "Click me";
+    //创建一个超链接 此方法创建一个用作超文本目标的HTML锚。语法：string.anchor( anchorname ) 允许可有可无参数
+    console.log("<br>" + s2.anchor("click")); //创建一个锚点名字为click
+    console.log("<br>" + s2.anchor());//创建一个没有锚点名字的a标签
+    //将字符串变大
+    document.write("<br>" + s1.big());
+    document.write("<br>" + "2"+s2.sup());//将s2变为上标
+    document.write("<br>" + "H"+s2.sub()); //将s2变为下标
+    document.write("<br>" + s2.link("http://baidu.com")); //创建爱你一个连接
+    document.write("<br>" + s2.bold()); //将s2变粗
+   console.log( "2"+s2.sup());//将s2变为上标
+   console.log( "H"+s2.sub()); //将s2变为下标
+   console.log( s2.link("http://baidu.com")); //创建一个连接
+   console.log( s2.bold()); //将s2变粗
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+        .pop {
+            width: 300px;
+            height: 120px;
+            margin: 30px auto;
+            background: url("img/paopao.png") no-repeat left bottom
+                        ,url("img/paopao.png") no-repeat right top #026;
+            border-radius: 6px;
+            -webkit-transition: all 1s linear;
+            -moz-transition: all 1s linear;
+            -ms-transition: all 1s linear;
+            -o-transition: all 1s linear;
+            transition: all 1s linear;
+        }
+        .pop:hover {
+            background-position: left top, right bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="pop"></div>
+</body>
+</html>

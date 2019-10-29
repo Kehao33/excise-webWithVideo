@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*<!--navigator导航-->*/
+        //geolocation:地理定位
+        //window.navigator.geolocation
+        //兼容处理
+        if(navigator.geolocation) {
+            //如果存在导航地理定位元素，则获取用户地理信息
+            // successCallback 当获取用户位置成功的回调函数
+            //erroCallback 当获取用户位置失败的回调函数
+
+            navigator.geolocation.getCurrentPosition(successCallback,errorCallback);
+        }else {
+            alert("sorry,你的浏览器不支持地理位置");
+        }
+        //获取地理位置成功的回调函数
+        function successCallback(position) {
+            //获取用户当前的经纬度
+            //coordes坐标  coordinate;
+            //纬度： latitude
+            var wd = position.coords.latitude;
+            //经度： longitude
+            var jd = position.coords.longitude;
+
+            console.log("用户的地理位置为：");
+            console.log("纬度:" + wd + ",经度:" + jd);
+            /*
+            * 攀枝花： 纬度:26.569958004502044,经度:101.72531597817189
+            * */
+        }
+        //获取地理位置失败的回调函数
+        function errorCallback(error) {
+            console.log(error);
+            console.log("获取用户位置失败！");
+        }
+    </script>
+</body>
+</html>

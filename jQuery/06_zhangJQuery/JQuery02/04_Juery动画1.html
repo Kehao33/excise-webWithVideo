@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JQuery动画</title>
+		<style type="text/css">
+			#txt{
+				height: 100px;
+				width: 100px;
+				background-color: chartreuse;
+				position: relative;
+				left: 0px;
+				top: 0px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			/* $(selector).animate({params},speed,callback); 
+			必需的 params 参数定义形成动画的 CSS 属性。
+			可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+			可选的 callback 参数是动画完成后所执行的函数名称。
+			*/
+		   $().ready(function(){
+			   $("button").eq(0).bind("click",function(){
+				   $("#txt").animate({"height":"300px"},2000);
+				   $("#txt").animate({"width":"300px"},2000);
+				   $("#txt").animate({"height":"100px"},2000);
+				   $("#txt").animate({"width":"100px"},2000);
+			   });
+		   });
+			
+		</script>
+		
+		
+	</head>
+	<body>
+		<button>点击开始动画</button>
+		<div id="txt"></div>
+	</body>
+</html>

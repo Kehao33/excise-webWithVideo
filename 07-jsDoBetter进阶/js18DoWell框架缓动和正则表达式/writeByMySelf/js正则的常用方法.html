@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="demo">匹配的结果</p>
+    <script>
+        /*match() 方法可在字符串内检索指定的值，
+        找到的一个或多个正则表达式的匹配
+        返回的是一个对象（对象数组)。
+        */
+        var str="The rain in SPAIN stays mainly in the plain";
+        var n=str.match(/ain/gi);
+        console.log(n); //["ain","AIN","ain","ain"];
+        document.getElementById("demo").innerHTML = n;
+
+        /*search() 方法用于检索字符串中指定的子字符串，
+        或检索与正则表达式相匹配的子字符串。
+        返回匹配成功后的第一个索引
+        */
+
+        var s1 = "The rain in SPAIN stays mainly in the plain";
+        var sun = "ain";
+        console.log(s1.search(sun));  //5
+
+        /*
+        split() 方法用于把一个字符串分割成字符串数组。*/
+        var s2 = "九-尺-龙-泉";
+        //用"-"将s2截取乘2个元素
+        console.log(s2.split("-",2)); //["九","尺"]
+
+        /*
+        slice() 提取字符串的某个部分并在新字符串中返回被提取的部分。*/
+        var s3 = "中国人民站起来了";
+        //截取的范围索引为[2,5)
+        console.log(s3.slice(2,5)); //结果为： 人民站
+
+        /*
+        regex.test(strobj2)方法
+        */
+        var so = /你好啊/;
+        var s02 = "他说你好啊";
+        console.log(so.test(s02));
+
+
+    </script>
+</body>
+</html>

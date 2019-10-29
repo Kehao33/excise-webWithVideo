@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            font: 23px "Arial";
+            color: #008;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button>localStorage存储</button>
+    <button>localStorage获取</button>
+    <button>localStorage更新</button>
+    <button>localStorage删除</button>
+    <button>localStorage清除</button>
+    <p>
+        setItem(key, value) 设置存储内容（键值存储） <br>
+        getItem(key) 读取存储内容 <br>
+        removeItem(key) 删除键值为key的存储内容 <br>
+        clear() 清空所有存储内容 <br>
+        key(n) 以索引值来获取存储内容 <br>
+    </p>
+
+    <script>
+        /**
+         * localStorage
+         * 数据存放在硬盘上的
+         * 永久生效，除非手动删除
+         * 20M
+         * */
+
+        var txt = document.querySelector("input");
+        var btns = document.querySelectorAll("button");
+        //localStorage存储数据
+        btns[0].onclick = function () {
+            window.localStorage.setItem("userName",txt.value);
+        };
+        //localStorage获取数据localStorage.getItem(key)
+        btns[1].onclick = function () {
+            txt.value = window.localStorage.getItem("userName");
+        };
+        //更新就是覆盖原来的信息即可
+        btns[2].onclick = function () {
+             window.localStorage.setItem("userName",txt.value);
+        };
+        //删除。localStorage.removeItem();
+        btns[3].onclick = function () {
+            window.localStorage.removeItem("userName");
+        };
+        //清除clear()
+        btns[4].onclick = function () {
+            window.localStorage.clear();
+        };
+    </script>
+</body>
+</html>

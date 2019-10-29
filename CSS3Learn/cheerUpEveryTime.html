@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>祝你飞得更高</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Bitter");
+        html,body {
+            margin: 0;
+            font-family: "Bitter",Serif;
+            text-align: center;
+            height: 100%;
+        }
+        h1 {
+            text-shadow: 8px 6px 4px #888;
+        }
+        .wrap, .first, .second, .third{
+            width: 100%;
+            height: 100%;
+        }
+        .first, .second, .third{
+            position: absolute;
+        }
+        .second, .third {
+            opacity: 0;
+        }
+        .wrap {
+            position: relative;
+            z-index: 1;
+        }
+        .first {
+            -webkit-animation: first 10s infinite;
+            -o-animation: first 10s infinite;
+            animation: first 10s infinite;
+            background: linear-gradient(#5ff8ca,#ff008c);
+            z-index: 10;
+        }
+        @keyframes first {
+            0%{
+                opacity: 1;
+            }
+            20%{
+                opacity: 0.8;
+            }
+            30%{
+                opacity: 0.4;
+            }
+            40%{
+                opacity: 0.6;
+            }
+            50%{
+                opacity: 0.3;
+            }
+            60%{
+                opacity: 0.8;
+            }
+            70%{
+                opacity: 0.5;
+            }
+            80%{
+                opacity: 0.7;
+            }
+            90%{
+                opacity: 0.5;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .second {
+            -webkit-animation: second 10s infinite;
+            -o-animation: second 10s infinite;
+            animation: second 10s infinite;
+            animation-delay: 2s;
+            background: linear-gradient(#8e44ad,#00a1f0);
+            z-index: 20;
+        }
+        @keyframes second {
+            0%{
+                opacity: 1;
+            }
+            10%{
+                opacity: 0.3;
+            }
+            20%{
+                opacity: 0.4;
+            }
+            30%{
+                opacity: 0.6;
+            }
+            40%{
+                opacity: 0.8;
+            }
+            50%{
+                opacity: 0.2;
+            }
+            60%{
+                opacity: 0.3;
+            }
+            70%{
+                opacity: 0.4;
+            }
+            80%{
+                opacity: 0.6;
+            }
+            90%{
+                opacity: 0.8;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+        .third {
+            -webkit-animation: third 10s infinite;
+            -o-animation: third 10s infinite;
+            animation: third 10s infinite;
+            animation-delay: 8s;
+            background: linear-gradient(#0f0,#ff75c6);
+            z-index: 30;
+        }
+        @keyframes third {
+            0%{
+                opacity: 1;
+            }
+            10%{
+                opacity: 0.3;
+            }
+            20%{
+                opacity: 0.4;
+            }
+            30%{
+                opacity: 0.6;
+            }
+            40%{
+                opacity: 0.8;
+            }
+            50%{
+                opacity: 0.2;
+            }
+            60%{
+                opacity: 0.3;
+            }
+            70%{
+                opacity: 0.4;
+            }
+            80%{
+                opacity: 0.6;
+            }
+            90%{
+                opacity: 0.8;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+        .txt {
+            font: 32px "Arial";
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            left: 50%;
+            top: 30%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            z-index: 999;
+        }
+        .txt p {
+            font-weight: 600;
+            text-shadow: 3px 2px 3px #eee;
+        }
+        #tell {
+            width: 60%;
+            height: 40%;
+            font: 32px/46px "Arial";
+            color: #fafafa;
+            position: absolute;
+
+            top: 50%;
+            left: 20%;
+            z-index: 998;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+        <div class="txt">
+            <h1>要加油</h1>
+            <p>
+                努力的往前飞，
+                再累也无所谓，
+                黑夜过后的光芒有多美 &nbsp;！<br>
+                ——张杰 《我们都一样》
+            </p>
+        </div>
+        <div id="tell">
+            <p id="content"></p>
+        </div>
+    </div>
+
+    <script>
+        var txts = "王涵徒弟，你生日那天我搞忘了，你师兄提醒过我的，尴！生日快乐是迟了很多，" +
+                "但是原谅为师的错，知道你和你师兄周铖轩都挺努力向上的，我也想过送你礼物的，" +
+                "可就是不知道送什么，然后又知道你喜欢张杰，所以就利用了自己的专业知识，" +
+                "写一个小小的网页送给你，希望你继续积极向上高情商的努力的走下去！";
+        var num = txts.length+8;
+        var i =0;
+        function show() {
+            var shower = txts.substr(0,i) + "_";
+            document.getElementById("content").innerHTML = shower;
+            i++;
+            if(i + 1 >= num){
+                document.getElementById("content").innerHTML = txts;
+                clearInterval(done);
+            }
+        }
+        var done = setInterval(show,200);
+    </script>
+</body>
+</html>

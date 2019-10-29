@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>按钮0</button>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <script>
+        var bntList = document.getElementsByTagName("button");
+        for(var i  = 0; i < bntList.length; i++){
+            bntList[i].index = i;
+            bntList[i].onmouseover = function(){
+                alert(this.index);
+            }
+        }
+    </script>
+</body>
+</html>

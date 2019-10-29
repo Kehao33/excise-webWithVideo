@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0000dd;
+        }
+        .d-box {
+            width: 1320px;
+            height: 2000px;
+            margin: 0 auto;
+            background-color: #004;
+        }
+        .nav {
+            position: fixed;
+        }
+        span {
+            position: fixed;
+            width: 300px;
+            height: 200px;
+            margin-top: 200px;
+            line-height: 200px ;
+            text-align: center;
+            font-size: 23px;
+            font-family: "Microsoft Himalaya";
+            background-color: chartreuse;
+
+            /*fixed的作用：让盒子可以隐式转化为块级元素，但是不占原来的位置，位置从浏览器出发*/
+        }
+        .right{
+            right: 198px ;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="nav">
+            <img src="img/jd.png" alt="" width="1320px">
+        </div>
+        <span>
+            常常会幻想未来很美好
+        </span>
+        <span class="right">
+            常常会幻想未来很美好
+        </span>
+    </div>
+</body>
+</html>

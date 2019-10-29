@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <video src="video/fun.mp4"></video>
+    <br>
+    <button>播放</button>
+    <button>暂停</button>
+
+    <script>
+        /*
+        用querySelector("x:nth-child(n)")只管现在的位置属性doucument的第几个元素即可
+        *如播放按钮属于document的第3个盒子
+        * */
+        document.querySelector("button:nth-child(3)").onclick = function () {
+            //播放
+            document.querySelector("video").play();
+        }
+        document.querySelector("button:nth-child(4)").onclick = function () {
+            //暂停
+            document.querySelector("video").pause();
+        }
+    </script>
+</body>
+</html>

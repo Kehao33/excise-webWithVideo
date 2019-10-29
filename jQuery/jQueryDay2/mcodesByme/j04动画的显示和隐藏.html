@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        //点击按钮后产生动画
+        $(function () {
+            $("button:eq(0)").click(function () {
+                //显示动画用法1：show() 没有参数实现了 display:block;
+//            $("div").show();
+
+                //显示动画用法2 show(2000);参数代表的是毫秒值，通过控制宽高透明度和display：block
+//                $("div").show(2000);
+
+                //显示动画用法3：show(字符串）；slow慢：600ms normal正常：400ms fast快：200ms
+//                $("div").show("slow");
+                $("div").show("fast");
+//                $("div").show("normal")
+
+                //显示动画用法1： show（毫秒值，回到函数【对执行完后进项操作】);
+             /*   $("div").show(1000,function () {
+                 alert("在动画执行完后我们可以对他进行其他操作");
+                 })*/
+
+                //隐藏动画
+                $("button:eq(1)").click(function () {
+                    //隐藏动画用法1： hide()不带参数
+//                    $("div").hide(); //通过这个方法实现的 display:none;
+
+                    //隐藏动画2：hide(2000) 参数为执行的时间的毫秒值
+//                    $("div").hide(2000);
+
+                    //显示用法3： hide(字符串） 参数有slow(600ms） normal（400ms) fast（200ms）
+//                    $("div").hide("slow");
+                    //隐藏动画4：hide(毫秒值，回调函数[执行完毕后的操作]);
+                    $("div").hide(2000,function () {
+                        console.log("隐藏完毕");
+                    });
+                });
+
+                $("button:eq(2)").click(function () {
+                    //显示和隐藏互相转换
+                    //同样有四种用法
+                    $("div").toggle(2000);
+                });
+
+
+            });
+        })
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div></div>
+</body>
+</html>
